@@ -23,6 +23,9 @@ export default defineConfig({
   optimizeDeps: {
     include: ['react', 'react-dom', 'three', 'framer-motion']
   },
+  define: {
+    global: 'globalThis',
+  },
   server: {
     port: 3000,
     open: true

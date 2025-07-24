@@ -121,6 +121,7 @@ The project is configured for optimal performance:
    - Run `npm run build` locally first
    - Check for TypeScript/ESLint errors
    - Ensure all dependencies are in package.json
+   - **Fixed:** Removed problematic markdown dependencies that caused Rollup import issues
 
 3. **3D Models Not Loading:**
    - Ensure models are in `public/` directory
@@ -130,6 +131,11 @@ The project is configured for optimal performance:
 4. **Routing Issues:**
    - Verify `vercel.json` is configured correctly
    - Check that all routes redirect to `index.html`
+
+5. **ChatBot Formatting:**
+   - **Updated:** Replaced ReactMarkdown with simple text formatter
+   - Supports bullet points and basic bold text formatting
+   - No external markdown dependencies required
 
 ## 📊 Performance Monitoring
 

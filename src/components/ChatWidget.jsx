@@ -5,11 +5,35 @@ import { FaAt } from "react-icons/fa"; // Add @ icon
 import { BsThreeDots } from "react-icons/bs";
 import { styles } from "../styles";
 import { profilePic } from "../assets";
-// Import React Markdown and its plugins
-import ReactMarkdown from 'react-markdown';
-import rehypeRaw from 'rehype-raw';
-import rehypeSanitize from 'rehype-sanitize';
-import remarkGfm from 'remark-gfm';
+// Simple text formatter for bot messages
+const formatBotMessage = (text) => {
+  return text
+    .split('\n')
+    .map((line, index) => {
+      // Handle bullet points
+      if (line.trim().startsWith('•') || line.trim().startsWith('-')) {
+        return (
+          <div key={index} className="flex items-start gap-2 my-1">
+            <span className="text-accent-purple mt-1">•</span>
+            <span>{line.replace(/^[•-]\s*/, '')}</span>
+          </div>
+        );
+      }
+      // Handle bold text (simple **text** format)
+      if (line.includes('**')) {
+        const parts = line.split('**');
+        return (
+          <p key={index} className="my-1">
+            {parts.map((part, i) =>
+              i % 2 === 1 ? <strong key={i}>{part}</strong> : part
+            )}
+          </p>
+        );
+      }
+      // Regular text
+      return line.trim() ? <p key={index} className="my-1">{line}</p> : <br key={index} />;
+    });
+};
 
 // Speech Recognition setup
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -426,28 +450,8 @@ const ChatWidget = () => {
                     } ${message.isTemporary ? "opacity-70" : ""}`}
                   >
                     {message.sender === "bot" ? (
-                      <div className="markdown-content">
-                        <ReactMarkdown
-                          remarkPlugins={[remarkGfm]}
-                          rehypePlugins={[rehypeRaw, rehypeSanitize]}
-                          className="text-sm prose prose-invert max-w-none"
-                          components={{
-                            h1: ({node, ...props}) => <h1 className="text-xl font-bold my-2" {...props} />,
-                            h2: ({node, ...props}) => <h2 className="text-lg font-bold my-2" {...props} />,
-                            h3: ({node, ...props}) => <h3 className="text-base font-bold my-1" {...props} />,
-                            p: ({node, ...props}) => <p className="my-1" {...props} />,
-                            ul: ({node, ...props}) => <ul className="list-disc pl-4 my-1" {...props} />,
-                            ol: ({node, ...props}) => <ol className="list-decimal pl-4 my-1" {...props} />,
-                            li: ({node, ...props}) => <li className="my-0.5" {...props} />,
-                            a: ({node, ...props}) => <a className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer" {...props} />,
-                            code: ({node, inline, ...props}) => 
-                              inline ? 
-                                <code className="bg-gray-800 px-1 py-0.5 rounded text-xs" {...props} /> :
-                                <code className="block bg-gray-800 rounded p-2 my-2 overflow-x-auto text-xs" {...props} />
-                          }}
-                        >
-                          {message.text}
-                        </ReactMarkdown>
+                      <div className="text-sm">
+                        {formatBotMessage(message.text)}
                       </div>
                     ) : (
                       <p className="text-sm">{message.text}</p>
