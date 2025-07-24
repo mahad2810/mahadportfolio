@@ -42,7 +42,7 @@ Using advanced natural language processing, Mahad.AI can answer questions about 
 - **📨 Contact System**: EmailJS for hassle-free communication
 - **📊 State Management**: React Context API for efficient state handling
 - **🔄 Version Control**: Git for code versioning
-- **☁️ Deployment**: Hosted on Vercel/Netlify for optimal performance
+- **☁️ Deployment**: Optimized for Vercel with automatic deployments
 - **⚡ Optimization**: Lazy loading and code splitting for improved performance
 
 ## 📂 Project Structure
@@ -176,6 +176,47 @@ Feel free to reach out to me through any of the following channels:
 - **🐦 Twitter**: [@CSnippets62428](https://x.com/CSnippets62428)
 
 Or simply use the contact form on my portfolio website to send me a message directly. I'm always open to discussing new projects, opportunities, or just connecting with fellow developers!
+
+## 🚀 Deployment
+
+This portfolio is optimized for **Vercel** deployment with automatic CI/CD.
+
+### Quick Deploy to Vercel:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/mahad2810/mahadportfolio)
+
+### Manual Deployment:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/mahad2810/mahadportfolio.git
+   cd mahadportfolio
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables:**
+   ```bash
+   cp .env.example .env
+   # Add your API keys to .env file
+   ```
+
+4. **Build and deploy:**
+   ```bash
+   npm run build
+   vercel --prod
+   ```
+
+### Environment Variables Required:
+- `VITE_GEMINI_API_KEY` - For AI chatbot functionality
+- `VITE_APP_EMAILJS_SERVICE_ID` - For contact form
+- `VITE_APP_EMAILJS_TEMPLATE_ID` - For contact form
+- `VITE_APP_EMAILJS_PUBLIC_KEY` - For contact form
+
+📖 **Detailed deployment guide:** See [DEPLOYMENT.md](./DEPLOYMENT.md)
 
 ---
 
