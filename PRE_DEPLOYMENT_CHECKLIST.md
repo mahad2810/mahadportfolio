@@ -8,7 +8,7 @@
 - [ ] All dependencies are in package.json (not devDependencies for runtime deps)
 
 ## 🌐 Environment Variables
-- [ ] All VITE_ prefixed environment variables are set
+- [ ] All environment variables are set (GEMINI_API_KEY, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY)
 - [ ] API keys are valid and working
 - [ ] EmailJS credentials are correct
 - [ ] Gemini API key has proper permissions

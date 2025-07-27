@@ -40,12 +40,14 @@ vercel --prod
 In Vercel Dashboard → Project Settings → Environment Variables, add:
 
 ```
-VITE_GEMINI_API_KEY = "AIzaSyBhAGZ8TTDhnv8aO4XFIV9oKIxFPkU_1w8"
-VITE_APP_EMAILJS_SERVICE_ID = "service_d4rhbjc"
-VITE_APP_EMAILJS_TEMPLATE_ID = "template_x8jjoc4"
-VITE_APP_EMAILJS_PUBLIC_KEY = "-j0nNZwBSnjRdqxT0"
+GEMINI_API_KEY = "AIzaSyBhAGZ8TTDhnv8aO4XFIV9oKIxFPkU_1w8"
+EMAILJS_SERVICE_ID = "service_d4rhbjc"
+EMAILJS_TEMPLATE_ID = "template_x8jjoc4"
+EMAILJS_PUBLIC_KEY = "-j0nNZwBSnjRdqxT0"
 NODE_ENV = "production"
 ```
+
+**Note**: These environment variables don't use the `VITE_` prefix. They are manually exposed to the client-side through the Vite configuration in `vite.config.js`.
 
 ### 4. **Verify Deployment**
 - ✅ Site loads correctly
@@ -73,7 +75,7 @@ NODE_ENV = "production"
 
 ### Common Issues:
 1. **Build Fails**: Check all dependencies are in package.json
-2. **Environment Variables**: Ensure all VITE_ prefixed vars are set
+2. **Environment Variables**: Ensure all environment variables are set in Vercel dashboard (no VITE_ prefix needed)
 3. **3D Models Not Loading**: Check public folder assets are included
 4. **Contact Form Not Working**: Verify EmailJS credentials
 5. **Routing Issues**: Ensure vercel.json rewrites are configured
