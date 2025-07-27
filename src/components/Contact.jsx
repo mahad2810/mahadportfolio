@@ -144,10 +144,10 @@ const Contact = () => {
         {/* Section Header */}
         <motion.div variants={textVariant()} className="text-center mb-16">
           <p className={`${styles.sectionSubText} text-gray-500 dark:text-gray-400`}>
-            Let's Connect
+            Professional Contact
           </p>
           <h2 className={`${styles.sectionHeadText} text-gray-800 dark:text-white`}>
-            Get In Touch
+            Contact Information
           </h2>
           <p className="text-gray-600 dark:text-gray-300 text-lg mt-4 max-w-2xl mx-auto">
             Have a project in mind or just want to say hello? I'd love to hear from you.

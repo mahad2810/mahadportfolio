@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { Code, Palette, Zap, Users } from "lucide-react";
 
@@ -40,7 +39,7 @@ const About = () => {
         {/* Section Header */}
         <motion.div variants={textVariant()} className="text-center mb-16">
           <p className={`${styles.sectionSubText} text-gray-500 dark:text-gray-400`}>
-            Introduction
+            Professional Background
           </p>
           <h2 className={`${styles.sectionHeadText} text-gray-800 dark:text-white`}>
             About Me
@@ -101,33 +100,6 @@ const About = () => {
             ))}
           </motion.div>
         </div>
-
-        {/* Stats section */}
-        <motion.div
-          variants={fadeIn("up", "spring", 0.5, 1)}
-          className="mt-16"
-        >
-          <GlassCard variant="primary" className="p-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div>
-                <h4 className="text-3xl font-bold text-white mb-2">2+</h4>
-                <p className="text-gray-200">Years Experience</p>
-              </div>
-              <div>
-                <h4 className="text-3xl font-bold text-white mb-2">15+</h4>
-                <p className="text-gray-200">Projects Completed</p>
-              </div>
-              <div>
-                <h4 className="text-3xl font-bold text-white mb-2">10+</h4>
-                <p className="text-gray-200">Technologies</p>
-              </div>
-              <div>
-                <h4 className="text-3xl font-bold text-white mb-2">100%</h4>
-                <p className="text-gray-200">Client Satisfaction</p>
-              </div>
-            </div>
-          </GlassCard>
-        </motion.div>
       </div>
     </div>
   );

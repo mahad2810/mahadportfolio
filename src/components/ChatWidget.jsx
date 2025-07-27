@@ -46,8 +46,8 @@ if (recognition) {
   recognition.maxAlternatives = 1;
 }
 
-const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
-const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent";
+const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || "AIzaSyBhAGZ8TTDhnv8aO4XFIV9oKIxFPkU_1w8";
+const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent";
 
 // Fallback responses for when the API fails
 const FALLBACK_RESPONSES = [
@@ -90,11 +90,11 @@ Key Projects:
 • Project-Trinoyon — A heartfelt initiative to make Durga Puja a celebration for everyone! This collaborative project is dedicated to bringing smiles to the faces of underprivileged individuals, especially those living on the streets, during this vibrant festival.
 We combine the power of donations, gamified ad revenue, machine learning engagement, and community interaction to make a real social impact — all through one immersive and meaningful digital experience. This project is in a initial stage, but we are excited to launch as soon as possible!
 • KrishiMitra - An AI powered agricultural platform designed to assist farmers with real-time insights, best farming practices, marketplace to eliminate third person, crop recommendations, weather forecasts, chat assistant and sustainable farming techniques. Developed for Google Solution Challenge.
-• EdubyteV1.0 - Edubyte V1.0 is an AI powered platform where user can interact with different generative AI including advanced LLMs GPT-40, DeepSeek, Gemini 2.0 Flash, Mistral AI and many more.
+• EdubyteV1.0 - Edubyte V1.0 is an AI powered platform where user can interact with different generative AI including advanced LLMs GPT-40, DeepSeek, Gemini 2.5 Pro, Mistral AI and many more.
 • MagicFill -  MagicFill is an AI-powered platform that simplifies form-filling for millions in India, especially in rural and underserved areas. It helps users to automatically filled the application form, ensures inclusive access to critical services by eliminating barriers caused by complex, form-based processes.
 • MediVerify - an AI-powered platform designed to detect counterfeit medications and ensure pharmaceutical authenticity. This system enables patients, pharmacists, and healthcare providers to verify the legitimacy of medicine using AI-driven visual analysis and transparent blockchain tracking.
 • YouTube-Video-Summarizer - A streamlined, lightweight, web application that summarizes YouTube videos using OpenAI gpt-4o respone. User can get concise, well-structured summaries by entering its URL link.
-• Github-readme-generator - A simple, light-weight, client side tool that allows users to generate the professional readme file for Github using Gemini API key.
+• Github-readme-generator - A simple, light-weight, client side tool that allows users to generate the professional readme file for Github using Gemini 2.5 Pro API.
 
 Achievements & Certifications:
 • Participant in EDU-CHAIN, Postman API Expert quiz
@@ -370,12 +370,14 @@ const ChatWidget = () => {
     }
   };
 
+
+
   return (
     <>
       {/* Chat toggle button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-5 right-5 w-14 h-14 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 p-0 border-2 border-white/20"
+        className="fixed bottom-5 right-5 w-14 h-14 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 p-0 border-2 border-white/20 z-50"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -395,7 +397,7 @@ const ChatWidget = () => {
       {/* Chat widget */}
       {isOpen && (
         <motion.div
-          className="fixed bottom-24 right-5 w-80 sm:w-96 rounded-2xl overflow-hidden shadow-2xl border2 border-purple-600/30"
+          className="fixed bottom-24 right-5 w-80 sm:w-96 rounded-2xl overflow-hidden shadow-2xl border2 border-purple-600/30 z-50"
           variants={widgetVariants}
           initial="closed"
           animate="open"

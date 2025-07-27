@@ -1,43 +1,54 @@
 import {
-  mobile,
-  backend,
-  creator,
-  web,
-  javascript,
-  typescript,
-  html,
-  css,
-  reactjs,
-  redux,
-  tailwind,
-  nodejs,
-  mongodb,
-  git,
-  figma,
-  docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
-  KrishiMitra,
-  jobit,
-  tripguide,
-  threejs,
-  Edubyte,
-  Trinoyon,
-  MagicFill,
-  GithubReadmeGenerator,
-  YouTubeSummarizer,
+  aiwallah,
+  pinnacle,
+  codsoft,
 } from "../assets";
+
+// Import PDF projects from assets
+import DAProject from "../assets/projects/DA(CV).pdf";
+import MaveriqAirProject from "../assets/projects/MaveriqAir.pdf";
+import AuraMedProject from "../assets/projects/Snapshots (AuraMed).pdf";
+import Trade2AlgoProject from "../assets/projects/Trade2Algo.pdf";
+
+// Import tech images from local assets
+import pythonImg from "../assets/tech/python.jpg";
+import reactImg from "../assets/tech/react.png";
+import dockerImg from "../assets/tech/docker.webp";
+import firebaseImg from "../assets/tech/firebase.png";
+import flaskImg from "../assets/tech/flask.jpg";
+import gcpImg from "../assets/tech/gcp.png";
+import gitImg from "../assets/tech/git.png";
+import nextjsImg from "../assets/tech/nextjs.jpg";
+import opencvImg from "../assets/tech/opencv.png";
+import powerbiImg from "../assets/tech/powerbi.jpg";
+import scikitImg from "../assets/tech/scikit.png";
+import tableauImg from "../assets/tech/tableau.png";
+import tensorflowImg from "../assets/tech/tensorflow.jpg";
 
 export const navLinks = [
   {
-    id: "about",
-    title: "About",
+    id: "dashboard",
+    title: "Dashboard",
   },
   {
-    id: "work",
-    title: "Work",
+    id: "about",
+    title: "About Me",
+  },
+  {
+    id: "experience",
+    title: "Experience",
+  },
+  {
+    id: "education",
+    title: "Education",
+  },
+  {
+    id: "tech",
+    title: "Technologies",
+  },
+  {
+    id: "projects",
+    title: "Projects",
   },
   {
     id: "certifications",
@@ -49,57 +60,84 @@ export const navLinks = [
   },
 ];
 
-const services = [
-  {
-    title: "Machine Learning Engineer",
-    icon: web,
-  },
-  {
-    title: "Data Scientist",
-    icon: mobile,
-  },
-  {
-    title: "AI/ML Developer",
-    icon: backend,
-  },
-  {
-    title: "Healthcare AI Specialist",
-    icon: creator,
-  },
-];
+
 
 const technologies = [
+  // Programming Languages
   {
     name: "Python",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    icon: pythonImg,
+    category: "languages"
   },
-  {
-    name: "TensorFlow",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
-  },
+
+  // Frontend Technologies
   {
     name: "React JS",
-    icon: reactjs,
+    icon: reactImg,
+    category: "frontend"
   },
   {
-    name: "JavaScript",
-    icon: javascript,
+    name: "Next.js",
+    icon: nextjsImg,
+    category: "frontend"
   },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
+
+  // Backend & Frameworks
   {
     name: "Flask",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg",
+    icon: flaskImg,
+    category: "backend"
   },
+
+  // AI/ML & Data Science
+  {
+    name: "TensorFlow",
+    icon: tensorflowImg,
+    category: "ai-ml"
+  },
+  {
+    name: "OpenCV",
+    icon: opencvImg,
+    category: "ai-ml"
+  },
+  {
+    name: "Scikit-learn",
+    icon: scikitImg,
+    category: "ai-ml"
+  },
+
+  // Cloud & DevOps
   {
     name: "Docker",
-    icon: docker,
+    icon: dockerImg,
+    category: "devops"
   },
   {
+    name: "Google Cloud Platform",
+    icon: gcpImg,
+    category: "devops"
+  },
+  {
+    name: "Firebase",
+    icon: firebaseImg,
+    category: "devops"
+  },
+
+  // Tools & Analytics
+  {
     name: "Git",
-    icon: git,
+    icon: gitImg,
+    category: "tools"
+  },
+  {
+    name: "Power BI",
+    icon: powerbiImg,
+    category: "analytics"
+  },
+  {
+    name: "Tableau",
+    icon: tableauImg,
+    category: "analytics"
   },
 ];
 
@@ -107,7 +145,7 @@ const experiences = [
   {
     title: "Generative AI Developer Intern",
     company_name: "AI Wallah (Quality Connections Pvt Ltd)",
-    icon: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiByeD0iMTAiIGZpbGw9IiM0RjQ2RTUiLz4KPHRleHQgeD0iNTAiIHk9IjU1IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+QUk8L3RleHQ+Cjwvc3ZnPgo=",
+    icon: aiwallah,
     iconBg: "#383E56",
     date: "July 7, 2025 - October 7, 2025",
     points: [
@@ -120,7 +158,7 @@ const experiences = [
   {
     title: "Machine Learning Intern",
     company_name: "CODSOFT",
-    icon: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiByeD0iMTAiIGZpbGw9IiNGRjZCMzUiLz4KPHRleHQgeD0iNTAiIHk9IjU1IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Q1M8L3RleHQ+Cjwvc3ZnPgo=",
+    icon: codsoft,
     iconBg: "#E6DEDD",
     date: "February 2025 - March 2025",
     points: [
@@ -132,7 +170,7 @@ const experiences = [
   },
   {
     title: "Data Analysis Intern - Restaurant EDA",
-    company_name: "Independent Project",
+    company_name: "Cognizify Technologies",
     icon: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiByeD0iMTAiIGZpbGw9IiMwNTk2NjkiLz4KPHRleHQgeD0iNTAiIHk9IjU1IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+REE8L3RleHQ+Cjwvc3ZnPgo=",
     iconBg: "#383E56",
     date: "January 2025 - February 2025",
@@ -146,7 +184,7 @@ const experiences = [
   {
     title: "Data Science Virtual Intern",
     company_name: "Pinnacle Labs",
-    icon: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiByeD0iMTAiIGZpbGw9IiM4NkJDMjUiLz4KPHRleHQgeD0iNTAiIHk9IjU1IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UEw8L3RleHQ+Cjwvc3ZnPgo=",
+    icon: pinnacle,
     iconBg: "#E6DEDD",
     date: "December 12, 2024 - January 11, 2025",
     points: [
@@ -154,19 +192,6 @@ const experiences = [
       "Built advanced analytics and text classification models using Transformer-based architectures (e.g., BERT) and traditional ML algorithms.",
       "Performed advanced text preprocessing, feature engineering, and model evaluation using libraries like NLTK, scikit-learn, and Transformers.",
       "Explored Generative AI use-cases and enhanced NLP workflows with Prompt Engineering and contextual understanding.",
-    ],
-  },
-  {
-    title: "Student",
-    company_name: "Heritage Institute of Technology, Kolkata",
-    icon: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiByeD0iMTAiIGZpbGw9IiNEQzI2MjYiLz4KPHRleHQgeD0iNTAiIHk9IjU1IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+SElUPC90ZXh0Pgo8L3N2Zz4K",
-    iconBg: "#383E56",
-    date: "2023 - 2027",
-    points: [
-      "Pursuing B.Tech in Computer Science & Engineering (AI & ML) with strong foundation in CS fundamentals.",
-      "Actively improving data structures and algorithms (DSA) skills by solving problems on LeetCode and participating in coding challenges.",
-      "Built and deployed machine learning projects like healthcare platforms and crop yield prediction systems.",
-      "Strong foundation in CS fundamentals and passionate about building scalable, impactful systems.",
     ],
   },
 ];
@@ -199,11 +224,13 @@ const projects = [
       { name: "TensorFlow", color: "orange-text-gradient" }
     ],
     image: "https://via.placeholder.com/400x300/4F46E5/FFFFFF?text=AuraMed",
-    source_code_link: "https://auramed-app-156513904358.us-central1.run.app",
-    live_demo_link: "https://auramed-app-156513904358.us-central1.run.app",
+    source_code_link: "https://github.com/mahad2810/AuraMed28",
+    live_demo_link: "https://www.youtube.com/watch?v=ECsVEbnQ51I",
     demo_video: "#",
     snapshots: "#",
-    category: "ai"
+    category: "ai",
+    pdf_file: AuraMedProject,
+    type: "pdf"
   },
   {
     name: "🌍 MaveriqAir – Environmental Intelligence & AQI Forecasting",
@@ -227,10 +254,12 @@ const projects = [
       { name: "Machine Learning", color: "blue-text-gradient" }
     ],
     image: "https://via.placeholder.com/400x300/059669/FFFFFF?text=MaveriqAir",
-    source_code_link: "#",
-    live_demo_link: "#",
+    source_code_link: "https://github.com/mahad2810/MaveriqAir",
+    live_demo_link: "https://www.youtube.com/watch?v=Sb3SMGgRnZ4&t=4s",
     demo_video: "#",
-    category: "ai"
+    category: "ai",
+    pdf_file: MaveriqAirProject,
+    type: "pdf"
   },
   {
     name: "🧬 DA(CV) – Lung Cancer Prediction & Data Analysis",
@@ -252,7 +281,9 @@ const projects = [
     ],
     image: "https://via.placeholder.com/400x300/DC2626/FFFFFF?text=Data+Analysis",
     source_code_link: "#",
-    category: "data"
+    category: "data",
+    pdf_file: DAProject,
+    type: "pdf"
   },
   {
     name: "🤖 Computer Vision Suite with MediaPipe",
@@ -274,7 +305,7 @@ const projects = [
       { name: "NumPy", color: "orange-text-gradient" }
     ],
     image: "https://via.placeholder.com/400x300/7C3AED/FFFFFF?text=Computer+Vision",
-    source_code_link: "#",
+    source_code_link: "https://github.com/mahad2810/ComputerVision",
     category: "ai"
   },
   {
@@ -298,9 +329,11 @@ const projects = [
       { name: "JWT", color: "blue-text-gradient" }
     ],
     image: "https://via.placeholder.com/400x300/0891B2/FFFFFF?text=Trade2Algo",
-    source_code_link: "#",
-    category: "fullstack"
+    source_code_link: "https://github.com/mahad2810/RestApi-Project",
+    category: "fullstack",
+    pdf_file: Trade2AlgoProject,
+    type: "pdf"
   }
 ];
 
-export { services, technologies, experiences, projects };
+export { technologies, experiences, projects };

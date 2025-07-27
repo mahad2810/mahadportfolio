@@ -7,18 +7,21 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    sourcemap: false,
+    sourcemap: process.env.NODE_ENV !== 'production',
+    minify: 'terser',
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
           three: ['three', '@react-three/fiber', '@react-three/drei'],
           motion: ['framer-motion'],
-          ui: ['lucide-react', 'react-icons']
+          ui: ['lucide-react', 'react-icons'],
+          emailjs: ['@emailjs/browser']
         }
       }
     },
-    chunkSizeWarningLimit: 1000
+    chunkSizeWarningLimit: 1000,
+    target: 'esnext'
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'three', 'framer-motion']

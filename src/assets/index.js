@@ -1,17 +1,10 @@
-import logo from "./logo.svg";
-import backend from "./backend.png";
-import creator from "./creator.png";
-import mobile from "./mobile.png";
-import web from "./web.png";
-import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
 import profilePic from "./myself/me.jpeg";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
+import aiwallah from '../assets/company/aiwallah.jpg';
+import pinnacle from '../assets/company/pinncle.jpg';
+import codsoft from '../assets/company/codsoft.jpg';
 
 // Placeholder for missing images - using data URIs for now
 const css = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiMxNTcyQjYiLz48dGV4dCB4PSI1MCIgeT0iNTUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5DU1M8L3RleHQ+PC9zdmc+";
@@ -39,15 +32,8 @@ const GithubReadmeGenerator = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiB
 const YouTubeSummarizer = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNGRjAwMDAiLz48dGV4dCB4PSIyMDAiIHk9IjE0NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPllvdVR1YmU8L3RleHQ+PHRleHQgeD0iMjAwIiB5PSIxNjUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5TdW1tYXJpemVyPC90ZXh0Pjwvc3ZnPg==";
 
 export {
-  logo,
-  backend,
-  creator,
-  mobile,
-  web,
-  github,
   menu,
   close,
-  profilePic,
   css,
   docker,
   figma,
@@ -61,10 +47,6 @@ export {
   tailwind,
   typescript,
   threejs,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
   KrishiMitra,
   jobit,
   tripguide,
@@ -73,4 +55,8 @@ export {
   MagicFill,
   GithubReadmeGenerator,
   YouTubeSummarizer,
+  aiwallah,
+  pinnacle,
+  codsoft,
+  profilePic,
 };

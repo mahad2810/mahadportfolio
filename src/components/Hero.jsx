@@ -22,7 +22,7 @@ const Hero = () => {
 
       {/* Main content */}
       <div className={`relative z-10 h-full flex items-center ${styles.paddingX} max-w-7xl mx-auto`}>
-        <div className="flex flex-col lg:flex-row items-center justify-between w-full gap-12">
+        <div className="flex flex-col lg:flex-row items-center justify-between w-full gap-8 lg:gap-12">
 
           {/* Left side - Text content */}
           <motion.div
@@ -54,23 +54,23 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Aspiring Machine Learning Engineer
+              AI/ML Engineer | Data Scientist 
             </motion.p>
 
             {/* Description */}
             <motion.p
-              className="text-lg text-gray-500 dark:text-gray-400 mb-8 max-w-2xl"
+              className="text-sm sm:text-base lg:text-lg text-gray-500 dark:text-gray-400 mb-6 sm:mb-8 max-w-2xl leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              B.Tech in CSE (AI & ML) | Passionate About Data Science, NLP, and Real-World ML Applications.
-              Building intelligent solutions that make a difference.
+              B.Tech in CSE (AI & ML) | Passionate About Data Science, NLP, and Real-World ML Applications
+              | Building intelligent solutions that make a difference | 2x Hackathon Winner
             </motion.p>
 
             {/* CTA Buttons */}
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start w-full sm:w-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
@@ -79,8 +79,8 @@ const Hero = () => {
                 variant="primary"
                 size="lg"
                 onClick={handleDownloadResume}
-                icon={<Download size={20} />}
-                className="min-w-[200px]"
+                icon={<Download size={18} />}
+                className="w-full sm:min-w-[180px] lg:min-w-[200px]"
               >
                 Download Resume
               </GlassButton>
@@ -89,8 +89,8 @@ const Hero = () => {
                 variant="secondary"
                 size="lg"
                 onClick={handleContactClick}
-                icon={<Mail size={20} />}
-                className="min-w-[200px]"
+                icon={<Mail size={18} />}
+                className="w-full sm:min-w-[180px] lg:min-w-[200px]"
               >
                 Get In Touch
               </GlassButton>

@@ -1,0 +1,11 @@
+Model Information:
+* title:	HighWay Road
+* source:	https://sketchfab.com/3d-models/highway-road-3003f1420891496fb13eb142cfd5e84e
+* author:	BOOBALAN (https://sketchfab.com/BOOBROS)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "HighWay Road" (https://sketchfab.com/3d-models/highway-road-3003f1420891496fb13eb142cfd5e84e) by BOOBALAN (https://sketchfab.com/BOOBROS) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
-import { logo, menu, close, profilePic } from "../assets";
-import { ThemeToggle } from "./ui";
+import { menu, close, profilePic } from "../assets";
 
-const Navbar = () => {
-  const [active, setActive] = useState("");
+const Navbar = ({ activeSection, setActiveSection }) => {
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -33,7 +30,7 @@ const Navbar = () => {
         styles.paddingX
       } w-full flex items-center py-5 fixed top-0 z-20 transition-all duration-300 ${
         scrolled
-          ? "bg-glass-light dark:bg-glass-dark backdrop-blur-md border-b border-white/10"
+          ? "bg-glass-dark backdrop-blur-md border-b border-white/10"
           : "bg-transparent"
       }`}
       initial={{ y: -100 }}
@@ -41,11 +38,10 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
     >
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
-        <Link
-          to='/'
-          className='flex items-center gap-2'
+        <div
+          className='flex items-center gap-2 cursor-pointer'
           onClick={() => {
-            setActive("");
+            setActiveSection("dashboard");
             window.scrollTo(0, 0);
             }}
           >
@@ -57,31 +53,9 @@ const Navbar = () => {
             Mahad &nbsp;
             <span className='sm:block hidden'> |  Mahad Iqbal</span>
             </p>
-          </Link>
-
-          <div className="hidden sm:flex items-center gap-6">
-            <ul className='list-none flex flex-row gap-10'>
-              {navLinks.map((nav) => (
-              <li
-                key={nav.id}
-                className={`${
-                active === nav.title ? "text-white dark:text-white" : "text-secondary dark:text-gray-300"
-                } hover:text-accent-purple transition-colors duration-300 text-[18px] font-medium cursor-pointer`}
-                onClick={() => setActive(nav.title)}
-              >
-                <a href={`#${nav.id}`}>{nav.title}</a>
-              </li>
-              ))}
-            </ul>
-
-            {/* Theme Toggle */}
-            <ThemeToggle />
           </div>
 
-          <div className='sm:hidden flex flex-1 justify-end items-center gap-4'>
-            {/* Mobile Theme Toggle */}
-            <ThemeToggle />
-
+          <div className='flex flex-1 justify-end items-center'>
             <img
             src={toggle ? close : menu}
             alt='menu'
@@ -89,30 +63,74 @@ const Navbar = () => {
             onClick={() => setToggle(!toggle)}
             />
 
+            {/* Overlay */}
+            {toggle && (
+              <motion.div
+                className="fixed inset-0 bg-black/50 z-40"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setToggle(false)}
+              />
+            )}
+
+            {/* Sidebar */}
             <motion.div
             className={`${
-              !toggle ? "hidden" : "flex"
-            } p-6 bg-glass-light dark:bg-glass-dark backdrop-blur-md border border-white/20 dark:border-white/10 absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl shadow-glass`}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: toggle ? 1 : 0, scale: toggle ? 1 : 0.8 }}
-            transition={{ duration: 0.2 }}
+              !toggle ? "translate-x-full" : "translate-x-0"
+            } fixed top-0 right-0 h-full w-72 sm:w-80 bg-glass-dark backdrop-blur-md border-l border-white/10 z-50 flex flex-col`}
+            initial={{ x: "100%" }}
+            animate={{ x: toggle ? 0 : "100%" }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
             >
-            <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
-              {navLinks.map((nav) => (
-              <li
-                key={nav.id}
-                className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                active === nav.title ? "text-white dark:text-white" : "text-secondary dark:text-gray-300"
-                } hover:text-accent-purple transition-colors duration-300`}
-                onClick={() => {
-                    setToggle(!toggle);
-                    setActive(nav.title);
-                  }}
-                >
-                  <a href={`#${nav.id}`}>{nav.title}</a>
-                </li>
-              ))}
-            </ul>
+              {/* Sidebar Header */}
+              <div className="p-6 border-b border-white/10">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <img src={profilePic} alt='Mahad Iqbal' className='w-10 h-10 rounded-full object-cover' />
+                    <div>
+                      <h3 className="text-white font-semibold">Mahad Iqbal</h3>
+                      <p className="text-gray-400 text-sm">AI/ML Engineer</p>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => setToggle(false)}
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    <img src={close} alt="close" className="w-6 h-6" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Navigation Links */}
+              <nav className="flex-1 p-6">
+                <ul className='list-none flex flex-col gap-2'>
+                  {navLinks.map((nav) => (
+                  <li key={nav.id}>
+                    <button
+                      className={`w-full text-left p-3 rounded-lg font-medium transition-all duration-300 ${
+                      activeSection === nav.id
+                        ? "bg-accent-purple text-white shadow-lg"
+                        : "text-gray-300 hover:bg-white/10 hover:text-white"
+                      }`}
+                      onClick={() => {
+                          setToggle(false);
+                          setActiveSection(nav.id);
+                        }}
+                      >
+                        {nav.title}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+
+              {/* Footer */}
+              <div className="p-6 border-t border-white/10">
+                <p className="text-gray-400 text-sm text-center">
+                  © 2024 Mahad Iqbal
+                </p>
+              </div>
           </motion.div>
         </div>
       </div>

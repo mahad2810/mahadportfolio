@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { GraduationCap, Award, Calendar, MapPin } from 'lucide-react';
 import { SectionWrapper } from '../hoc';
@@ -85,7 +84,7 @@ const Education = () => {
         {/* Section Header */}
         <motion.div variants={textVariant()} className="text-center mb-16">
           <p className={`${styles.sectionSubText} text-gray-500 dark:text-gray-400`}>
-            My Academic Journey
+            Academic Background
           </p>
           <h2 className={`${styles.sectionHeadText} text-gray-800 dark:text-white`}>
             Education

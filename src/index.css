@@ -12,6 +12,27 @@
   scroll-behavior: smooth;
 }
 
+/* Mobile-specific improvements */
+@media (max-width: 768px) {
+  /* Prevent horizontal scroll on mobile */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Improve touch targets */
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Better text readability on mobile */
+  body {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+}
+
 /* Prevent flash of unstyled content */
 html {
   background-color: #050816;
@@ -47,6 +68,97 @@ body {
   --text-secondary: #d1d5db;
   --bg-primary: #050816;
   --bg-secondary: #151030;
+}
+
+/* Enhanced Timeline Styles */
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  border-radius: 5px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #915EFF, #7c3aed);
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(145, 94, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 6px 12px rgba(145, 94, 255, 0.6);
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #915EFF, #7c3aed);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 8px rgba(145, 94, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.slider::-moz-range-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 6px 12px rgba(145, 94, 255, 0.6);
+}
+
+/* Glassmorphism effects */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.glass-popup {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Timeline specific animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(145, 94, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(145, 94, 255, 0.8);
+  }
+}
+
+.checkpoint-marker {
+  animation: pulse-glow 2s infinite;
+}
+
+/* Custom scrollbar for popup content */
+.glass-popup::-webkit-scrollbar {
+  width: 6px;
+}
+
+.glass-popup::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.glass-popup::-webkit-scrollbar-thumb {
+  background: rgba(145, 94, 255, 0.6);
+  border-radius: 3px;
+}
+
+.glass-popup::-webkit-scrollbar-thumb:hover {
+  background: rgba(145, 94, 255, 0.8);
 }
 
 /* Smooth theme transitions */
