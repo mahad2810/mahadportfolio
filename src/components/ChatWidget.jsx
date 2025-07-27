@@ -46,7 +46,7 @@ if (recognition) {
   recognition.maxAlternatives = 1;
 }
 
-const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || "AIzaSyBhAGZ8TTDhnv8aO4XFIV9oKIxFPkU_1w8";
+const API_KEY = import.meta.env.GEMINI_API_KEY || "AIzaSyBhAGZ8TTDhnv8aO4XFIV9oKIxFPkU_1w8";
 const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent";
 
 // Fallback responses for when the API fails
