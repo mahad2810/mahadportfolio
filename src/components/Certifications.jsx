@@ -40,15 +40,15 @@ const certificationsData = [
     image: gdgCert
   },
   {
-    title: "HACK-O-NiT 36hr Overnight Hackathon",
-    issuer: "Heritage Institute of Technology",
+    title: "HACK-O-NIT (24 hours overnight Hackathon)",
+    issuer: "Narula Institute of Technology",
     issuerLogo: hackonitLogo,
     date: "March 20-21, 2025",
-    level: "36-hour Overnight Hackathon",
-    credentialId: "HACK-O-NiT-2025",
+    level: "3rd Position among 180 teams",
+    credentialId: "HACK-O-NIT-2025",
     verifyLink: "#",
     skills: ["Problem Solving", "Team Collaboration", "Innovation", "Rapid Prototyping", "Technical Implementation"],
-    description: "Participated in an intensive 12-hour overnight hackathon organized by Heritage Institute of Technology. Demonstrated exceptional problem-solving skills, creativity, and technical expertise in developing innovative solutions under time constraints.",
+    description: "As part of team 'NeuroHack' from Heritage Institute of Technology, presented the project 'AuraMed: Revolutionizing Hospital Operations & Patient Care' and secured 3rd position among 180 teams in the Grand Finale. The event was organized by the Department of Computer Science & Engineering (AIML) at Narula Institute of Technology (A Unit of JIS Educational Initiatives), Agarpara, Kolkata.",
     image: hackointCert
   },
   {
