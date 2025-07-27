@@ -76,9 +76,9 @@ const educationData = [
 
 const Education = () => {
   return (
-    <section className={`relative ${styles.padding} max-w-7xl mx-auto`}>
+    <div className="relative bg-glass-dark backdrop-blur-md border border-white/10 rounded-3xl p-8">
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan/5 via-transparent to-accent-purple/5 rounded-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan/10 via-transparent to-accent-purple/10 rounded-3xl" />
 
       <div className="relative z-10">
         {/* Section Header */}
@@ -193,7 +193,7 @@ const Education = () => {
           </GlassCard>
         </motion.div>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -144,14 +144,14 @@ const Contact = () => {
         {/* Section Header */}
         <motion.div variants={textVariant()} className="text-center mb-16">
           <p className={`${styles.sectionSubText} text-gray-500 dark:text-gray-400`}>
-            Professional Contact
+            Get In Touch
           </p>
           <h2 className={`${styles.sectionHeadText} text-gray-800 dark:text-white`}>
-            Contact Information
+            Let's Work Together
           </h2>
           <p className="text-gray-600 dark:text-gray-300 text-lg mt-4 max-w-2xl mx-auto">
-            Have a project in mind or just want to say hello? I'd love to hear from you.
-            Let's create something amazing together!
+            Ready to bring your ideas to life? Whether you have a project in mind, need consultation,
+            or just want to connect, I'm here to help. Let's create something extraordinary together!
           </p>
         </motion.div>
 
@@ -160,7 +160,7 @@ const Contact = () => {
           <motion.div variants={slideIn("left", "tween", 0.2, 1)}>
             <GlassCard variant="default" className="p-8">
               <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">
-                Send me a message
+                Send Me a Message
               </h3>
 
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -171,7 +171,7 @@ const Contact = () => {
                     value={form.name}
                     onChange={handleChange}
                     error={errors.name}
-                    placeholder="Your name"
+                    placeholder="Enter your full name"
                   />
 
                   <GlassInput
@@ -191,7 +191,7 @@ const Contact = () => {
                   value={form.subject}
                   onChange={handleChange}
                   error={errors.subject}
-                  placeholder="What's this about?"
+                  placeholder="Project inquiry, collaboration, or general question"
                 />
 
                 <GlassInput
@@ -202,7 +202,7 @@ const Contact = () => {
                   value={form.message}
                   onChange={handleChange}
                   error={errors.message}
-                  placeholder="Tell me about your project or just say hi!"
+                  placeholder="Share details about your project, timeline, requirements, or just say hello! I'd love to hear from you."
                 />
 
                 <GlassButton
