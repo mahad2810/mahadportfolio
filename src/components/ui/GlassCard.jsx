@@ -10,7 +10,7 @@ const GlassCard = forwardRef(({
   ...props 
 }, ref) => {
   const variants = {
-    default: 'bg-glass-light dark:bg-glass-dark border border-white/20 dark:border-white/10',
+    default: 'glass border border-white/20 dark:border-white/10',
     primary: 'bg-gradient-to-br from-accent-purple/20 to-accent-blue/20 border border-accent-purple/30',
     secondary: 'bg-gradient-to-br from-accent-blue/20 to-accent-cyan/20 border border-accent-blue/30',
     accent: 'bg-gradient-to-br from-accent-pink/20 to-accent-purple/20 border border-accent-pink/30',

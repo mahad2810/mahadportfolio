@@ -30,7 +30,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
         styles.paddingX
       } w-full flex items-center py-5 fixed top-0 z-20 transition-all duration-300 ${
         scrolled
-          ? "bg-glass-dark backdrop-blur-md border-b border-white/10"
+          ? "glass backdrop-blur-md border-b border-white/10"
           : "bg-transparent"
       }`}
       initial={{ y: -100 }}
@@ -78,7 +78,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
             <motion.div
             className={`${
               !toggle ? "translate-x-full" : "translate-x-0"
-            } fixed top-0 right-0 h-full w-72 sm:w-80 bg-glass-dark backdrop-blur-md border-l border-white/10 z-50 flex flex-col`}
+            } fixed top-0 right-0 h-full w-72 sm:w-80 glass backdrop-blur-md border-l border-white/10 z-50 flex flex-col`}
             initial={{ x: "100%" }}
             animate={{ x: toggle ? 0 : "100%" }}
             transition={{ duration: 0.3, ease: "easeInOut" }}

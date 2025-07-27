@@ -59,7 +59,7 @@ const GlassInput = forwardRef(({
           ${icon ? 'pl-12' : 'pl-4'}
           pr-4
           ${label ? 'pt-6 pb-2' : 'py-4'}
-          bg-glass-light dark:bg-glass-dark
+          glass
           backdrop-blur-md
           border border-white/20 dark:border-white/10
           rounded-xl

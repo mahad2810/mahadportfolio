@@ -470,7 +470,6 @@ const ExperienceMarkers = ({ experiences, curve, onMarkerClick }) => {
               position={[0, 3.2, 0.01]}
               maxWidth={5.0}
               rotation={[0, Math.PI * 0.17, 0]}
-              font="bold"
             >
               {experience?.title || 'Position'}
             </Text>
@@ -484,7 +483,6 @@ const ExperienceMarkers = ({ experiences, curve, onMarkerClick }) => {
               position={[0, 2.6, 0.01]}
               maxWidth={5.0}
               rotation={[0, Math.PI * 0.17, 0]}
-              font="bold"
             >
               {experience?.company_name || 'Company'}
             </Text>
@@ -498,7 +496,6 @@ const ExperienceMarkers = ({ experiences, curve, onMarkerClick }) => {
               position={[0, 2.1, 0.01]}
               maxWidth={5.0}
               rotation={[0, Math.PI * 0.17, 0]}
-              font="bold"
             >
               {experience?.date || 'Date'}
             </Text>

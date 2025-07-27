@@ -22,9 +22,9 @@ const GlassButton = forwardRef(({
       hover:shadow-[0_0_30px_rgba(139,92,246,0.5)]
     `,
     secondary: `
-      bg-glass-light dark:bg-glass-dark 
-      border border-white/20 dark:border-white/10 
-      text-gray-800 dark:text-white 
+      glass
+      border border-white/20 dark:border-white/10
+      text-gray-800 dark:text-white
       hover:bg-white/20 dark:hover:bg-white/10
       hover:border-white/30 dark:hover:border-white/20
     `,

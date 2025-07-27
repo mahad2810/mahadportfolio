@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { GraduationCap, Award, Calendar, MapPin } from 'lucide-react';
 import { SectionWrapper } from '../hoc';
-import { styles } from '../styles';
 import { textVariant, fadeIn } from '../utils/motion';
 import { GlassCard } from './ui';
 
@@ -76,49 +75,49 @@ const educationData = [
 
 const Education = () => {
   return (
-    <div className="relative glass-strong rounded-3xl p-8">
+    <div className="relative min-h-screen py-20 bg-red-900/30">
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan/10 via-transparent to-accent-purple/10 rounded-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan/30 via-transparent to-accent-purple/30 rounded-3xl" />
 
       <div className="relative z-10">
         {/* Section Header */}
         <motion.div variants={textVariant()} className="text-center mb-16">
-          <p className={`${styles.sectionSubText} text-gray-500 dark:text-gray-400`}>
+          <p className="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider">
             Academic Background
           </p>
-          <h2 className={`${styles.sectionHeadText} text-gray-800 dark:text-white`}>
+          <h2 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
             Education
           </h2>
         </motion.div>
 
         {/* Education Cards */}
-        <div className="space-y-8">
+        <div className="space-y-6 sm:space-y-8 px-4 sm:px-0">
           {educationData.map((edu, index) => (
             <motion.div
               key={`${edu.institution}-${edu.degree}-${index}`}
               variants={fadeIn("up", "spring", index * 0.2, 0.75)}
             >
-              <GlassCard 
-                variant="default" 
-                className="p-8 hover:scale-[1.02] transition-transform duration-300"
+              <GlassCard
+                variant="default"
+                className="p-4 sm:p-6 lg:p-8 hover:scale-[1.02] transition-transform duration-300"
               >
-                <div className="grid lg:grid-cols-3 gap-8">
+                <div className="grid lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
                   {/* Left side - Main info */}
-                  <div className="lg:col-span-2 space-y-4">
-                    <div className="flex items-start gap-4">
-                      <div className="p-3 bg-gradient-to-br from-accent-purple/20 to-accent-blue/20 rounded-full">
-                        <GraduationCap size={24} className="text-accent-purple" />
+                  <div className="lg:col-span-2 space-y-3 sm:space-y-4">
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <div className="p-2 sm:p-3 bg-gradient-to-br from-accent-purple/20 to-accent-blue/20 rounded-full">
+                        <GraduationCap size={20} className="text-accent-purple sm:w-6 sm:h-6" />
                       </div>
-                      
+
                       <div className="flex-1">
-                        <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
+                        <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-1 sm:mb-2">
                           {edu.degree}
                         </h3>
-                        <p className="text-xl text-accent-purple font-semibold mb-2">
+                        <p className="text-base sm:text-lg lg:text-xl text-accent-purple font-semibold mb-2">
                           {edu.institution}
                         </p>
-                        
-                        <div className="flex flex-wrap gap-4 text-gray-600 dark:text-gray-300 mb-4">
+
+                        <div className="flex flex-wrap gap-2 sm:gap-4 text-sm sm:text-base text-white/80 mb-3 sm:mb-4">
                           <div className="flex items-center gap-2">
                             <Calendar size={16} />
                             <span>{edu.duration}</span>
@@ -137,14 +136,14 @@ const Education = () => {
 
                     {/* Achievements */}
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-3">
+                      <h4 className="text-lg font-semibold text-white mb-3">
                         Key Achievements
                       </h4>
                       <ul className="space-y-2">
                         {edu.achievements.map((achievement, achIndex) => (
-                          <li 
+                          <li
                             key={achIndex}
-                            className="text-gray-600 dark:text-gray-300 flex items-start"
+                            className="text-white/80 flex items-start"
                           >
                             <span className="text-accent-purple mr-3 mt-1">•</span>
                             <span>{achievement}</span>
@@ -156,14 +155,14 @@ const Education = () => {
 
                   {/* Right side - Courses */}
                   <div className="space-y-4">
-                    <h4 className="text-lg font-semibold text-gray-800 dark:text-white">
+                    <h4 className="text-lg font-semibold text-white">
                       Key Subjects
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {edu.courses.map((course, courseIndex) => (
                         <span
                           key={courseIndex}
-                          className="px-3 py-1 bg-glass-light dark:bg-glass-dark backdrop-blur-sm border border-white/20 dark:border-white/10 rounded-full text-sm text-gray-700 dark:text-gray-300 hover:border-accent-purple/50 transition-colors duration-300"
+                          className="px-3 py-1 glass backdrop-blur-sm border border-white/20 rounded-full text-sm text-white/90 hover:border-accent-purple/50 transition-colors duration-300"
                         >
                           {course}
                         </span>
@@ -179,15 +178,15 @@ const Education = () => {
         {/* Additional Info */}
         <motion.div
           variants={fadeIn("up", "spring", 0.6, 0.75)}
-          className="mt-12"
+          className="mt-8 sm:mt-12 px-4 sm:px-0"
         >
-          <GlassCard variant="primary" className="p-8 text-center">
-            <h3 className="text-2xl font-bold text-white mb-4">
+          <GlassCard variant="primary" className="p-4 sm:p-6 lg:p-8 text-center">
+            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 sm:mb-4">
               Continuous Learning
             </h3>
-            <p className="text-gray-200 text-lg max-w-3xl mx-auto">
-              Beyond formal education, I'm committed to lifelong learning through online courses, 
-              workshops, and hands-on projects. I regularly update my skills with the latest 
+            <p className="text-gray-200 text-sm sm:text-base lg:text-lg max-w-3xl mx-auto">
+              Beyond formal education, I'm committed to lifelong learning through online courses,
+              workshops, and hands-on projects. I regularly update my skills with the latest
               technologies and industry best practices.
             </p>
           </GlassCard>

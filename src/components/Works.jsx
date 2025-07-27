@@ -4,7 +4,6 @@ import Tilt from "react-parallax-tilt";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Eye, Code, X, FileText } from "lucide-react";
 
-import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
@@ -279,7 +278,7 @@ const ProjectCard = ({
 
             {/* Project status badge */}
             <div className="absolute top-4 left-4">
-              <span className="px-3 py-1 bg-glass-light dark:bg-glass-dark backdrop-blur-md border border-white/20 dark:border-white/10 rounded-full text-xs font-medium text-gray-700 dark:text-gray-300">
+              <span className="px-3 py-1 glass backdrop-blur-md border border-white/20 dark:border-white/10 rounded-full text-xs font-medium text-gray-700 dark:text-gray-300">
                 {project.pdf_file ? 'PDF Project' : 'Featured'}
               </span>
             </div>
@@ -382,17 +381,17 @@ const Works = () => {
 
 
   return (
-    <div className="relative glass-strong rounded-3xl p-8">
+    <div className="relative min-h-screen py-20 bg-gray-900/20">
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-br from-accent-pink/10 via-transparent to-accent-cyan/10 rounded-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-br from-accent-pink/20 via-transparent to-accent-cyan/20 rounded-3xl" />
 
       <div className="relative z-10">
         {/* Section Header */}
         <motion.div variants={textVariant()} className="text-center mb-16">
-          <p className={`${styles.sectionSubText} text-gray-500 dark:text-gray-400`}>
+          <p className="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider">
             Project Portfolio
           </p>
-          <h2 className={`${styles.sectionHeadText} text-gray-800 dark:text-white`}>
+          <h2 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
             Projects & Applications
           </h2>
         </motion.div>

@@ -11,7 +11,7 @@ const ThemeToggle = ({ className = '' }) => {
       className={`
         relative
         w-14 h-8
-        bg-glass-light dark:bg-glass-dark
+        glass
         backdrop-blur-md
         border border-white/20 dark:border-white/10
         rounded-full

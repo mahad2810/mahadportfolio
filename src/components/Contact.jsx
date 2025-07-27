@@ -270,7 +270,7 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     variants={fadeIn("up", "spring", index * 0.1, 0.75)}
-                    className={`p-4 bg-glass-light dark:bg-glass-dark backdrop-blur-md border border-white/20 dark:border-white/10 rounded-full text-gray-600 dark:text-gray-300 ${social.color} transition-all duration-300 hover:scale-110 hover:border-accent-purple/50`}
+                    className={`p-4 glass backdrop-blur-md border border-white/20 dark:border-white/10 rounded-full text-gray-600 dark:text-gray-300 ${social.color} transition-all duration-300 hover:scale-110 hover:border-accent-purple/50`}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >

@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Award, ExternalLink, Calendar, CheckCircle, Eye, X } from 'lucide-react';
 import { SectionWrapper } from '../hoc';
-import { styles } from '../styles';
 import { textVariant, fadeIn } from '../utils/motion';
 import { GlassCard, GlassButton } from './ui';
 
@@ -269,15 +268,15 @@ const CertificationCard = ({ cert, index, onViewDetails }) => {
   return (
     <motion.div
       variants={fadeIn("up", "spring", index * 0.2, 0.75)}
-      className="w-full sm:w-[300px]"
+      className="w-full sm:w-[280px] lg:w-[300px]"
     >
       <GlassCard
         variant="default"
-        className="p-6 h-full hover:scale-[1.02] transition-transform duration-300 group cursor-pointer"
+        className="p-4 sm:p-6 h-full hover:scale-[1.02] transition-transform duration-300 group cursor-pointer"
         onClick={() => onViewDetails(cert)}
       >
-        <div className="text-center space-y-4">
-          <div className="w-20 h-20 bg-white rounded-lg p-2 mx-auto">
+        <div className="text-center space-y-3 sm:space-y-4">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-lg p-2 mx-auto">
             <img
               src={cert.issuerLogo}
               alt={cert.issuer}
@@ -286,10 +285,10 @@ const CertificationCard = ({ cert, index, onViewDetails }) => {
           </div>
           
           <div>
-            <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-2 group-hover:text-accent-purple transition-colors line-clamp-2">
+            <h3 className="text-base sm:text-lg font-bold text-gray-800 dark:text-white mb-1 sm:mb-2 group-hover:text-accent-purple transition-colors line-clamp-2">
               {cert.title}
             </h3>
-            <p className="text-accent-purple font-semibold">
+            <p className="text-sm sm:text-base text-accent-purple font-semibold">
               {cert.issuer}
             </p>
           </div>
@@ -297,8 +296,8 @@ const CertificationCard = ({ cert, index, onViewDetails }) => {
           <GlassButton
             variant="primary"
             size="sm"
-            icon={<Eye size={16} />}
-            className="w-full"
+            icon={<Eye size={14} className="sm:w-4 sm:h-4" />}
+            className="w-full text-sm sm:text-base"
           >
             View Details
           </GlassButton>
@@ -323,21 +322,21 @@ const Certifications = () => {
   };
 
   return (
-    <div className="relative glass-strong rounded-3xl p-8">
-      <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan/10 via-transparent to-accent-pink/10 rounded-3xl" />
+    <div className="relative min-h-screen py-20 bg-gray-900/20">
+      <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan/20 via-transparent to-accent-pink/20 rounded-3xl" />
 
       <div className="relative z-10">
         <motion.div variants={textVariant()} className="text-center mb-16">
-          <p className={`${styles.sectionSubText} text-gray-500 dark:text-gray-400`}>
+          <p className="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider">
             Professional Achievements
           </p>
-          <h2 className={`${styles.sectionHeadText} text-gray-800 dark:text-white`}>
+          <h2 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
             Certifications & Awards
           </h2>
         </motion.div>
 
         {/* Certifications Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 place-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 place-items-center px-4 sm:px-0">
           {certificationsData.map((cert, index) => (
             <CertificationCard
               key={cert.credentialId || index}

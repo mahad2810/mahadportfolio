@@ -108,7 +108,7 @@ const DashboardProjectCard = ({ project, index, onViewDetails }) => {
 
             {/* Project status badge */}
             <div className="absolute top-4 left-4">
-              <span className="px-3 py-1 bg-glass-light dark:bg-glass-dark backdrop-blur-md border border-white/20 dark:border-white/10 rounded-full text-xs font-medium text-gray-700 dark:text-gray-300">
+              <span className="px-3 py-1 glass backdrop-blur-md border border-white/20 dark:border-white/10 rounded-full text-xs font-medium text-gray-700 dark:text-gray-300">
                 {project.pdf_file ? 'PDF Project' : 'Featured'}
               </span>
             </div>
