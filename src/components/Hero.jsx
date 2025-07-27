@@ -4,11 +4,18 @@ import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 import { GlassButton } from "./ui";
 import ErrorBoundary from "./ErrorBoundary";
+import { resume } from "../assets";
 
 const Hero = () => {
   const handleDownloadResume = () => {
-    // Add your resume download logic here
-    console.log("Download resume");
+    // Create a temporary link element and trigger download
+    const link = document.createElement('a');
+    link.href = resume;
+    link.download = 'Mahad_Iqbal_Resume.pdf';
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const handleContactClick = () => {
@@ -16,17 +23,17 @@ const Hero = () => {
   };
 
   return (
-    <section className={`relative w-full h-screen mx-auto overflow-hidden`}>
+    <section className={`relative w-full min-h-screen mx-auto overflow-hidden`}>
       {/* Background with glassmorphism overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-accent-purple/10 via-transparent to-accent-blue/10" />
 
       {/* Main content */}
-      <div className={`relative z-10 h-full flex items-center ${styles.paddingX} max-w-7xl mx-auto`}>
-        <div className="flex flex-col lg:flex-row items-center justify-between w-full gap-8 lg:gap-12">
+      <div className={`relative z-10 min-h-screen flex items-center ${styles.paddingX} max-w-7xl mx-auto py-20 sm:py-16 lg:py-0`}>
+        <div className="flex flex-col lg:flex-row items-center justify-between w-full gap-6 sm:gap-8 lg:gap-12">
 
           {/* Left side - Text content */}
           <motion.div
-            className="flex-1 text-center lg:text-left"
+            className="flex-1 text-center lg:text-left w-full"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -39,7 +46,7 @@ const Hero = () => {
 
             {/* Main heading */}
             <motion.h1
-              className={`${styles.heroHeadText} text-gray-800 dark:text-white mb-4`}
+              className={`${styles.heroHeadText} text-gray-800 dark:text-white mb-3 sm:mb-4`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -49,12 +56,12 @@ const Hero = () => {
 
             {/* Subtitle */}
             <motion.p
-              className={`${styles.heroSubText} text-gray-600 dark:text-gray-300 mb-2`}
+              className={`${styles.heroSubText} text-gray-600 dark:text-gray-300 mb-2 sm:mb-3`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              AI/ML Engineer | Data Scientist 
+              AI/ML Engineer | Data Scientist
             </motion.p>
 
             {/* Description */}
@@ -129,7 +136,7 @@ const Hero = () => {
 
           {/* Right side - 3D Model or Visual */}
           <motion.div
-            className="flex-1 h-full min-h-[400px] relative"
+            className="flex-1 w-full h-[300px] sm:h-[400px] lg:h-full lg:min-h-[400px] relative"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}

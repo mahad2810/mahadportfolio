@@ -463,12 +463,12 @@ const ExperienceMarkers = ({ experiences, curve, onMarkerClick }) => {
 
             {/* Job title - Primary position */}
             <Text
-              fontSize={0.6}
+              fontSize={0.5}
               color="#915EFF"
               anchorX="center"
               anchorY="middle"
-              position={[0, 3.0, 0.01]}
-              maxWidth={5.5}
+              position={[0, 3.2, 0.01]}
+              maxWidth={5.0}
               rotation={[0, Math.PI * 0.17, 0]}
               font="bold"
             >
@@ -477,12 +477,12 @@ const ExperienceMarkers = ({ experiences, curve, onMarkerClick }) => {
 
             {/* Company name - Secondary */}
             <Text
-              fontSize={0.4}
+              fontSize={0.35}
               color="#CCCCCC"
               anchorX="center"
               anchorY="middle"
-              position={[0, 2.5, 0.01]}
-              maxWidth={5.5}
+              position={[0, 2.6, 0.01]}
+              maxWidth={5.0}
               rotation={[0, Math.PI * 0.17, 0]}
               font="bold"
             >
@@ -491,12 +491,12 @@ const ExperienceMarkers = ({ experiences, curve, onMarkerClick }) => {
 
             {/* Timeline/Duration - Tertiary */}
             <Text
-              fontSize={0.35}
+              fontSize={0.3}
               color="#888888"
               anchorX="center"
               anchorY="middle"
-              position={[0, 2.0, 0.01]}
-              maxWidth={5.5}
+              position={[0, 2.1, 0.01]}
+              maxWidth={5.0}
               rotation={[0, Math.PI * 0.17, 0]}
               font="bold"
             >

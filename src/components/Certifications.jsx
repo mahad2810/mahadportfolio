@@ -323,7 +323,7 @@ const Certifications = () => {
   };
 
   return (
-    <div className="relative">
+    <section className={`relative ${styles.padding} max-w-7xl mx-auto`}>
       <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan/5 via-transparent to-accent-pink/5 rounded-3xl" />
 
       <div className="relative z-10">
@@ -354,7 +354,7 @@ const Certifications = () => {
           onClose={closeModal}
         />
       </div>
-    </div>
+    </section>
   );
 };
 

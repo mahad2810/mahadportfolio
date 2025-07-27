@@ -382,7 +382,7 @@ const Works = () => {
 
 
   return (
-    <div className="relative">
+    <section className={`relative ${styles.padding} max-w-7xl mx-auto`}>
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-br from-accent-pink/5 via-transparent to-accent-cyan/5 rounded-3xl" />
 
@@ -483,7 +483,7 @@ const Works = () => {
       />
 
 
-    </div>
+    </section>
   );
 };
 
