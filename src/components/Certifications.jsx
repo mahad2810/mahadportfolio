@@ -4,6 +4,7 @@ import { Award, ExternalLink, Calendar, CheckCircle, Eye, X } from 'lucide-react
 import { SectionWrapper } from '../hoc';
 import { textVariant, fadeIn } from '../utils/motion';
 import { GlassCard, GlassButton } from './ui';
+import { styles } from '../styles';
 
 // Import certificate images
 import geminiCert from '../assets/certifications/genai1.png';
@@ -322,15 +323,15 @@ const Certifications = () => {
   };
 
   return (
-    <div className="relative min-h-screen py-20 bg-gray-900/20">
+    <div className="relative min-h-[50vh] py-20 bg-gray-900/20">
       <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan/20 via-transparent to-accent-pink/20 rounded-3xl" />
 
       <div className="relative z-10">
         <motion.div variants={textVariant()} className="text-center mb-16">
-          <p className="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider">
+          <p className={`${styles.sectionSubText} text-gray-500 dark:text-gray-400`}>
             Professional Achievements
           </p>
-          <h2 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
+          <h2 className={`${styles.sectionHeadText} text-gray-800 dark:text-white`}>
             Certifications & Awards
           </h2>
         </motion.div>

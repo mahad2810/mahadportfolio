@@ -9,6 +9,7 @@ import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { GlassCard, GlassButton } from "./ui";
 import PDFViewer from "./PDFViewer";
+import { styles } from "../styles";
 
 // Enhanced Project Modal with PDF Integration
 const ProjectModal = ({ project, isOpen, onClose }) => {
@@ -381,17 +382,17 @@ const Works = () => {
 
 
   return (
-    <div className="relative min-h-screen py-20 bg-gray-900/20">
+    <div className="relative min-h-[50vh] py-20 bg-gray-900/20">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-br from-accent-pink/20 via-transparent to-accent-cyan/20 rounded-3xl" />
 
       <div className="relative z-10">
         {/* Section Header */}
         <motion.div variants={textVariant()} className="text-center mb-16">
-          <p className="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider">
+          <p className={`${styles.sectionSubText} text-gray-500 dark:text-gray-400`}>
             Project Portfolio
           </p>
-          <h2 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
+          <h2 className={`${styles.sectionHeadText} text-gray-800 dark:text-white`}>
             Projects & Applications
           </h2>
         </motion.div>
