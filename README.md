@@ -1,191 +1,217 @@
-# 🚀 Mahad Iqbal | AI Portfolio | Interactive Web Experience
+# 🚀 Mahad Iqbal | AI/ML Engineer Portfolio | Interactive 3D Experience
 
-![Gemini API](https://img.shields.io/badge/Gemini%20API-powered%20by%20Google%20AI-yellow?logo=google)
+![Gemini 2.5 Pro](https://img.shields.io/badge/Gemini%202.5%20Pro-powered%20by%20Google%20AI-yellow?logo=google)
 ![React](https://img.shields.io/badge/React-18-blue?logo=react)
+![Three.js](https://img.shields.io/badge/Three.js-3D%20Graphics-black?logo=three.js)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-Latest-38bdf8?logo=tailwind-css)
-![Machine Learning](https://img.shields.io/badge/Machine%20Learning-TensorFlow-orange?logo=tensorflow)
+![Vercel](https://img.shields.io/badge/Vercel-Deployed-black?logo=vercel)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-AI%2FML-orange?logo=tensorflow)
 
 ![Portfolio Screenshot](src/assets/screenshot.png)
 
 ## 📋 Overview
 
-This AI-powered portfolio showcases my journey as an aspiring Machine Learning Engineer pursuing B.Tech in CSE (AI & ML). Leveraging cutting-edge 3D visualization and artificial intelligence, this portfolio creates an immersive experience that highlights my expertise in Data Science, NLP, and Real-World ML Applications.
+An immersive, AI-powered portfolio showcasing my journey as an AI/ML Engineer and Data Scientist pursuing B.Tech in CSE (AI & ML) at Heritage Institute of Technology. This cutting-edge portfolio combines stunning 3D visualizations, glassmorphism design, and intelligent AI interactions to create an unforgettable user experience.
+
+**🎯 Key Highlights:**
+- **2x Hackathon Winner** with proven track record in AI/ML competitions
+- **Healthcare AI Specialist** focused on revolutionizing medical technology
+- **Full-Stack Developer** with expertise in modern web technologies
+- **3D Experience Designer** creating immersive digital experiences
 
 ## 👋 Introduction
 
-Welcome to my AI-powered Portfolio! I'm Mahad Iqbal, passionate about revolutionizing healthcare through AI and building intelligent solutions that make a difference. This portfolio combines modern web development with stunning 3D visualization to showcase my work in machine learning, data science, and healthcare innovation.
+Welcome to my AI-powered Portfolio! I'm **Mahad Iqbal**, a passionate AI/ML Engineer dedicated to building intelligent solutions that make a real-world impact. This portfolio represents the perfect fusion of cutting-edge technology and creative design, showcasing my expertise in machine learning, data science, healthcare innovation, and modern web development.
 
-## 🤖🧠 Introducing Mahad.AI
+From developing **AuraMed** (healthcare AI platform) to creating **crop yield prediction systems**, my work demonstrates a commitment to solving complex problems through artificial intelligence and data-driven insights.
 
-My personalized AI assistant integrated directly into this portfolio. Mahad.AI is designed to enhance your browsing experience by providing instant information about my ML projects, technical skills, and professional background in AI/ML development.
+## 🤖🧠 Meet Mahad.AI - Your Personal Portfolio Assistant
 
-Using advanced natural language processing, Mahad.AI can answer questions about my work on AuraMed, crop yield prediction systems, fake news detection, and other AI projects. Feel free to interact with the chat widget to learn more about my journey in machine learning and healthcare innovation!
+**Powered by Google's Gemini 2.5 Pro**, Mahad.AI is an intelligent chatbot integrated directly into this portfolio, designed to provide instant, personalized responses about my professional journey, technical expertise, and project portfolio.
 
-## ✨ Key Features
+**🎯 What Mahad.AI Can Help You With:**
+- **Project Deep Dives**: Get detailed insights into AuraMed, KrishiMitra, and other AI/ML projects
+- **Technical Expertise**: Learn about my skills in Python, TensorFlow, React, and more
+- **Career Journey**: Discover my experience at AIWallah, Pinnacle, and CodSoft
+- **Academic Background**: Information about my B.Tech in CSE (AI & ML)
+- **Collaboration Opportunities**: Discuss potential projects and partnerships
 
-- **🔮 Interactive 3D Models**: Immerse yourself in a world of realistic 3D models, including drones and laptops with detailed textures and fluid animations.
-- **📱 Responsive Design**: Enjoy a seamless experience across all devices - from smartphones to ultrawide monitors.
-- **🤖 AI-Powered Chat Widget**: Get immediate responses to your questions through an intelligent chat assistant powered by Google's Gemini API.
-- **⚡ Dynamic Content**: Experience smooth transitions and captivating visual effects throughout the portfolio.
-- **🚀 Performance Optimized**: Fast loading times and efficient rendering even with complex 3D elements.
-- **🌓 Dark Mode**: Eye-friendly interface with automatic theme detection.
-- **🎭 Project Showcase**: Detailed display of projects with links, descriptions, and technologies used.
-- **📊 Skill Visualization**: Interactive representation of technical skills with visually appealing elements.
+**🚀 Advanced Features:**
+- Natural language understanding with context awareness
+- Real-time responses with professional insights
+- Comprehensive knowledge of my portfolio and achievements
+- Interactive and engaging conversation experience
 
-## 🛠️ Technologies Used
+Try asking Mahad.AI questions like:
+- *"Tell me about your healthcare AI projects"*
+- *"What technologies do you specialize in?"*
+- *"How can we collaborate on an AI project?"*
 
-- **⚛️ Frontend Framework**: React.js with Vite for lightning-fast development
-- **🎨 Styling**: Tailwind CSS for utility-first styling
-- **🌐 3D Visualization**: Three.js for immersive 3D experiences
-- **🔄 Motion Graphics**: Framer Motion for smooth animations
-- **🧠 AI Integration**: Google Gemini API for intelligent interactions
-- **📨 Contact System**: EmailJS for hassle-free communication
-- **📊 State Management**: React Context API for efficient state handling
-- **🔄 Version Control**: Git for code versioning
-- **☁️ Deployment**: Optimized for Vercel with automatic deployments
-- **⚡ Optimization**: Lazy loading and code splitting for improved performance
+## ✨ Key Features & Innovations
 
-## 📂 Project Structure
+### 🎨 **Modern Design & UX**
+- **🌟 Glassmorphism UI**: Stunning glass-like interface with backdrop blur effects
+- **🎭 3D Interactive Timeline**: Revolutionary experience timeline with floating info panels
+- **📱 Fully Responsive**: Seamless experience across all devices and screen sizes
+- **🌓 Dark Theme Optimized**: Professional dark mode with perfect contrast ratios
+- **⚡ Smooth Animations**: Framer Motion powered transitions and micro-interactions
+
+### 🤖 **AI-Powered Intelligence**
+- **🧠 Gemini 2.5 Pro Integration**: Advanced AI chatbot with contextual understanding
+- **💬 Smart Conversations**: Natural language processing for meaningful interactions
+- **📚 Portfolio Knowledge Base**: AI trained on my professional background and projects
+- **🔄 Real-time Responses**: Instant, intelligent answers to visitor questions
+
+### 🚀 **Technical Excellence**
+- **🔮 Advanced 3D Graphics**: Three.js powered immersive 3D models and scenes
+- **📊 Interactive Dashboards**: Modern grid-based layouts with dynamic content
+- **📧 Smart Contact System**: EmailJS integration with professional form handling
+- **⚡ Performance Optimized**: Code splitting, lazy loading, and efficient rendering
+- **🔒 Secure & Scalable**: Environment-based configuration with production-ready setup
+
+### 📱 **User Experience**
+- **🎯 Intuitive Navigation**: Single-page application with smooth section transitions
+- **📋 Comprehensive Sections**: Dashboard, About, Experience, Education, Projects, Certifications
+- **💼 Professional Presentation**: Detailed project showcases with live demos and GitHub links
+- **📞 Direct Communication**: Functional contact form with instant email delivery
+
+## 🛠️ Technology Stack
+
+### 🎯 **Core Technologies**
+- **⚛️ React 18**: Modern React with hooks and concurrent features
+- **⚡ Vite**: Next-generation frontend tooling for lightning-fast development
+- **🎨 Tailwind CSS**: Utility-first CSS framework with custom design system
+- **🌐 Three.js**: WebGL-based 3D graphics library for immersive experiences
+- **🔄 Framer Motion**: Production-ready motion library for React
+
+### 🤖 **AI & Backend Services**
+- **🧠 Google Gemini 2.5 Pro**: Advanced AI model for intelligent chatbot interactions
+- **📧 EmailJS**: Client-side email service for contact form functionality
+- **🔐 Environment Variables**: Secure configuration management
+
+### 🎨 **Design & UX**
+- **✨ Glassmorphism**: Modern glass-like UI components with backdrop blur
+- **🎭 Custom Animations**: Tailored motion graphics and transitions
+- **📱 Responsive Design**: Mobile-first approach with breakpoint optimization
+- **🌓 Dark Theme**: Professional dark mode with accessibility compliance
+
+### 🚀 **Development & Deployment**
+- **📦 Modern Build System**: Vite with optimized production builds
+- **🔄 Git Workflow**: Version control with feature branch strategy
+- **☁️ Vercel Deployment**: Serverless deployment with automatic CI/CD
+- **⚡ Performance**: Code splitting, lazy loading, and asset optimization
+- **🔧 Development Tools**: ESLint, Prettier, and modern dev experience
+
+## 📂 Project Architecture
 
 ```
-AI-portfolio/
+mahadportfolio/
 │
-├── index.html              # Main HTML entry point
-├── package.json            # NPM dependencies and scripts
-├── postcss.config.cjs      # PostCSS configuration
-├── README.md               # Project documentation
-├── tailwind.config.cjs     # Tailwind CSS configuration
-├── vite.config.js          # Vite build tool configuration
+├── 📄 Configuration Files
+│   ├── index.html              # Main HTML entry point
+│   ├── package.json            # Dependencies and scripts
+│   ├── tailwind.config.cjs     # Tailwind CSS configuration
+│   ├── vite.config.js          # Vite build configuration
+│   ├── vercel.json             # Vercel deployment config
+│   └── .env.example            # Environment variables template
 │
-├── public/                 # Public assets served as-is
-│   └── buster_drone/       # 3D drone model
-│       ├── license.txt
-│       ├── scene.bin
-│       ├── scene.gltf
-│       └── textures/      # Drone model textures
-│           ├── Boden_baseColor.png
-│           ├── Boden_metallicRoughness.png
-│           ├── Boden_normal.png
-│           ├── body_baseColor.png
-│           ├── body_emissive.png
-│           ├── body_metallicRoughness.png
-│           ├── body_normal.png
-│           ├── material_baseColor.png
-│           ├── material_metallicRoughness.png
-│           └── material_normal.png
+├── 📁 public/                  # Static assets
+│   ├── buster_drone/           # 3D drone model files
+│   │   ├── scene.gltf          # 3D model geometry
+│   │   ├── scene.bin           # Binary model data
+│   │   └── textures/           # PBR texture maps
+│   └── desktop_pc/             # 3D computer model files
 │
-└── src/                    # Source code
-    ├── App.jsx             # Main React component
-    ├── index.css           # Global CSS
-    ├── main.jsx            # React entry point
-    ├── styles.js           # Shared style definitions
-    │
-    ├── assets/             # Static assets
-    │   ├── backend.png
-    │   ├── close.svg
-    │   ├── creator.png
-    │   ├── Edubyte.png
-    │   ├── Github-readme-generator.png
-    │   ├── github.png
-    │   ├── grid1.png
-    │   ├── grid2-.png
-    │   ├── grid2.png
-    │   ├── grid3.png
-    │   ├── grid4.png
-    │   ├── herobg.png
-    │   ├── index.js        # Asset exports
-    │   ├── jobit.png
-    │   ├── KrishiMitra.png
-    │   ├── logo.svg
-    │   ├── MagicFill.png
-    │   ├── menu.svg
-    │   ├── mobile.png
-    │   ├── screenshot.png
-    │   ├── Trinoyon.png
-    │   ├── tripguide.png
-    │   ├── web.png
-    │   ├── YouTube-Video-Summarizer.jpeg
-    │   │
-    │   └── tech/           # Technology icons
-    │       ├── css.png
-    │       ├── docker.png
-    │       ├── figma.png
-    │       ├── git.png
-    │       ├── html.png
-    │       ├── javascript.png
-    │       ├── mongodb.png
-    │       ├── nodejs.png
-    │       ├── reactjs.png
-    │       ├── redux.png
-    │       ├── tailwind.png
-    │       ├── threejs.svg
-    │       └── typescript.png
-    │
-    ├── components/          # React components
-    │   ├── About.jsx        # About section component
-    │   ├── Button.jsx       # Reusable button component
-    │   ├── Cards.jsx        # Card display component
-    │   ├── ChatWidget.jsx   # AI chat assistant component
-    │   ├── Contact.jsx      # Contact form component
-    │   ├── Hero.jsx         # Hero section component
-    │   ├── index.js         # Component exports
-    │   ├── Loader.jsx       # Loading animation component
-    │   ├── Navbar.jsx       # Navigation bar component
-    │   ├── Tech.jsx         # Technologies section component
-    │   ├── Works.jsx        # Projects section component
-    │   │
-    │   └── canvas/          # Three.js 3D components
-    │       ├── Ball.jsx     # 3D ball component for tech icons
-    │       ├── Computers.jsx # 3D computer model component
-    │       ├── Earth.jsx    # 3D earth model component
-    │       ├── index.js     # Canvas component exports
-    │       └── Stars.jsx    # 3D stars background component
-    │
-    ├── constants/           # Application constants
-    │   └── index.js         # Centralized constants
-    │
-    ├── hoc/                 # Higher-Order Components
-    │   ├── index.js         # HOC exports
-    │   └── SectionWrapper.jsx # Section wrapper HOC
-    │
-    └── utils/               # Utility functions
-        ├── fontawesome.js   # FontAwesome icon configuration
-        └── motion.js        # Framer Motion animations
+├── 📁 src/                     # Source code
+│   ├── 🎯 Core Application
+│   │   ├── App.jsx             # Main application component
+│   │   ├── main.jsx            # React entry point
+│   │   ├── index.css           # Global styles & glassmorphism
+│   │   └── styles.js           # Shared style definitions
+│   │
+│   ├── 📦 assets/              # Static resources
+│   │   ├── Mahad(Resume).pdf   # Downloadable resume
+│   │   ├── profilePic.jpg      # Profile image
+│   │   ├── company/            # Company logos
+│   │   │   ├── aiwallah.jpg
+│   │   │   ├── pinnacle.jpg
+│   │   │   └── codsoft.jpg
+│   │   ├── projects/           # Project screenshots
+│   │   │   ├── AuraMed.png
+│   │   │   ├── KrishiMitra.png
+│   │   │   └── [other projects]
+│   │   └── tech/               # Technology icons
+│   │       ├── react.png
+│   │       ├── python.png
+│   │       └── [other tech icons]
+│   │
+│   ├── 🧩 components/          # React components
+│   │   ├── 🏠 Core Sections
+│   │   │   ├── Hero.jsx        # Landing section with 3D
+│   │   │   ├── Dashboard.jsx   # Modern dashboard layout
+│   │   │   ├── About.jsx       # About section
+│   │   │   ├── Contact.jsx     # Contact form with EmailJS
+│   │   │   └── Navbar.jsx      # Navigation with mobile menu
+│   │   │
+│   │   ├── 📊 Portfolio Sections
+│   │   │   ├── ExperienceTimeline.jsx  # 3D timeline experience
+│   │   │   ├── Education.jsx           # Academic background
+│   │   │   ├── Works.jsx              # Projects showcase
+│   │   │   ├── Certifications.jsx     # Achievements & awards
+│   │   │   └── Tech.jsx               # Technology skills
+│   │   │
+│   │   ├── 🤖 Interactive Features
+│   │   │   └── ChatWidget.jsx  # Gemini 2.5 Pro AI chatbot
+│   │   │
+│   │   ├── 🎨 UI Components
+│   │   │   └── ui/              # Reusable UI components
+│   │   │       ├── GlassCard.jsx
+│   │   │       ├── GlassButton.jsx
+│   │   │       └── GlassInput.jsx
+│   │   │
+│   │   ├── 🌐 3D Canvas Components
+│   │   │   └── canvas/          # Three.js components
+│   │   │       ├── Computers.jsx    # 3D computer model
+│   │   │       ├── Earth.jsx        # 3D earth model
+│   │   │       ├── Stars.jsx        # Animated star field
+│   │   │       └── Ball.jsx         # 3D tech skill balls
+│   │   │
+│   │   └── 🔧 Utilities
+│   │       ├── ErrorBoundary.jsx    # Error handling
+│   │       └── index.js             # Component exports
+│   │
+│   ├── 📋 constants/           # Application data
+│   │   └── index.js            # Portfolio data & configuration
+│   │
+│   ├── 🔄 hoc/                 # Higher-Order Components
+│   │   └── SectionWrapper.jsx  # Section animation wrapper
+│   │
+│   └── 🛠️ utils/               # Utility functions
+│       └── motion.js           # Framer Motion animations
+│
+└── 📚 Documentation
+    ├── README.md               # Project documentation
+    ├── VERCEL_DEPLOYMENT.md    # Deployment guide
+    └── PRE_DEPLOYMENT_CHECKLIST.md
 ```
 
-The structure above shows the organization of the project, where:
+### 🏗️ **Architecture Highlights**
 
-- **`index.html`** is the main entry point of the application.
-- **`package.json`** contains the project's metadata and dependencies.
-- **`vite.config.js`** is the configuration file for Vite, the build tool.
-- **`public/`** directory contains assets that are served directly, like 3D models and their textures.
-- **`src/`** is where the source code lives, including React components, assets, and styles.
-- **`components/`** folder inside `src/` contains all the React components used in the application.
-- **`canvas/`** folder inside `components/` contains Three.js related components for 3D rendering.
-- **`constants/`** holds application-wide constants.
-- **`hoc/`** is for Higher-Order Components used in the project.
-- **`utils/`** is for utility functions and helpers used across the application.
+- **🎯 Component-Based**: Modular React architecture with reusable components
+- **🎨 Design System**: Consistent glassmorphism UI with custom Tailwind components
+- **🤖 AI Integration**: Centralized AI chatbot with environment-based configuration
+- **📱 Responsive First**: Mobile-optimized components with progressive enhancement
+- **⚡ Performance**: Lazy loading, code splitting, and optimized asset delivery
+- **🔒 Security**: Environment variables and secure API key management
 
-## 📬 Contact
+## 🚀 Quick Start Guide
 
-Feel free to reach out to me through any of the following channels:
+### 📋 **Prerequisites**
+- Node.js 18+ and npm/yarn
+- Git for version control
+- Code editor (VS Code recommended)
 
-- **✉️ Email**: [codesnippets45@gmail.com](mailto:codesnippets45@gmail.com)
-- **💼 LinkedIn**: [Bikram Mondal](https://www.linkedin.com/in/bikram-mondal-a2bb18343)
-- **💻 GitHub**: [BikramMondal5](https://github.com/BikramMondal5)
-- **🐦 Twitter**: [@CSnippets62428](https://x.com/CSnippets62428)
-
-Or simply use the contact form on my portfolio website to send me a message directly. I'm always open to discussing new projects, opportunities, or just connecting with fellow developers!
-
-## 🚀 Deployment
-
-This portfolio is optimized for **Vercel** deployment with automatic CI/CD.
-
-### Quick Deploy to Vercel:
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/mahad2810/mahadportfolio)
-
-### Manual Deployment:
+### ⚡ **Installation**
 
 1. **Clone the repository:**
    ```bash
@@ -200,24 +226,114 @@ This portfolio is optimized for **Vercel** deployment with automatic CI/CD.
 
 3. **Set up environment variables:**
    ```bash
-   cp .env.example .env
-   # Add your API keys to .env file
+   cp .env.example .env.local
+   # Add your API keys to .env.local
    ```
 
-4. **Build and deploy:**
+4. **Start development server:**
+   ```bash
+   npm run dev
+   ```
+
+5. **Open in browser:**
+   ```
+   http://localhost:5173
+   ```
+
+### 🔑 **Environment Variables**
+Create a `.env.local` file with:
+```env
+GEMINI_API_KEY="your_gemini_api_key"
+EMAILJS_SERVICE_ID="your_emailjs_service_id"
+EMAILJS_TEMPLATE_ID="your_emailjs_template_id"
+EMAILJS_PUBLIC_KEY="your_emailjs_public_key"
+```
+
+## 📬 Get In Touch
+
+Ready to collaborate or have questions? Let's connect!
+
+### 🌐 **Professional Links**
+- **✉️ Email**: [mahadiqbal70@gmail.com](mailto:mahadiqbal70@gmail.com)
+- **💼 LinkedIn**: [Mahad Iqbal](https://www.linkedin.com/in/mahadiqbal16/)
+- **💻 GitHub**: [mahad2810](https://github.com/mahad2810/)
+- **📍 Location**: Kolkata, West Bengal, India
+
+### 💬 **Let's Discuss**
+- 🤖 **AI/ML Projects**: Healthcare AI, NLP, Computer Vision
+- 🌐 **Web Development**: React, Three.js, Full-stack solutions
+- 🚀 **Collaboration**: Open source contributions, hackathons
+- 💼 **Opportunities**: Internships, freelance projects, full-time roles
+
+**💡 Pro Tip**: Use the AI chatbot on my portfolio for instant responses about my work and expertise!
+
+## 🚀 Production Deployment
+
+### ⚡ **One-Click Deploy to Vercel**
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/mahad2810/mahadportfolio)
+
+### 🔧 **Manual Deployment Steps**
+
+1. **Prepare for production:**
    ```bash
    npm run build
+   npm run preview  # Test production build locally
+   ```
+
+2. **Deploy to Vercel:**
+   ```bash
+   npm install -g vercel
    vercel --prod
    ```
 
-### Environment Variables Required:
-- `VITE_GEMINI_API_KEY` - For AI chatbot functionality
-- `VITE_APP_EMAILJS_SERVICE_ID` - For contact form
-- `VITE_APP_EMAILJS_TEMPLATE_ID` - For contact form
-- `VITE_APP_EMAILJS_PUBLIC_KEY` - For contact form
+3. **Configure environment variables in Vercel Dashboard:**
+   ```env
+   GEMINI_API_KEY=your_gemini_api_key
+   EMAILJS_SERVICE_ID=your_emailjs_service_id
+   EMAILJS_TEMPLATE_ID=your_emailjs_template_id
+   EMAILJS_PUBLIC_KEY=your_emailjs_public_key
+   ```
 
-📖 **Detailed deployment guide:** See [DEPLOYMENT.md](./DEPLOYMENT.md)
+### 📋 **Deployment Checklist**
+- ✅ All environment variables configured
+- ✅ Build completes without errors
+- ✅ 3D models load correctly
+- ✅ AI chatbot responds properly
+- ✅ Contact form sends emails
+- ✅ Mobile responsiveness verified
+
+### 📚 **Additional Resources**
+- 📖 [Complete Deployment Guide](./VERCEL_DEPLOYMENT.md)
+- ✅ [Pre-Deployment Checklist](./PRE_DEPLOYMENT_CHECKLIST.md)
+- 🔧 [Environment Setup Guide](./.env.example)
+
+## 🎯 **Performance & Features**
+
+### ⚡ **Optimizations**
+- **Bundle Size**: Optimized with code splitting and lazy loading
+- **3D Performance**: Efficient Three.js rendering with LOD optimization
+- **Mobile First**: Responsive design with touch-friendly interactions
+- **SEO Ready**: Meta tags and structured data for search engines
+
+### 🔒 **Security & Best Practices**
+- Environment variable protection
+- Secure API key management
+- HTTPS-only deployment
+- Content Security Policy headers
 
 ---
 
-*Built with ❤️ and a passion for creating exceptional web experiences.*
+## 🌟 **What Makes This Portfolio Special**
+
+✨ **Innovation**: Cutting-edge 3D web technology meets AI intelligence
+🎨 **Design**: Modern glassmorphism with professional dark theme
+🤖 **Intelligence**: AI-powered interactions for enhanced user engagement
+📱 **Accessibility**: Fully responsive with excellent mobile experience
+🚀 **Performance**: Optimized for speed without compromising visual quality
+
+---
+
+*Built with ❤️ by Mahad Iqbal | Powered by React, Three.js & Gemini AI*
+
+**🔗 Live Portfolio**: [Coming Soon - Deploy to see your live URL]

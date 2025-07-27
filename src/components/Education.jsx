@@ -76,7 +76,7 @@ const educationData = [
 
 const Education = () => {
   return (
-    <div className="relative bg-glass-dark backdrop-blur-md border border-white/10 rounded-3xl p-8">
+    <div className="relative glass-strong rounded-3xl p-8">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan/10 via-transparent to-accent-purple/10 rounded-3xl" />
 

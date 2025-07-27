@@ -9,9 +9,9 @@ import { GlassCard } from "./ui";
 
 const Tech = () => {
   return (
-    <div className="relative">
+    <div className="relative glass-strong rounded-3xl p-8">
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-br from-accent-blue/5 via-transparent to-accent-purple/5 rounded-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-br from-accent-blue/10 via-transparent to-accent-purple/10 rounded-3xl" />
 
       <div className="relative z-10">
         {/* Section Header */}
