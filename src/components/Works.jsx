@@ -52,46 +52,47 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
         style={{ zIndex: 99999 }}
         onClick={onClose}
       >
-        <div className="flex items-center justify-center min-h-screen p-4">
+        <div className="flex items-center justify-center min-h-screen p-2 sm:p-4">
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.8, opacity: 0 }}
-            className="relative w-full max-w-7xl h-[90vh] bg-white dark:bg-gray-900 rounded-2xl shadow-2xl overflow-hidden"
+            className="relative w-full max-w-7xl h-[95vh] sm:h-[90vh] bg-white dark:bg-gray-900 rounded-lg sm:rounded-2xl shadow-2xl overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 z-10 p-2 bg-black/50 rounded-full text-white hover:bg-black/70 transition-colors"
+              className="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 p-2 bg-black/50 rounded-full text-white hover:bg-black/70 transition-colors"
             >
-              <X size={20} />
+              <X size={18} className="sm:w-5 sm:h-5" />
             </button>
 
             <div className="flex flex-col h-full overflow-hidden">
               {/* PDF Preview Section - Top (60% height) */}
               {project.pdf_file && (
-                <div className="h-[60%] border-b border-gray-200 dark:border-gray-700">
+                <div className="h-[50%] sm:h-[60%] border-b border-gray-200 dark:border-gray-700">
                   <div className="h-full flex flex-col">
-                    <div className="p-3 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
+                    <div className="p-2 sm:p-3 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
                       <div className="flex items-center justify-between">
-                        <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
+                        <h3 className="text-sm sm:text-lg font-semibold text-gray-800 dark:text-white">
                           PDF Preview
                         </h3>
                         <GlassButton
                           variant="accent"
                           size="sm"
                           onClick={handlePDFView}
-                          className="flex items-center gap-2"
+                          className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm"
                         >
-                          <FileText size={16} />
-                          View Full PDF
+                          <FileText size={14} className="sm:w-4 sm:h-4" />
+                          <span className="hidden sm:inline">View Full PDF</span>
+                          <span className="sm:hidden">PDF</span>
                         </GlassButton>
                       </div>
                     </div>
-                    <div className="flex-1 p-2 bg-gray-100 dark:bg-gray-900">
+                    <div className="flex-1 p-1 sm:p-2 bg-gray-100 dark:bg-gray-900">
                       <iframe
-                        src={`${project.pdf_file}#toolbar=0&navpanes=0&scrollbar=1&page=1&zoom=90`}
+                        src={`${project.pdf_file}#toolbar=0&navpanes=0&scrollbar=1&page=1&zoom=${window.innerWidth < 640 ? '70' : '90'}`}
                         className="w-full h-full border-0 rounded-lg shadow-lg"
                         title={`${project.name} PDF Preview`}
                       />
@@ -101,19 +102,19 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               )}
 
               {/* Project Info Section - Bottom (40% height) */}
-              <div className={`${project.pdf_file ? 'h-[40%]' : 'h-full'} overflow-y-auto`}>
+              <div className={`${project.pdf_file ? 'h-[50%] sm:h-[40%]' : 'h-full'} overflow-y-auto`}>
                 {/* Content */}
-                <div className="p-8">
-                  <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
+                <div className="p-3 sm:p-4 lg:p-8">
+                  <h2 className="text-lg sm:text-2xl lg:text-3xl font-bold text-gray-800 dark:text-white mb-3 sm:mb-4 leading-tight">
                     {project.name}
                   </h2>
 
                   {/* Tech Stack */}
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
                     {project.tags.map((tag) => (
                       <span
                         key={`modal-${project.name}-${tag.name}`}
-                        className="px-3 py-1 bg-gradient-to-r from-purple-500/20 to-blue-500/20 border border-purple-500/30 rounded-full text-sm font-medium text-purple-600 dark:text-purple-400"
+                        className="px-2 sm:px-3 py-0.5 sm:py-1 bg-gradient-to-r from-purple-500/20 to-blue-500/20 border border-purple-500/30 rounded-full text-xs sm:text-sm font-medium text-purple-600 dark:text-purple-400"
                       >
                         {tag.name}
                       </span>
@@ -335,63 +336,70 @@ const ProjectCard = ({
           </div>
 
           {/* Project Info */}
-          <div className='p-6 space-y-4'>
+          <div className='p-3 sm:p-4 lg:p-6 space-y-3 sm:space-y-4'>
             <div>
-              <h3 className='text-gray-800 dark:text-white font-bold text-xl mb-2 group-hover:text-accent-purple transition-colors duration-300'>
+              <h3 className='text-gray-800 dark:text-white font-bold text-base sm:text-lg lg:text-xl mb-1 sm:mb-2 group-hover:text-accent-purple transition-colors duration-300 leading-tight'>
                 {name}
               </h3>
-              <p className='text-gray-600 dark:text-gray-300 text-sm leading-relaxed'>
+              <p className='text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed line-clamp-3'>
                 {description}
               </p>
             </div>
 
             {/* Tech Stack Tags */}
-            <div className='flex flex-wrap gap-2'>
-              {tags.map((tag) => (
+            <div className='flex flex-wrap gap-1.5 sm:gap-2'>
+              {tags.slice(0, 4).map((tag) => (
                 <span
                   key={`${name}-${tag.name}`}
-                  className="px-3 py-1 bg-gradient-to-r from-accent-purple/10 to-accent-blue/10 border border-accent-purple/20 rounded-full text-xs font-medium text-accent-purple hover:from-accent-purple/20 hover:to-accent-blue/20 transition-all duration-300"
+                  className="px-2 sm:px-3 py-0.5 sm:py-1 bg-gradient-to-r from-accent-purple/10 to-accent-blue/10 border border-accent-purple/20 rounded-full text-xs font-medium text-accent-purple hover:from-accent-purple/20 hover:to-accent-blue/20 transition-all duration-300"
                 >
                   {tag.name}
                 </span>
               ))}
+              {tags.length > 4 && (
+                <span className="px-2 sm:px-3 py-0.5 sm:py-1 text-xs text-gray-500 dark:text-gray-400">
+                  +{tags.length - 4} more
+                </span>
+              )}
             </div>
 
             {/* Action Buttons */}
-            <div className="flex gap-3">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
               <GlassButton
                 variant="primary"
                 size="sm"
                 onClick={() => onViewDetails(project)}
-                icon={<Eye size={16} />}
-                className="flex-1"
+                icon={<Eye size={14} />}
+                className="flex-1 text-xs sm:text-sm"
               >
                 View Details
               </GlassButton>
 
-              {source_code_link && source_code_link !== "#" && (
-                <GlassButton
-                  variant="outline"
-                  size="sm"
-                  onClick={() => window.open(source_code_link, "_blank")}
-                  icon={<Code size={16} />}
-                  className="flex-1"
-                >
-                  Code
-                </GlassButton>
-              )}
+              <div className="flex gap-2 sm:gap-3">
+                {source_code_link && source_code_link !== "#" && (
+                  <GlassButton
+                    variant="outline"
+                    size="sm"
+                    onClick={() => window.open(source_code_link, "_blank")}
+                    icon={<Code size={14} />}
+                    className="flex-1 text-xs sm:text-sm"
+                  >
+                    Code
+                  </GlassButton>
+                )}
 
-              {live_demo_link && live_demo_link !== "#" && (
-                <GlassButton
-                  variant="secondary"
-                  size="sm"
-                  onClick={() => window.open(live_demo_link, "_blank")}
-                  icon={<ExternalLink size={16} />}
-                  className="flex-1"
-                >
-                  Demo
-                </GlassButton>
-              )}
+                {live_demo_link && live_demo_link !== "#" && (
+                  <GlassButton
+                    variant="secondary"
+                    size="sm"
+                    onClick={() => window.open(live_demo_link, "_blank")}
+                    icon={<ExternalLink size={14} />}
+                    className="flex-1 text-xs sm:text-sm"
+                  >
+                    Demo
+                  </GlassButton>
+                )}
+              </div>
             </div>
           </div>
         </GlassCard>
@@ -477,7 +485,7 @@ const Works = () => {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 place-items-center px-4 sm:px-0'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8 place-items-center px-2 sm:px-4 lg:px-0'>
           {filteredProjects.map((project, index) => (
             <ProjectCard
               key={`project-${index}`}

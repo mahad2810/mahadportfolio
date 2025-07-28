@@ -38,25 +38,53 @@
     padding: 1rem;
     margin-bottom: 1rem;
   }
-  
+
   /* Compact text for mobile */
   .mobile-text-compact {
     line-height: 1.4;
     font-size: 0.875rem;
   }
-  
+
   /* Mobile grid improvements */
   .mobile-grid-2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
   }
-  
+
   .mobile-grid-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0.5rem;
   }
+
+  /* Touch-friendly buttons */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Prevent text selection on touch */
+  .no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  /* Better modal sizing */
+  .mobile-modal {
+    margin: 0.5rem;
+    max-height: calc(100vh - 1rem);
+  }
+}
+
+/* Line clamping utility */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* Prevent flash of unstyled content */

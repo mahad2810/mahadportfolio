@@ -70,49 +70,49 @@ const TestimonialCard = ({ testimonial, isActive }) => {
       transition={{ duration: 0.5 }}
       className={`${isActive ? 'z-10' : 'z-0'}`}
     >
-      <GlassCard 
-        variant="default" 
-        className="p-8 max-w-4xl mx-auto text-center relative"
+      <GlassCard
+        variant="default"
+        className="p-4 sm:p-6 lg:p-8 max-w-4xl mx-auto text-center relative"
       >
         {/* Quote Icon */}
-        <div className="absolute top-4 left-4 text-accent-purple/30">
-          <Quote size={40} />
+        <div className="absolute top-2 left-2 sm:top-4 sm:left-4 text-accent-purple/30">
+          <Quote size={24} className="sm:w-8 sm:h-8 lg:w-10 lg:h-10" />
         </div>
 
         {/* Rating Stars */}
-        <div className="flex justify-center gap-1 mb-6">
+        <div className="flex justify-center gap-0.5 sm:gap-1 mb-4 sm:mb-6 mt-2 sm:mt-0">
           {[...Array(testimonial.rating)].map((_, i) => (
-            <Star 
-              key={i} 
-              size={20} 
-              className="text-yellow-400 fill-current" 
+            <Star
+              key={i}
+              size={16}
+              className="text-yellow-400 fill-current sm:w-5 sm:h-5"
             />
           ))}
         </div>
 
         {/* Testimonial Text */}
-        <blockquote className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8 italic">
+        <blockquote className="text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6 sm:mb-8 italic px-2 sm:px-4">
           "{testimonial.testimonial}"
         </blockquote>
 
         {/* Author Info */}
-        <div className="flex items-center justify-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
           <img
             src={testimonial.image}
             alt={testimonial.name}
-            className="w-16 h-16 rounded-full object-cover border-2 border-accent-purple/30"
+            className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-accent-purple/30 flex-shrink-0"
             onError={(e) => {
               e.target.src = `https://ui-avatars.com/api/?name=${testimonial.name}&background=8b5cf6&color=fff&size=64`;
             }}
           />
-          <div className="text-left">
-            <h4 className="text-xl font-bold text-gray-800 dark:text-white">
+          <div className="text-center sm:text-left">
+            <h4 className="text-base sm:text-lg lg:text-xl font-bold text-gray-800 dark:text-white">
               {testimonial.name}
             </h4>
-            <p className="text-accent-purple font-semibold">
+            <p className="text-accent-purple font-semibold text-sm sm:text-base">
               {testimonial.position}
             </p>
-            <p className="text-gray-600 dark:text-gray-400 text-sm">
+            <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">
               {testimonial.company}
             </p>
             <p className="text-gray-500 dark:text-gray-500 text-xs mt-1">
@@ -175,29 +175,50 @@ const Testimonials = () => {
 
         {/* Testimonial Carousel */}
         <div className="relative">
-          {/* Navigation Buttons */}
-          <div className="absolute left-0 top-1/2 transform -translate-y-1/2 z-20">
+          {/* Navigation Buttons - Hidden on mobile, shown on larger screens */}
+          <div className="hidden sm:block absolute left-0 top-1/2 transform -translate-y-1/2 z-20">
             <GlassButton
               variant="secondary"
               size="sm"
               onClick={goToPrevious}
-              icon={<ChevronLeft size={20} />}
-              className="rounded-full w-12 h-12 p-0"
+              icon={<ChevronLeft size={18} />}
+              className="rounded-full w-10 h-10 sm:w-12 sm:h-12 p-0"
             />
           </div>
-          
-          <div className="absolute right-0 top-1/2 transform -translate-y-1/2 z-20">
+
+          <div className="hidden sm:block absolute right-0 top-1/2 transform -translate-y-1/2 z-20">
             <GlassButton
               variant="secondary"
               size="sm"
               onClick={goToNext}
-              icon={<ChevronRight size={20} />}
-              className="rounded-full w-12 h-12 p-0"
+              icon={<ChevronRight size={18} />}
+              className="rounded-full w-10 h-10 sm:w-12 sm:h-12 p-0"
+            />
+          </div>
+
+          {/* Mobile Navigation Buttons */}
+          <div className="flex sm:hidden justify-between items-center mb-4 px-4">
+            <GlassButton
+              variant="secondary"
+              size="sm"
+              onClick={goToPrevious}
+              icon={<ChevronLeft size={16} />}
+              className="rounded-full w-10 h-10 p-0"
+            />
+            <span className="text-sm text-gray-500 dark:text-gray-400">
+              {currentIndex + 1} / {testimonialsData.length}
+            </span>
+            <GlassButton
+              variant="secondary"
+              size="sm"
+              onClick={goToNext}
+              icon={<ChevronRight size={16} />}
+              className="rounded-full w-10 h-10 p-0"
             />
           </div>
 
           {/* Testimonial Cards */}
-          <div className="px-16">
+          <div className="px-2 sm:px-8 lg:px-16">
             <AnimatePresence mode="wait">
               <TestimonialCard
                 key={currentIndex}
@@ -208,12 +229,12 @@ const Testimonials = () => {
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center gap-3 mt-8">
+          <div className="flex justify-center gap-2 sm:gap-3 mt-6 sm:mt-8">
             {testimonialsData.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                   index === currentIndex
                     ? 'bg-accent-purple scale-125'
                     : 'bg-gray-300 dark:bg-gray-600 hover:bg-accent-purple/50'
@@ -226,21 +247,21 @@ const Testimonials = () => {
         {/* Stats Section */}
         <motion.div
           variants={fadeIn("up", "spring", 0.3, 1)}
-          className="mt-16"
+          className="mt-12 sm:mt-16 px-2 sm:px-4"
         >
-          <GlassCard variant="primary" className="p-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <GlassCard variant="primary" className="p-4 sm:p-6 lg:p-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center">
               <div>
-                <h4 className="text-4xl font-bold text-white mb-2">50+</h4>
-                <p className="text-gray-200">Happy Clients</p>
+                <h4 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-1 sm:mb-2">50+</h4>
+                <p className="text-gray-200 text-sm sm:text-base">Happy Clients</p>
               </div>
               <div>
-                <h4 className="text-4xl font-bold text-white mb-2">98%</h4>
-                <p className="text-gray-200">Satisfaction Rate</p>
+                <h4 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-1 sm:mb-2">98%</h4>
+                <p className="text-gray-200 text-sm sm:text-base">Satisfaction Rate</p>
               </div>
               <div>
-                <h4 className="text-4xl font-bold text-white mb-2">24/7</h4>
-                <p className="text-gray-200">Support Available</p>
+                <h4 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-1 sm:mb-2">24/7</h4>
+                <p className="text-gray-200 text-sm sm:text-base">Support Available</p>
               </div>
             </div>
           </GlassCard>
@@ -249,15 +270,16 @@ const Testimonials = () => {
         {/* Call to Action */}
         <motion.div
           variants={fadeIn("up", "spring", 0.4, 1)}
-          className="text-center mt-12"
+          className="text-center mt-8 sm:mt-12 px-2 sm:px-4"
         >
-          <p className="text-gray-600 dark:text-gray-300 text-lg mb-6">
+          <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base lg:text-lg mb-4 sm:mb-6">
             Ready to join these satisfied clients?
           </p>
           <GlassButton
             variant="primary"
-            size="lg"
+            size="md"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            className="w-full sm:w-auto"
           >
             Start Your Project
           </GlassButton>

@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 import { Code, Palette, Zap, Users } from "lucide-react";
 

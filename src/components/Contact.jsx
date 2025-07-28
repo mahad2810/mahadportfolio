@@ -155,21 +155,21 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Contact Form */}
-          <motion.div variants={slideIn("left", "tween", 0.2, 1)} className="flex-[0.75]">
-            <GlassCard variant="default" className="p-6 sm:p-8">
-              <div className="mb-8">
-                <p className={`${styles.sectionSubText} text-gray-500 dark:text-gray-400`}>
+          <motion.div variants={slideIn("left", "tween", 0.2, 1)} className="flex-[0.75] order-2 lg:order-1">
+            <GlassCard variant="default" className="p-4 sm:p-6 lg:p-8">
+              <div className="mb-6 sm:mb-8">
+                <p className={`${styles.sectionSubText} text-gray-500 dark:text-gray-400 text-center lg:text-left`}>
                   Get in touch
                 </p>
-                <h3 className={`${styles.sectionHeadText} text-gray-800 dark:text-white`}>
+                <h3 className={`${styles.sectionHeadText} text-gray-800 dark:text-white text-center lg:text-left`}>
                   Contact Me
                 </h3>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Name *
@@ -233,10 +233,10 @@ const Contact = () => {
                 <GlassButton
                   type="submit"
                   variant="primary"
-                  size="lg"
+                  size="md"
                   loading={loading}
-                  icon={<Send size={20} />}
-                  className="w-full"
+                  icon={<Send size={18} />}
+                  className="w-full sm:w-auto sm:px-8"
                 >
                   {loading ? "Sending..." : "Send Message"}
                 </GlassButton>
@@ -245,33 +245,33 @@ const Contact = () => {
           </motion.div>
 
           {/* Contact Info & 3D Earth */}
-          <motion.div variants={slideIn("right", "tween", 0.2, 1)} className="space-y-8">
+          <motion.div variants={slideIn("right", "tween", 0.2, 1)} className="space-y-4 sm:space-y-6 lg:space-y-8 order-1 lg:order-2">
             {/* Contact Information */}
-            <GlassCard variant="minimal" className="p-8">
-              <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">
+            <GlassCard variant="minimal" className="p-4 sm:p-6 lg:p-8">
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 dark:text-white mb-4 sm:mb-6 text-center lg:text-left">
                 Contact Information
               </h3>
 
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {contactInfo.map((info, index) => (
                   <motion.div
                     key={info.title}
                     variants={fadeIn("up", "spring", index * 0.1, 0.75)}
-                    className="flex items-center gap-4 group"
+                    className="flex items-center gap-3 sm:gap-4 group"
                   >
-                    <div className="p-3 bg-gradient-to-br from-accent-purple/20 to-accent-blue/20 rounded-full group-hover:from-accent-purple/30 group-hover:to-accent-blue/30 transition-all duration-300">
+                    <div className="p-2 sm:p-3 bg-gradient-to-br from-accent-purple/20 to-accent-blue/20 rounded-full group-hover:from-accent-purple/30 group-hover:to-accent-blue/30 transition-all duration-300 flex-shrink-0">
                       <div className="text-accent-purple">
-                        {info.icon}
+                        {React.cloneElement(info.icon, { size: window.innerWidth < 640 ? 18 : 24 })}
                       </div>
                     </div>
 
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-800 dark:text-white">
+                    <div className="min-w-0 flex-1">
+                      <h4 className="text-base sm:text-lg font-semibold text-gray-800 dark:text-white">
                         {info.title}
                       </h4>
                       <a
                         href={info.link}
-                        className="text-gray-600 dark:text-gray-300 hover:text-accent-purple transition-colors duration-300"
+                        className="text-sm sm:text-base text-gray-600 dark:text-gray-300 hover:text-accent-purple transition-colors duration-300 break-words"
                       >
                         {info.value}
                       </a>
@@ -282,12 +282,12 @@ const Contact = () => {
             </GlassCard>
 
             {/* Social Links */}
-            <GlassCard variant="minimal" className="p-8">
-              <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">
+            <GlassCard variant="minimal" className="p-4 sm:p-6 lg:p-8">
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 dark:text-white mb-4 sm:mb-6 text-center lg:text-left">
                 Follow Me
               </h3>
 
-              <div className="flex gap-4">
+              <div className="flex justify-center lg:justify-start gap-3 sm:gap-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={social.name}
@@ -295,18 +295,18 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     variants={fadeIn("up", "spring", index * 0.1, 0.75)}
-                    className={`p-4 glass backdrop-blur-md border border-white/20 dark:border-white/10 rounded-full text-gray-600 dark:text-gray-300 ${social.color} transition-all duration-300 hover:scale-110 hover:border-accent-purple/50`}
+                    className={`p-3 sm:p-4 glass backdrop-blur-md border border-white/20 dark:border-white/10 rounded-full text-gray-600 dark:text-gray-300 ${social.color} transition-all duration-300 hover:scale-110 hover:border-accent-purple/50`}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    {social.icon}
+                    {React.cloneElement(social.icon, { size: window.innerWidth < 640 ? 20 : 24 })}
                   </motion.a>
                 ))}
               </div>
             </GlassCard>
 
             {/* 3D Earth */}
-            <div className="h-[350px] rounded-2xl overflow-hidden">
+            <div className="h-[250px] sm:h-[300px] lg:h-[350px] rounded-xl sm:rounded-2xl overflow-hidden">
               <EarthCanvas />
             </div>
           </motion.div>
@@ -315,21 +315,22 @@ const Contact = () => {
         {/* Additional Info */}
         <motion.div
           variants={fadeIn("up", "spring", 0.4, 1)}
-          className="mt-16 text-center"
+          className="mt-12 sm:mt-16 text-center px-2 sm:px-4"
         >
-          <GlassCard variant="primary" className="p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-4">
+          <GlassCard variant="primary" className="p-4 sm:p-6 lg:p-8 max-w-4xl mx-auto">
+            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 sm:mb-4">
               Let's Build Something Amazing Together
             </h3>
-            <p className="text-gray-200 text-lg mb-6">
+            <p className="text-gray-200 text-sm sm:text-base lg:text-lg mb-4 sm:mb-6 leading-relaxed">
               Whether you have a project in mind, need technical consultation, or just want to connect,
               I'm always excited to discuss new opportunities and collaborations.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
               <GlassButton
                 variant="secondary"
                 size="md"
                 onClick={() => window.open("https://calendly.com/your-link", "_blank")}
+                className="w-full sm:w-auto"
               >
                 Schedule a Call
               </GlassButton>
@@ -337,6 +338,7 @@ const Contact = () => {
                 variant="ghost"
                 size="md"
                 onClick={() => window.open("/resume.pdf", "_blank")}
+                className="w-full sm:w-auto"
               >
                 Download Resume
               </GlassButton>
