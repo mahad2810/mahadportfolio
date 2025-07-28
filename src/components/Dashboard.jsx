@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
-import { Eye, Code, ExternalLink, FileText } from "lucide-react";
+import { Eye, Code, ExternalLink, FileText, Mail } from "lucide-react";
 import { styles } from "../styles";
 import { technologies, projects, experiences } from "../constants";
+import { profilePic } from "../assets";
 import { GlassCard, GlassButton } from "./ui";
 import { fadeIn, textVariant } from "../utils/motion";
 import { BallCanvas } from "./canvas";
@@ -139,25 +140,27 @@ const DashboardProjectCard = ({ project, index, onViewDetails }) => {
 
             {/* Action Buttons */}
             <div className="flex gap-2">
-              <GlassButton
-                variant="primary"
-                size="sm"
-                onClick={() => onViewDetails(project)}
-                icon={<Eye size={14} />}
-                className="flex-1 text-xs"
-              >
-                View Details
-              </GlassButton>
-
               {source_code_link && source_code_link !== "#" && (
                 <GlassButton
-                  variant="outline"
+                  variant="primary"
                   size="sm"
                   onClick={() => window.open(source_code_link, "_blank")}
                   icon={<Code size={14} />}
                   className="flex-1 text-xs"
                 >
-                  Code
+                  View Code
+                </GlassButton>
+              )}
+
+              {live_demo_link && live_demo_link !== "#" && (
+                <GlassButton
+                  variant="outline"
+                  size="sm"
+                  onClick={() => window.open(live_demo_link, "_blank")}
+                  icon={<ExternalLink size={14} />}
+                  className="flex-1 text-xs"
+                >
+                  Live Demo
                 </GlassButton>
               )}
             </div>
@@ -177,6 +180,11 @@ const Dashboard = () => {
   
   // Get current job (most recent experience)
   const currentJob = experiences[0];
+
+  const handleGetInTouch = () => {
+    // Navigate to contact section
+    window.dispatchEvent(new CustomEvent('navigateToSection', { detail: 'contact' }));
+  };
 
   return (
     <div className="relative min-h-screen">
@@ -198,29 +206,27 @@ const Dashboard = () => {
             {/* Current Position - Large Card */}
             <motion.div
               variants={fadeIn("up", "spring", 0.1, 1)}
-              className="lg:col-span-8"
+              className="lg:col-span-8 space-y-6"
             >
-              <GlassCard className="p-4 sm:p-6 lg:p-8 h-full bg-gradient-to-br from-accent-purple/10 via-transparent to-accent-blue/10">
-                <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 h-full">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden flex-shrink-0 ring-4 ring-accent-purple/20">
+              <GlassCard className="p-6 sm:p-8">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-4 border-white/20 flex-shrink-0">
                     <img
-                      src={currentJob.icon}
-                      alt={currentJob.company_name}
+                      src={profilePic}
+                      alt="Mahad Iqbal"
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="text-center sm:text-left flex-1">
-                    <div className="inline-block px-3 py-1 bg-accent-purple/20 rounded-full text-xs font-medium text-accent-purple mb-3">
-                      Current Position
-                    </div>
-                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 dark:text-white mb-2">
-                      {currentJob.title}
-                    </h3>
-                    <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-1">
-                      {currentJob.company_name}
+                  <div className="flex-1">
+                    <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white mb-2">
+                      Mahad Iqbal
+                    </h1>
+                    <p className="text-accent-purple font-semibold text-lg mb-3">
+                      AI/ML Engineer & Data Scientist & Analyst
                     </p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">
-                      {currentJob.date}
+                    <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base leading-relaxed">
+                      Passionate about building intelligent solutions that make a real-world impact. 
+                      Currently pursuing B.Tech in CSE (AI & ML) at Heritage Institute of Technology.
                     </p>
                   </div>
                 </div>
@@ -378,7 +384,7 @@ const Dashboard = () => {
               </GlassCard>
               <GlassCard className="p-6 text-center bg-gradient-to-br from-orange-500/10 to-red-500/10">
                 <h4 className="text-2xl font-bold text-orange-500 mb-1">
-                  2+
+                  1+
                 </h4>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">Years Experience</p>
               </GlassCard>
@@ -391,3 +397,11 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+
+
+
+
+
+
+

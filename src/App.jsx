@@ -19,6 +19,18 @@ const App = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const handleNavigateToSection = (event) => {
+      setActiveSection(event.detail);
+    };
+
+    window.addEventListener('navigateToSection', handleNavigateToSection);
+    
+    return () => {
+      window.removeEventListener('navigateToSection', handleNavigateToSection);
+    };
+  }, []);
+
   if (isLoading || !showContent) {
     return <LoadingScreen />;
   }

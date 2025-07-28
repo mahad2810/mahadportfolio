@@ -11,24 +11,20 @@ const educationData = [
     degree: "B.Tech in Computer Science & Engineering (AI & ML)",
     duration: "2023 - 2027",
     location: "Kolkata, India",
-    grade: "SGPA: 9.52 (2nd Semester), SGPA: 9.7 (EVEN 4th Semester)",
+    grade: "YGPA: 9.13 (1st Year), YGPA: 9.61 (2nd Year)",
     achievements: [
-      "Consistently maintained excellent academic performance with SGPA above 9.5",
+      "Consistently maintained excellent academic performance with YGPA above 9.0",
       "Strong foundation in AI/ML specialization subjects",
       "Active participation in technical projects and internships",
       "Developed multiple AI-powered applications during coursework"
     ],
     courses: [
-      "Environmental Sciences",
-      "Digital Circuit Design",
-      "Introduction to Smart Sensing Technology",
-      "Design & Analysis of Algorithms",
-      "Computer Organization and Architecture",
-      "Introduction to Artificial Intelligence",
-      "Design & Analysis of Algorithms Lab",
-      "Computer Architecture Lab",
-      "AI Lab",
-      "Digital Circuit Design Lab"
+      "Data Structures & Algorithms",
+      "Machine Learning",
+      "Artificial Intelligence",
+      "Database Management Systems",
+      "Web Development",
+      "Software Engineering"
     ]
   },
   {
@@ -36,19 +32,19 @@ const educationData = [
     degree: "Indian School Certificate (ISC) - Class XII",
     duration: "2021 - 2023",
     location: "Kolkata, India",
-    grade: "Overall: 91.9% | English: 91% | Mathematics: 81% | Physics: 93% | Chemistry: 93% | Computer Science: 97%",
+    grade: "Overall: 94.25%",
     achievements: [
-      "Exceptional performance in Computer Science with 97%",
-      "Strong performance in Science subjects (Physics: 93%, Chemistry: 93%)",
-      "Consistent academic excellence across all subjects",
-      "Grade A in Internal Assessment and Community Service"
+      "Outstanding academic performance across all subjects",
+      "Consistent high scores in Mathematics and Computer Science",
+      "Active participation in school technical events",
+      "Leadership roles in academic projects"
     ],
     courses: [
-      "English Language & Literature",
       "Mathematics",
       "Physics",
       "Chemistry",
-      "Computer Science"
+      "Computer Science",
+      "English"
     ]
   },
   {
@@ -56,10 +52,10 @@ const educationData = [
     degree: "Indian Certificate of Secondary Education (ICSE) - Class X",
     duration: "2019 - 2021",
     location: "Kolkata, India",
-    grade: "Overall: 91.9% | English: 92% | Hindi: 99% | History/Civics/Geography: 92% | Mathematics: 84% | Science: 92% | Economics: 96%",
+    grade: "Overall: 91.9%",
     achievements: [
-      "Outstanding performance in Hindi with 99%",
-      "Excellent performance in Economics with 96%",
+      "Outstanding performance across all subjects",
+      "Excellent performance in core subjects",
       "Consistent high scores across all subjects",
       "Grade A in Internal Assessment and Community Service"
     ],

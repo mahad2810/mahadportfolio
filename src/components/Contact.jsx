@@ -157,53 +157,78 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Contact Form */}
-          <motion.div variants={slideIn("left", "tween", 0.2, 1)}>
-            <GlassCard variant="default" className="p-8">
-              <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">
-                Send Me a Message
-              </h3>
+          <motion.div variants={slideIn("left", "tween", 0.2, 1)} className="flex-[0.75]">
+            <GlassCard variant="default" className="p-6 sm:p-8">
+              <div className="mb-8">
+                <p className={`${styles.sectionSubText} text-gray-500 dark:text-gray-400`}>
+                  Get in touch
+                </p>
+                <h3 className={`${styles.sectionHeadText} text-gray-800 dark:text-white`}>
+                  Contact Me
+                </h3>
+              </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <GlassInput
-                    label="Full Name"
-                    name="name"
-                    value={form.name}
-                    onChange={handleChange}
-                    error={errors.name}
-                    placeholder="Enter your full name"
-                  />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      Name *
+                    </label>
+                    <GlassInput
+                      name="name"
+                      value={form.name}
+                      onChange={handleChange}
+                      error={errors.name}
+                      placeholder="What's your name?"
+                      required
+                    />
+                  </div>
 
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      Email *
+                    </label>
+                    <GlassInput
+                      name="email"
+                      type="email"
+                      value={form.email}
+                      onChange={handleChange}
+                      error={errors.email}
+                      placeholder="What's your email address?"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    Subject *
+                  </label>
                   <GlassInput
-                    label="Email Address"
-                    name="email"
-                    type="email"
-                    value={form.email}
+                    name="subject"
+                    value={form.subject}
                     onChange={handleChange}
-                    error={errors.email}
-                    placeholder="your.email@example.com"
+                    error={errors.subject}
+                    placeholder="What's the subject of your message?"
+                    required
                   />
                 </div>
 
-                <GlassInput
-                  label="Subject"
-                  name="subject"
-                  value={form.subject}
-                  onChange={handleChange}
-                  error={errors.subject}
-                  placeholder="Project inquiry, collaboration, or general question"
-                />
-
-                <GlassInput
-                  label="Message"
-                  name="message"
-                  multiline
-                  rows={6}
-                  value={form.message}
-                  onChange={handleChange}
-                  error={errors.message}
-                  placeholder="Share details about your project, timeline, requirements, or just say hello! I'd love to hear from you."
-                />
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    Message *
+                  </label>
+                  <GlassInput
+                    name="message"
+                    multiline
+                    rows={6}
+                    value={form.message}
+                    onChange={handleChange}
+                    error={errors.message}
+                    placeholder="Share details about your project, timeline, requirements, or just say hello! I'd love to hear from you."
+                    required
+                  />
+                </div>
 
                 <GlassButton
                   type="submit"

@@ -19,7 +19,14 @@ const Hero = () => {
   };
 
   const handleContactClick = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    // For single page app navigation
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // If contact section not found, trigger navigation to contact
+      window.dispatchEvent(new CustomEvent('navigateToSection', { detail: 'contact' }));
+    }
   };
 
   return (
@@ -61,7 +68,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              AI/ML Engineer | Data Scientist
+              AI/ML Engineer | Data Scientist & Analyst
             </motion.p>
 
             {/* Description */}

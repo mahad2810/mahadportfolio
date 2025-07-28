@@ -169,7 +169,7 @@ const experiences = [
     ],
   },
   {
-    title: "Data Analysis Intern - Restaurant EDA",
+    title: "Data Analysis Intern",
     company_name: "Cognizify Technologies",
     icon: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiByeD0iMTAiIGZpbGw9IiMwNTk2NjkiLz4KPHRleHQgeD0iNTAiIHk9IjU1IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+REE8L3RleHQ+Cjwvc3ZnPgo=",
     iconBg: "#383E56",
@@ -200,113 +200,112 @@ const experiences = [
 
 const projects = [
   {
-    name: "🌐 AuraMed – AI-Powered Healthcare Logistics Platform",
-    description: "A unified digital healthcare ecosystem designed to modernize both rural and urban healthcare delivery.",
-    fullDescription: `A unified digital healthcare ecosystem designed to modernize both rural and urban healthcare delivery. AuraMed features dual dashboards—one for patients, one for hospitals—enabling appointment booking, AI-powered symptom checking, emergency SOS services, real-time bed and doctor availability, and hospital inventory control.
+    name: "🌐 AuraMed – Revolutionizing Hospital Operations & Patient Care",
+    description: "AuraMed bridges the gap between patients and healthcare providers by offering a unified, intelligent platform that enhances healthcare accessibility, continuity, and operational efficiency.",
+    fullDescription: `AuraMed bridges the gap between patients and healthcare providers by offering a unified, intelligent platform that enhances healthcare accessibility, continuity, and operational efficiency. It is a dual-interface hospital management system designed to serve both patients and hospitals through powerful features and real-time connectivity.
 
-**Key Features:**
-• AI-driven chatbot and disease predictor
-• SOS button with multilingual voice & GPS alerts
-• Real-time hospital resource monitoring
-• Google OAuth, secure health records, video consultations
-• Modular backend, GCP deployment, multi-tenant architecture
+**🔹 Patient Dashboard (for Individuals & Families):**
 
-**Role:** Full-Stack Developer · Team Lead
-**Hackathon:** Ideatex – Creative Mode | Team NeuroHack`,
+**Health Monitoring & Management:**
+• Book appointments with doctors and schedule lab tests
+• Access real-time health reports and medical history
+• Receive automated health alerts and medication reminders
+• Connect with family members for health updates and emergency notifications
+
+**Communication & Support:**
+• Direct video calling with healthcare providers
+• AI-powered chatbot for instant medical queries and guidance
+• Emergency contact system for critical health situations
+• Multilingual support for diverse patient populations
+
+**🔹 Hospital Dashboard (for Healthcare Providers):**
+
+**Patient Management System:**
+• Admit patients and track their real-time health metrics via connected devices (ECG, monitors, etc.)
+• Generate and send daily health reports to family members
+
+**Hospital Operations Management:**
+• Manage doctor appointments, lab test slots, and bed availability
+• Automate inventory and resource tracking
+• Enable direct communication through video calling with patients and families
+
+By connecting health monitoring devices to the web platform, AuraMed offers continuous insights and efficient management of hospital operations while empowering patients with control over their care.
+
+**Role:** Full-Stack Developer`,
     tags: [
-      { name: "Python Flask", color: "blue-text-gradient" },
-      { name: "MongoDB", color: "green-text-gradient" },
-      { name: "Firebase", color: "pink-text-gradient" },
-      { name: "React.js", color: "blue-text-gradient" },
-      { name: "WebRTC", color: "orange-text-gradient" },
-      { name: "Dialogflow", color: "green-text-gradient" },
-      { name: "Twilio", color: "pink-text-gradient" },
-      { name: "TensorFlow", color: "orange-text-gradient" }
+      { name: "Flask", color: "blue-text-gradient" },
+      { name: "Full-Stack Development", color: "green-text-gradient" },
+      { name: "Docker", color: "pink-text-gradient" },
+      { name: "Google Cloud Platform", color: "orange-text-gradient" },
+      { name: "MongoDB", color: "blue-text-gradient" },
+      { name: "Twilio", color: "green-text-gradient" },
+      { name: "TensorFlow", color: "pink-text-gradient" },
+      { name: "Dialogflow", color: "orange-text-gradient" }
     ],
-    image: "https://via.placeholder.com/400x300/4F46E5/FFFFFF?text=AuraMed",
-    source_code_link: "https://github.com/mahad2810/AuraMed28",
-    live_demo_link: "https://www.youtube.com/watch?v=ECsVEbnQ51I",
-    demo_video: "#",
-    snapshots: "#",
+    image: "https://via.placeholder.com/400x300/059669/FFFFFF?text=AuraMed",
+    source_code_link: "#",
+    demo_video: "https://www.youtube.com/watch?v=ECsVEbnQ51I",
     category: "ai",
     pdf_file: AuraMedProject,
     type: "pdf"
   },
   {
-    name: "🌍 MaveriqAir – Environmental Intelligence & AQI Forecasting",
-    description: "A modular platform that combines live CPCB data, Sentinel-5P satellite imagery, and AI-based forecasting to monitor air pollution and urban flooding in India.",
-    fullDescription: `MaveriqAir is a modular platform that combines live CPCB data, Sentinel-5P satellite imagery, and AI-based forecasting to monitor air pollution and urban flooding in India. It provides 72-hour AQI predictions, pollution source mapping, and flood alerts.
+    name: "🌍 MaveriqAir – Real-Time Air Quality Visualizer & Forecast App",
+    description: "Developed MaveriqAir, a real-time web platform addressing air quality monitoring and urban flooding alerts in India.",
+    fullDescription: `Developed MaveriqAir, a real-time web platform addressing air quality monitoring and urban flooding alerts in India. The system integrates CPCB ground sensors, high-resolution satellite data (Sentinel-5P), and AI-based forecasting models to deliver hyperlocal AQI insights and 24–72 hour forecasts.
 
-**Key Features:**
-• AI-predicted AQI forecasts (24–72 hrs)
-• Real-time waterlogging detection for commuters
-• Pollution source overlays: fire zones, industrial clusters
-• Multilingual health alerts with offline support
-• Progressive Web App optimized for low-connectivity areas
+**Key Highlights:**
+• **Pollution Source Mapping** – Visualizes fire zones, industrial clusters, and traffic corridors
+• **Waterlogging Detection** – Alerts users about flooded roads with rerouting options
+• **AI-Powered Forecasting** – Multi-day predictions for better preparedness
+• **Multilingual & Offline Support** – Health tips in regional languages and cached AQI data for rural areas
+• **Progressive Web App Ready** – Mobile-first design with plans for Flutter-based native app
+
+**Demo Video:** https://www.youtube.com/watch?v=Sb3SMGgRnZ4&themeRefresh=1
+**MVP:** https://maveriq-air.vercel.app/
 
 **Role:** Full-Stack Developer
 **Hackathon:** Ideatex – Bone Meal | Team Interstellar Maverick`,
     tags: [
       { name: "React.js", color: "blue-text-gradient" },
-      { name: "Python", color: "green-text-gradient" },
-      { name: "WebSockets", color: "pink-text-gradient" },
-      { name: "Satellite APIs", color: "orange-text-gradient" },
-      { name: "Machine Learning", color: "blue-text-gradient" }
+      { name: "Data Visualization", color: "green-text-gradient" },
+      { name: "Machine Learning", color: "pink-text-gradient" },
+      { name: "Data Integration", color: "orange-text-gradient" },
+      { name: "Web Development", color: "blue-text-gradient" }
     ],
     image: "https://via.placeholder.com/400x300/059669/FFFFFF?text=MaveriqAir",
     source_code_link: "https://github.com/mahad2810/MaveriqAir",
-    live_demo_link: "https://www.youtube.com/watch?v=Sb3SMGgRnZ4&t=4s",
-    demo_video: "#",
+    live_demo_link: "https://maveriq-air.vercel.app/",
+    demo_video: "https://www.youtube.com/watch?v=Sb3SMGgRnZ4&themeRefresh=1",
     category: "ai",
     pdf_file: MaveriqAirProject,
     type: "pdf"
   },
   {
-    name: "🧬 DA(CV) – Lung Cancer Prediction & Data Analysis",
-    description: "A deep-dive data analysis project using a dataset of 220,000+ individuals to identify lung cancer risk factors and survival patterns.",
-    fullDescription: `A deep-dive data analysis project using a dataset of 220,000+ individuals to identify lung cancer risk factors and survival patterns. Utilized SQL queries for insights, performed statistical analysis, and built an interactive Power BI dashboard for healthcare recommendations.
+    name: "🧬 Lung Cancer Prediction – Data Analysis & Dashboard",
+    description: "Performed an end-to-end data analysis project using the Lung Cancer Prediction dataset to identify high-risk individuals and uncover factors influencing lung cancer prevalence and survival rates.",
+    fullDescription: `Performed an end-to-end data analysis project using the Lung Cancer Prediction dataset to identify high-risk individuals and uncover factors influencing lung cancer prevalence and survival rates.
 
-**Key Features:**
-• Advanced SQL analysis (basic to advanced queries)
-• Correlation between smoking, pollution, and cancer prevalence
-• Predictive indicators by country, gender, and detection timing
-• Strategic insights for early detection and treatment programs
+**Key Highlights:**
+• **Data Preprocessing:** Removed duplicates, handled missing values, standardized categorical fields, and mapped boolean attributes for analysis
+• **Statistical Analysis & Insights:** Identified correlations between smoking, air pollution, and lung cancer risk; highlighted demographic and environmental factors
+• **SQL Analytics:** Wrote queries from basic to advanced level in PostgreSQL for cohort analysis, prevalence trends, and survival rate segmentation
+• **Dashboarding:** Designed interactive dashboards in Power BI to visualize prevalence rates, mortality trends, and country-wise patterns for actionable insights
+• **Business Recommendations:** Proposed early detection strategies, smoking cessation programs, and environmental health initiatives for healthcare improvement
 
-**Role:** Data Analyst
-**Platform:** Futurion Upskilling India Portfolio Challenge`,
+**Role:** Data Analyst & Dashboard Developer`,
     tags: [
-      { name: "PostgreSQL", color: "blue-text-gradient" },
-      { name: "Excel", color: "green-text-gradient" },
-      { name: "Power BI", color: "pink-text-gradient" }
+      { name: "Microsoft Power BI", color: "blue-text-gradient" },
+      { name: "SQL", color: "green-text-gradient" },
+      { name: "Data Analysis", color: "pink-text-gradient" },
+      { name: "PostgreSQL", color: "orange-text-gradient" },
+      { name: "Statistical Analysis", color: "blue-text-gradient" }
     ],
-    image: "https://via.placeholder.com/400x300/DC2626/FFFFFF?text=Data+Analysis",
+    image: "https://via.placeholder.com/400x300/0891B2/FFFFFF?text=Lung+Cancer+Analysis",
     source_code_link: "#",
     category: "data",
     pdf_file: DAProject,
     type: "pdf"
-  },
-  {
-    name: "🤖 Computer Vision Suite with MediaPipe",
-    description: "A robust collection of real-time computer vision tools built using MediaPipe and OpenCV.",
-    fullDescription: `A robust collection of real-time computer vision tools built using MediaPipe and OpenCV. Features include human pose estimation, facial mesh detection, hand gesture recognition, and interactive gesture-controlled utilities like virtual mouse and volume control.
-
-**Modules Implemented:**
-• Real-time pose estimation and landmark detection
-• Gesture recognition with finger tracking
-• Virtual mouse and volume control via gestures
-• Face mesh (468 landmark points) with live face analytics
-• Modular, class-based architecture optimized for live video
-
-**Role:** Computer Vision Engineer`,
-    tags: [
-      { name: "Python", color: "blue-text-gradient" },
-      { name: "OpenCV", color: "green-text-gradient" },
-      { name: "MediaPipe", color: "pink-text-gradient" },
-      { name: "NumPy", color: "orange-text-gradient" }
-    ],
-    image: "https://via.placeholder.com/400x300/7C3AED/FFFFFF?text=Computer+Vision",
-    source_code_link: "https://github.com/mahad2810/ComputerVision",
-    category: "ai"
   },
   {
     name: "📈 Trade2Algo – Full-Stack Trading Dashboard",

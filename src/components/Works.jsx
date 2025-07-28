@@ -121,16 +121,65 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                   </div>
 
                   {/* Description */}
-                  <div className="mb-8">
-                    {project.fullDescription ? (
-                      <div className="whitespace-pre-line text-gray-600 dark:text-gray-300 leading-relaxed">
-                        {project.fullDescription}
-                      </div>
-                    ) : (
-                      <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                        {project.description}
-                      </p>
-                    )}
+                  <div className="mb-6">
+                    <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-3">
+                      Description
+                    </h3>
+                    <div className="text-gray-600 dark:text-gray-300 leading-relaxed space-y-3">
+                      {project.fullDescription ? (
+                        project.fullDescription.split('\n').map((paragraph, index) => {
+                          if (paragraph.trim() === '') return null;
+                          
+                          // Handle headers (lines starting with **)
+                          if (paragraph.includes('**') && paragraph.includes(':**')) {
+                            const headerText = paragraph.replace(/\*\*/g, '').replace(':', '');
+                            return (
+                              <h4 key={index} className="text-base font-semibold text-gray-800 dark:text-white mt-4 mb-2">
+                                {headerText}
+                              </h4>
+                            );
+                          }
+                          
+                          // Handle bullet points (lines starting with •)
+                          if (paragraph.trim().startsWith('•')) {
+                            return (
+                              <div key={index} className="flex items-start gap-2 ml-4">
+                                <span className="text-accent-purple mt-1 flex-shrink-0">•</span>
+                                <span>{paragraph.replace(/^•\s*/, '')}</span>
+                              </div>
+                            );
+                          }
+                          
+                          // Handle bold text within paragraphs
+                          if (paragraph.includes('**')) {
+                            const parts = paragraph.split(/(\*\*.*?\*\*)/g);
+                            return (
+                              <p key={index} className="mb-2">
+                                {parts.map((part, partIndex) => {
+                                  if (part.startsWith('**') && part.endsWith('**')) {
+                                    return (
+                                      <strong key={partIndex} className="font-semibold text-gray-800 dark:text-white">
+                                        {part.replace(/\*\*/g, '')}
+                                      </strong>
+                                    );
+                                  }
+                                  return part;
+                                })}
+                              </p>
+                            );
+                          }
+                          
+                          // Regular paragraphs
+                          return (
+                            <p key={index} className="mb-2">
+                              {paragraph}
+                            </p>
+                          );
+                        })
+                      ) : (
+                        <p>{project.description}</p>
+                      )}
+                    </div>
                   </div>
 
                   {/* Action Buttons */}

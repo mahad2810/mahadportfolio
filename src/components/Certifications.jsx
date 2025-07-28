@@ -28,15 +28,15 @@ import internshala from '../assets/company/internshala.jpg';
 
 const certificationsData = [
   {
-    title: "Certificate of Achievement - Google Developer Groups",
-    issuer: "Google Developer Groups (GDG)",
+    title: "🏅 Certificate of Achievement – Google Developer Groups, Heritage Institute of Technology",
+    issuer: "Google Developer Groups (GDG) On Campus, HITK",
     issuerLogo: gdg,
-    date: "2024",
-    level: "Community Achievement",
-    credentialId: "GDG-ACHIEVEMENT-2024",
+    date: "July 25, 2025",
+    level: "1st Runners Up (2nd Place) – IdeateX 2025",
+    credentialId: "GDG-IDEATEX-2025",
     verifyLink: "#",
-    skills: ["Google Technologies", "Developer Community", "Technical Leadership", "Knowledge Sharing"],
-    description: "Recognized for outstanding contribution and participation in Google Developer Groups community activities. Demonstrated commitment to learning and sharing Google technologies and best practices.",
+    skills: ["React.js", "Data Visualization", "Machine Learning", "Data Integration", "Web Development", "TypeScript", "Google Cloud Platform (GCP)"],
+    description: "Recognized for developing MaveriqAir, a real-time web platform that addresses air quality monitoring and urban flooding alerts in Indian cities. The solution demonstrated creativity, problem-solving, and real-world impact in the 'Bone Meal' track during the IdeateX 2025 Hackathon.",
     image: gdgCert
   },
   {
