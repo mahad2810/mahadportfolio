@@ -172,16 +172,34 @@ const Experience = () => {
           </h2>
         </motion.div>
 
-        {/* Experience Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 place-items-center px-4 sm:px-0">
-          {experiences.map((experience, index) => (
-            <ExperienceCard
-              key={`experience-${index}`}
-              experience={experience}
-              index={index}
-              onViewDetails={handleViewDetails}
-            />
-          ))}
+        {/* Experience Cards Grid - Mobile Carousel Style */}
+        <div className="px-4 sm:px-0">
+          {/* Mobile: Horizontal scroll, Tablet+: Grid */}
+          <div className="sm:hidden">
+            <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
+              {experiences.map((experience, index) => (
+                <div key={`experience-${index}`} className="flex-shrink-0 w-72 snap-center">
+                  <ExperienceCard
+                    experience={experience}
+                    index={index}
+                    onViewDetails={handleViewDetails}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          {/* Tablet and Desktop Grid */}
+          <div className="hidden sm:grid sm:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8 place-items-center">
+            {experiences.map((experience, index) => (
+              <ExperienceCard
+                key={`experience-${index}`}
+                experience={experience}
+                index={index}
+                onViewDetails={handleViewDetails}
+              />
+            ))}
+          </div>
         </div>
 
         <ExperienceModal

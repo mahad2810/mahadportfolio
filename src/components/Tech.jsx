@@ -38,17 +38,17 @@ const Tech = () => {
 
             </h3>
 
-            {/* Improved grid layout with better spacing and alignment */}
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-8 gap-6 lg:gap-8 place-items-center max-w-6xl mx-auto">
+            {/* Mobile: 4 columns, Tablet: 6 columns, Desktop: 8 columns */}
+            <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 gap-3 sm:gap-6 lg:gap-8 place-items-center max-w-6xl mx-auto">
               {technologies.map((technology, index) => (
                 <motion.div
                   key={technology.name}
-                  className="w-20 h-20 lg:w-24 lg:h-24 group"
+                  className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 group"
                   initial={{ opacity: 0, scale: 0.5 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{
                     duration: 0.6,
-                    delay: index * 0.1,
+                    delay: index * 0.05,
                     type: "spring",
                     stiffness: 100
                   }}
@@ -56,9 +56,9 @@ const Tech = () => {
                 >
                   <BallCanvas icon={technology.icon} />
 
-                  {/* Technology name tooltip */}
-                  <div className="text-center mt-2">
-                    <span className="text-xs font-medium text-gray-600 dark:text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {/* Technology name tooltip - Hidden on mobile for cleaner look */}
+                  <div className="text-center mt-1 sm:mt-2">
+                    <span className="text-xs font-medium text-gray-600 dark:text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block">
                       {technology.name}
                     </span>
                   </div>

@@ -47,10 +47,10 @@ const About = () => {
         </motion.div>
 
         <div className="space-y-16">
-          {/* Highlights Grid - Top Section */}
+          {/* Highlights Grid - Mobile Optimized */}
           <motion.div
             variants={fadeIn("up", "spring", 0.1, 1)}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6"
           >
             {highlights.map((highlight, index) => (
               <motion.div
@@ -59,15 +59,17 @@ const About = () => {
               >
                 <GlassCard
                   variant="default"
-                  className="p-6 text-center group hover:scale-105 transition-transform duration-300"
+                  className="p-3 sm:p-6 text-center group hover:scale-105 transition-transform duration-300 h-full"
                 >
-                  <div className="text-accent-purple mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
-                    {highlight.icon}
+                  <div className="text-accent-purple mb-2 sm:mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-8 h-8 sm:w-6 sm:h-6 flex items-center justify-center">
+                      {React.cloneElement(highlight.icon, { size: window.innerWidth < 640 ? 20 : 24 })}
+                    </div>
                   </div>
-                  <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-2">
+                  <h4 className="text-sm sm:text-lg font-semibold text-gray-800 dark:text-white mb-1 sm:mb-2 leading-tight">
                     {highlight.title}
                   </h4>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                  <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-snug">
                     {highlight.description}
                   </p>
                 </GlassCard>

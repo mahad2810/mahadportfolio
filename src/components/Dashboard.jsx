@@ -200,55 +200,86 @@ const Dashboard = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 py-10 sm:py-16 lg:py-20">
 
-          {/* Modern Grid Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 mb-8 sm:mb-12 lg:mb-16">
-
-            {/* Current Position - Large Card */}
+          {/* Modern Grid Layout - Mobile Optimized */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4 sm:gap-6 mb-8 sm:mb-12 lg:mb-16">
+            
+            {/* Welcome Card - Full width on mobile */}
             <motion.div
-              variants={fadeIn("up", "spring", 0.1, 1)}
-              className="lg:col-span-8 space-y-6"
+              variants={fadeIn("right", "spring", 0.1, 1)}
+              className="sm:col-span-2 lg:col-span-8"
             >
-              <GlassCard className="p-6 sm:p-8">
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-4 border-white/20 flex-shrink-0">
+              <GlassCard className="p-4 sm:p-8 h-full">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 mb-4 sm:mb-6">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-accent-purple to-accent-blue rounded-full p-1">
                     <img
                       src={profilePic}
                       alt="Mahad Iqbal"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full rounded-full object-cover"
                     />
                   </div>
                   <div className="flex-1">
-                    <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white mb-2">
-                      Mahad Iqbal
-                    </h1>
-                    <p className="text-accent-purple font-semibold text-lg mb-3">
-                      AI/ML Engineer & Data Scientist & Analyst
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base leading-relaxed">
-                      Passionate about building intelligent solutions that make a real-world impact. 
-                      Currently pursuing B.Tech in CSE (AI & ML) at Heritage Institute of Technology.
+                    <h2 className="text-xl sm:text-3xl font-bold text-gray-800 dark:text-white mb-1 sm:mb-2">
+                      Welcome to My Portfolio
+                    </h2>
+                    <p className="text-sm sm:text-lg text-gray-600 dark:text-gray-300">
+                      AI/ML Engineer & Data Scientist
                     </p>
                   </div>
+                </div>
+                
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed mb-4 sm:mb-6">
+                  Passionate about transforming data into intelligent solutions. Explore my journey through machine learning, data science, and innovative AI applications.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                  <button
+                    onClick={handleGetInTouch}
+                    className="flex-1 sm:flex-none bg-gradient-to-r from-accent-purple to-accent-blue text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
+                  >
+                    <MessageCircle size={16} />
+                    Get In Touch
+                  </button>
+                  <button className="flex-1 sm:flex-none border border-accent-purple text-accent-purple px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium hover:bg-accent-purple/10 transition-all duration-300 flex items-center justify-center gap-2">
+                    <Download size={16} />
+                    Download CV
+                  </button>
                 </div>
               </GlassCard>
             </motion.div>
 
-            {/* Quick Stats - Vertical Cards */}
+            {/* Core Technologies - 2x3 grid on mobile */}
             <motion.div
-              variants={fadeIn("up", "spring", 0.2, 1)}
-              className="lg:col-span-4 grid grid-cols-2 lg:grid-cols-1 gap-3 sm:gap-4"
+              variants={fadeIn("left", "spring", 0.3, 1)}
+              className="sm:col-span-2 lg:col-span-4"
             >
-              <GlassCard className="p-4 sm:p-6 text-center bg-gradient-to-br from-green-500/10 to-emerald-500/10">
-                <h4 className="text-xl sm:text-2xl font-bold text-green-500 mb-1">
-                  {projects.length}+
-                </h4>
-                <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm">Projects</p>
-              </GlassCard>
-              <GlassCard className="p-4 sm:p-6 text-center bg-gradient-to-br from-blue-500/10 to-cyan-500/10">
-                <h4 className="text-xl sm:text-2xl font-bold text-blue-500 mb-1">
-                  {technologies.length}+
-                </h4>
-                <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm">Technologies</p>
+              <GlassCard className="p-4 sm:p-6 h-full">
+                <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-accent-purple to-accent-blue rounded-lg flex items-center justify-center">
+                    <Code size={14} className="sm:w-4 sm:h-4 text-white" />
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-white">
+                    Core Technologies
+                  </h3>
+                </div>
+                <div className="grid grid-cols-3 sm:grid-cols-3 gap-2 sm:gap-4 place-items-center">
+                  {topTechnologies.map((tech, index) => (
+                    <motion.div
+                      key={tech.name}
+                      className="w-12 h-12 sm:w-16 sm:h-16 group"
+                      initial={{ opacity: 0, scale: 0.5 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{
+                        duration: 0.6,
+                        delay: index * 0.1,
+                        type: "spring",
+                        stiffness: 100
+                      }}
+                      whileHover={{ scale: 1.1 }}
+                    >
+                      <BallCanvas icon={tech.icon} />
+                    </motion.div>
+                  ))}
+                </div>
               </GlassCard>
             </motion.div>
           </div>
@@ -397,6 +428,7 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
 
 
 
