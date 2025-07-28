@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
-import { Eye, Code, ExternalLink, FileText, Mail } from "lucide-react";
+import { Eye, Code, ExternalLink, FileText, Mail, MessageCircle, Download } from "lucide-react";
 import { styles } from "../styles";
 import { technologies, projects, experiences } from "../constants";
 import { profilePic } from "../assets";
