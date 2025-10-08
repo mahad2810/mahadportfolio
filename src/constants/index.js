@@ -141,57 +141,20 @@ const technologies = [
   },
 ];
 
+// Experiences trimmed per request: retain only current AI Wallah role
 const experiences = [
   {
-    title: "Generative AI Developer Intern",
+    title: "Generative AI Intern",
     company_name: "AI Wallah (Quality Connections Pvt Ltd)",
     icon: aiwallah,
     iconBg: "#383E56",
-    date: "July 7, 2025 - October 7, 2025",
+    date: "July 7, 2025 - Present",
+    headline: "Driving applied Generative AI from research to real-world impact",
     points: [
-      "Worked on real-world projects involving generative AI models and large language models (LLMs).",
-      "Gained hands-on experience in developing and deploying generative AI applications.",
-      "Focus Areas: LLMs, Generative AI, Project Deployment, Real-world AI Solutions.",
-      "Collaborated with cross-functional teams to deliver production-ready AI solutions.",
-    ],
-  },
-  {
-    title: "Machine Learning Intern",
-    company_name: "CODSOFT",
-    icon: codsoft,
-    iconBg: "#E6DEDD",
-    date: "February 2025 - March 2025",
-    points: [
-      "Genre Classification using Logistic Regression: Built a text classifier using TF-IDF and Logistic Regression with hyperparameter tuning to predict genres from descriptions.",
-      "Customer Churn Prediction: Implemented Logistic Regression, Random Forest, and Gradient Boosting models; performed EDA, feature encoding, and model evaluation to predict churn.",
-      "Spam Classification: Created a real-time SMS spam classifier with TF-IDF and saved the model using pickle for future predictions.",
-      "Skills: Logistic Regression, Random Forest, Gradient Boosting, TF-IDF, Scikit-learn, Pickle, GridSearchCV, Data Preprocessing.",
-    ],
-  },
-  {
-    title: "Data Analysis Intern",
-    company_name: "Cognizify Technologies",
-    icon: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiByeD0iMTAiIGZpbGw9IiMwNTk2NjkiLz4KPHRleHQgeD0iNTAiIHk9IjU1IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+REE8L3RleHQ+Cjwvc3ZnPgo=",
-    iconBg: "#383E56",
-    date: "January 2025 - February 2025",
-    points: [
-      "Conducted exploratory data analysis on restaurant data to identify trends in cuisines, city-wise ratings, price ranges, online delivery, and text review sentiment.",
-      "Identified top 3 cuisines and cities with highest number of restaurants.",
-      "Visualized price distribution and delivery-based rating comparisons.",
-      "Performed sentiment keyword extraction and correlation analysis between votes and ratings. Skills: Pandas, Seaborn, Matplotlib, Text Analysis, Visualization, EDA, Data Cleaning.",
-    ],
-  },
-  {
-    title: "Data Science Virtual Intern",
-    company_name: "Pinnacle Labs",
-    icon: pinnacle,
-    iconBg: "#E6DEDD",
-    date: "December 12, 2024 - January 11, 2025",
-    points: [
-      "Certificate ID: PL/2024/DECP4/079 - Worked on data science projects and demonstrated commendable performance in problem-solving, exploratory analysis, and deriving actionable insights from datasets.",
-      "Built advanced analytics and text classification models using Transformer-based architectures (e.g., BERT) and traditional ML algorithms.",
-      "Performed advanced text preprocessing, feature engineering, and model evaluation using libraries like NLTK, scikit-learn, and Transformers.",
-      "Explored Generative AI use-cases and enhanced NLP workflows with Prompt Engineering and contextual understanding.",
+      "Building and fine‑tuning LLM & diffusion model pipelines (inference optimization, prompt strategies, safety filters).",
+      "Designing RAG + vector search stacks for domain grounded answers (latency < 2s p95).",
+      "Implementing evaluation harnesses (factuality, toxicity, hallucination) to production‑gate model updates.",
+      "Deploying containerized microservices (GPU scheduling, autoscaling) and monitoring with structured telemetry.",
     ],
   },
 ];

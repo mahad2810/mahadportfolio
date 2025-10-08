@@ -1,6 +1,6 @@
 import { useRef, useState, useMemo, useEffect } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { useGLTF, Text, Sky, Cloud } from '@react-three/drei';
+import { Text, Sky, Cloud } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import { Vector3, CatmullRomCurve3, BufferGeometry, Float32BufferAttribute, DoubleSide } from 'three';
 import { useInView } from 'react-intersection-observer';
@@ -323,84 +323,35 @@ const ParticleSystem = () => {
   return null;
 };
 
-// Enhanced Animated Car with particle effects and smooth movement
-const AnimatedCar = ({ progress, curve, onReachCheckpoint }) => {
-  const carRef = useRef();
-  const car = useGLTF('./car_3d_model/scene.gltf');
+// Removed animated car; replaced with a subtle glowing progress orb
+const ProgressOrb = ({ progress, curve, onReachCheckpoint }) => {
+  const orbRef = useRef();
   const [currentCheckpoint, setCurrentCheckpoint] = useState(-1);
-
   const [prevProgress, setPrevProgress] = useState(0);
 
   useFrame((_, delta) => {
-    if (carRef.current && curve) {
-      // Smooth progress interpolation
-      const targetProgress = progress;
-      const currentProgress = prevProgress + (targetProgress - prevProgress) * delta * 5;
-      setPrevProgress(currentProgress);
+    if (!curve || !orbRef.current) return;
+    const targetProgress = progress;
+    const currentProgress = prevProgress + (targetProgress - prevProgress) * delta * 5;
+    setPrevProgress(currentProgress);
+    const position = curve.getPoint(currentProgress);
+    orbRef.current.position.lerp(position.clone().add(new Vector3(0, 0.8, 0)), delta * 6);
+    orbRef.current.rotation.y += delta * 0.6;
 
-      // Get position and tangent along curve
-      const position = curve.getPoint(currentProgress);
-      const tangent = curve.getTangent(currentProgress);
-
-      // Set car position with smooth transition
-      const targetPosition = position.clone();
-      targetPosition.y += 0.25;
-
-      carRef.current.position.lerp(targetPosition, delta * 8);
-
-      // Fixed rotation to face direction of movement
-      const lookAtPoint = position.clone().add(tangent);
-      lookAtPoint.y = carRef.current.position.y;
-
-      // Calculate rotation manually to avoid upside-down issues
-      const direction = tangent.clone().normalize();
-      const angle = Math.atan2(direction.x, direction.z);
-      carRef.current.rotation.y = angle;
-
-      // Reset other rotations to keep car upright
-      carRef.current.rotation.x = 0;
-      carRef.current.rotation.z = 0;
-
-      // Check for checkpoint reached
-      const checkpointIndex = Math.floor(currentProgress * experiences.length);
-      if (checkpointIndex !== currentCheckpoint && checkpointIndex < experiences.length) {
-        setCurrentCheckpoint(checkpointIndex);
-        onReachCheckpoint(checkpointIndex, position);
-      }
+    const checkpointIndex = Math.floor(currentProgress * experiences.length);
+    if (checkpointIndex !== currentCheckpoint && checkpointIndex < experiences.length) {
+      setCurrentCheckpoint(checkpointIndex);
+      onReachCheckpoint?.(checkpointIndex, position);
     }
   });
 
   return (
-    <group>
-      <group ref={carRef}>
-        <primitive
-          object={car.scene}
-          scale={3.024}
-          position={[0, 0, 0]}
-          castShadow
-        />
-
-
-
-        {/* Car headlights */}
-        <pointLight
-          position={[0.3, 0.1, 0.8]}
-          intensity={0.5}
-          distance={5}
-          color="#ffffff"
-          castShadow
-        />
-        <pointLight
-          position={[-0.3, 0.1, 0.8]}
-          intensity={0.5}
-          distance={5}
-          color="#ffffff"
-          castShadow
-        />
-      </group>
-
-      {/* Particle system for exhaust - temporarily disabled */}
-      <ParticleSystem />
+    <group ref={orbRef}>
+      <mesh>
+        <sphereGeometry args={[0.7, 32, 32]} />
+        <meshStandardMaterial emissive="#915EFF" emissiveIntensity={1.2} color="#915EFF" transparent opacity={0.85} />
+      </mesh>
+      <pointLight intensity={1.4} distance={6} color="#915EFF" />
     </group>
   );
 };
@@ -622,8 +573,8 @@ const Timeline3D = ({ progress, onCheckpointReached, onMarkerClick }) => {
       {/* Road surface */}
       <RoadSurface curve={curve} />
 
-      {/* Animated car */}
-      <AnimatedCar
+      {/* Progress orb */}
+      <ProgressOrb
         progress={progress}
         curve={curve}
         onReachCheckpoint={onCheckpointReached}

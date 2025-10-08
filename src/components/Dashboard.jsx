@@ -205,7 +205,7 @@ const Dashboard = () => {
   const topProjects = projects.slice(0, 3);
   
   // Get current job (most recent experience)
-  const currentJob = experiences[0];
+    const currentJob = experiences[0]; // Assuming only one experience is relevant
 
   const handleGetInTouch = () => {
     // Navigate to contact section
@@ -434,8 +434,8 @@ const Dashboard = () => {
               className="lg:col-span-1 space-y-4"
             >
               <GlassCard className="p-6 text-center bg-gradient-to-br from-purple-500/10 to-pink-500/10">
-                <h4 className="text-2xl font-bold text-purple-500 mb-1">
-                  {experiences.length}+
+                  <h4 className="text-2xl font-bold text-purple-500 mb-1">
+                    1+
                 </h4>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">Experiences</p>
               </GlassCard>

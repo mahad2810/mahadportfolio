@@ -3,7 +3,6 @@ import Hero from "./Hero";
 import Navbar from "./Navbar";
 import About from "./About";
 import Experience from "./Experience";
-import ExperienceTimeline from "./ExperienceTimeline";
 import Education from "./Education";
 import Tech from "./Tech";
 import Works from "./Works";
@@ -20,7 +19,6 @@ export {
   Navbar,
   About,
   Experience,
-  ExperienceTimeline,
   Education,
   Tech,
   Works,

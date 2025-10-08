@@ -61,26 +61,50 @@ const Hero = () => {
               Hi, I'm <span className='text-accent-purple'>Mahad Iqbal</span>
             </motion.h1>
 
-            {/* Subtitle */}
+            {/* Subtitle / Professional Headline */}
             <motion.p
-              className={`${styles.heroSubText} text-gray-600 dark:text-gray-300 mb-2 sm:mb-3`}
+              className={`${styles.heroSubText} text-gray-700 dark:text-gray-200 mb-3 sm:mb-4 font-semibold tracking-wide bg-gradient-to-r from-accent-purple via-accent-blue to-pink-500 bg-clip-text text-transparent`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.35 }}
             >
-              AI/ML Engineer | Data Scientist & Analyst
+              AI/ML Engineer · Data Scientist & Analyst · Generative AI Intern @ AI Wallah
             </motion.p>
 
             {/* Description */}
-            <motion.p
-              className="text-sm sm:text-base lg:text-lg text-gray-500 dark:text-gray-400 mb-6 sm:mb-8 max-w-2xl leading-relaxed"
+            <motion.div
+              className="space-y-4 mb-6 sm:mb-8 max-w-3xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 0.55 }}
             >
-              B.Tech in CSE (AI & ML) | Passionate About Data Science, NLP, and Real-World ML Applications
-              | Building intelligent solutions that make a difference | 2x Hackathon Winner
-            </motion.p>
+              <p className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                AI practitioner focused on <span className="font-semibold text-accent-purple/90">LLMs</span>,
+                <span className="font-semibold text-accent-blue/90"> multimodal generation</span>, and
+                <span className="font-semibold text-pink-500/80"> data‑driven intelligence</span>. B.Tech CSE - AIML @ Heritage Institute of Technology.
+                I love shipping production‑ready, measurable ML systems that move real metrics—not just demos.
+              </p>
+              <div className="flex flex-wrap gap-2 sm:gap-3">
+                {[
+                  '4× Hackathon Winner',
+                  'RAG & Vector Search',
+                  'MLOps & Model Eval',
+                  'Generative AI (LLMs / Diffusion)',
+                  'Data Storytelling'
+                ].map((badge, i) => (
+                  <span
+                    key={badge}
+                    className="relative px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium tracking-wide backdrop-blur-md bg-white/60 dark:bg-white/5 border border-white/30 dark:border-white/10 shadow-sm hover:shadow-md transition-all duration-300 group overflow-hidden"
+                    style={{ animationDelay: `${0.05 * i}s` }}
+                  >
+                    <span className="absolute inset-0 bg-gradient-to-r from-accent-purple/20 via-transparent to-accent-blue/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-purple via-accent-blue to-pink-500">
+                      {badge}
+                    </span>
+                  </span>
+                ))}
+              </div>
+            </motion.div>
 
             {/* CTA Buttons */}
             <motion.div
