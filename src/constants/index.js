@@ -273,7 +273,7 @@ The system is specifically designed to address common safety challenges:
       "/setuka/Screenshot 2025-10-08 193327.png",
       "/setuka/Screenshot 2025-10-08 193337.png"
     ],
-    image: "/setuka/Screenshot 2025-10-08 193305.png",
+    image: "/Main(Setuka).png",
     demo_video: "/setuka/WhatsApp Video 2025-09-26 at 8.54.32 PM.mp4",
     source_code_link: "#",
     category: "fullstack",
@@ -357,13 +357,15 @@ The platform is designed to deliver substantial benefits across environmental, s
       { name: "Sustainability", color: "pink-text-gradient" }
     ],
     image_gallery: [
-      "/eco/Screenshot 2025-08-21 145550.png", 
-      "/eco/Screenshot 2025-08-21 144929.png", 
-      "/eco/Screenshot 2025-08-21 150452.png",
-      "/eco/Screenshot 2025-08-21 145640.png",
-      "/eco/Screenshot 2025-08-21 150214.png"
+      "/eco/main.png",
+      "/eco/Screenshot 2025-08-21 144818.png",
+      "/eco/Screenshot 2025-08-21 145217.png",
+      "/eco/Screenshot 2025-08-21 145323.png",
+      "/eco/Screenshot 2025-08-21 145550.png",
+      "/eco/Screenshot 2025-08-21 145858.png"
     ],
-    image: "/eco/Screenshot 2025-08-21 145550.png",
+    image: "/Main(Eco).png",
+    coverImage: "/Main(Eco).png",
     source_code_link: "#",
     category: "fullstack",
     type: "gallery"
@@ -411,7 +413,7 @@ By connecting health monitoring devices to the web platform, AuraMed offers cont
       { name: "TensorFlow", color: "pink-text-gradient" },
       { name: "Dialogflow", color: "orange-text-gradient" }
     ],
-    image: "https://via.placeholder.com/400x300/059669/FFFFFF?text=AuraMed",
+    image: "/Main(AuraMed).png",
     source_code_link: "#",
     demo_video: "https://www.youtube.com/watch?v=ECsVEbnQ51I",
     category: "ai",
@@ -442,7 +444,7 @@ By connecting health monitoring devices to the web platform, AuraMed offers cont
       { name: "Data Integration", color: "orange-text-gradient" },
       { name: "Web Development", color: "blue-text-gradient" }
     ],
-    image: "https://via.placeholder.com/400x300/059669/FFFFFF?text=MaveriqAir",
+    image: "/Main(MaveriqAir).png",
     source_code_link: "https://github.com/mahad2810/MaveriqAir",
     live_demo_link: "https://maveriq-air.vercel.app/",
     demo_video: "https://www.youtube.com/watch?v=Sb3SMGgRnZ4&themeRefresh=1",
@@ -470,7 +472,7 @@ By connecting health monitoring devices to the web platform, AuraMed offers cont
       { name: "PostgreSQL", color: "orange-text-gradient" },
       { name: "Statistical Analysis", color: "blue-text-gradient" }
     ],
-    image: "https://via.placeholder.com/400x300/0891B2/FFFFFF?text=Lung+Cancer+Analysis",
+    image: "/Main(DA).png",
     source_code_link: "#",
     category: "data",
     pdf_file: DAProject,
@@ -496,7 +498,7 @@ By connecting health monitoring devices to the web platform, AuraMed offers cont
       { name: "Plotly.js", color: "orange-text-gradient" },
       { name: "JWT", color: "blue-text-gradient" }
     ],
-    image: "https://via.placeholder.com/400x300/0891B2/FFFFFF?text=Trade2Algo",
+    image: "/Main(Trade2Algo).png",
     source_code_link: "https://github.com/mahad2810/RestApi-Project",
     category: "fullstack",
     pdf_file: Trade2AlgoProject,
