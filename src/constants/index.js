@@ -200,7 +200,87 @@ const experiences = [
 
 const projects = [
   {
-    name: "� Ecosphere – Collaborative Platform for Environmental Action",
+    name: "🛡️ Setuka – Digital Guardian on Every Journey",
+    description: "An AI-driven ecosystem designed to revolutionize tourist safety with a smart wearable, mobile app, and unified command dashboard for authorities.",
+    fullDescription: `Setuka is an AI-driven ecosystem designed to revolutionize tourist safety, described as a "Digital Guardian on Every Journey." The project addresses the need for a smart safety monitoring and incident response system for tourists. It provides a comprehensive solution by equipping tourists with a mobile app and a smart wearable, while offering authorities a powerful, unified command dashboard.
+
+**Core Concept:**
+The platform operates as a proactive safety ecosystem. It places a digital guardian in every tourist's hand while simultaneously providing police, tourism departments, and medical teams with the tools for real-time monitoring and rapid response.
+
+The core components are:
+
+• For Tourists: A mobile application and an integrated smart wearable that monitors location, vitals, and environmental signals.
+• For Authorities: A unified web platform that serves as a command dashboard, providing real-time data, analytics, and incident management tools.
+
+**Key Features and Technology:**
+
+**Tourist-Facing Features:** 🛡️
+
+• Blockchain Digital ID: A secure digital identification system using blockchain technology for basic KYC and travel records. It allows for biometric verification, enabling emergency access even without a QR code.
+• Smart Wearable (IoT Integration): A smart band provides live location, monitors vital signs, and detects environmental signals to enhance safety, especially in high-risk or remote areas.
+• Mobile App: Features one-touch and voice-activated panic alerts, multilingual support for inclusive access, and critical offline functionality.
+
+**Authority-Facing Features:** 🚔
+
+• Unified Dashboard: Provides police and tourism departments with real-time tourist heat maps, risk analytics, and streamlined workflows.
+• AI Safety Intelligence: The system uses AI for threat scoring, anomaly detection in tourist behavior, and generating geo-fence alerts.
+• Rapid Incident Response: The platform can automatically generate an E-FIR (First Information Report), map available hospital beds, and dispatch the nearest emergency unit. A dedicated app for police staff links SOS alerts directly to the closest patrolling officer for faster rescue.
+
+**Innovation and Problem-Solving:**
+
+**Unique Approach:** 💡
+Setuka integrates several unique features to create a robust safety net:
+
+• Offline Resilience: Core functions like SOS alerts, routing, and translation are designed to work even in remote areas with no network coverage.
+• Privacy-First Security: It utilizes Zero-Knowledge Proofs (ZKPs), allowing for secure identity verification without revealing sensitive personal data.
+• Proactive & Predictive Policing: AI-driven insights help authorities manage crowds predictively and prevent incidents before they happen.
+
+**Overcoming Key Challenges:** ✅
+The system is specifically designed to address common safety challenges:
+
+• Connectivity Gaps: A hybrid online-offline app ensures core functions are always available. For high-risk zones, the wearable uses satellite-based GPS tracking.
+• AI False Alarms: A "Human-in-the-Loop" system adds a verification step to AI-generated alerts, reducing false positives and ensuring resources are sent only when necessary.
+• Medical Emergencies: The smart band can automatically trigger an SOS alert if it detects a health crisis (e.g., abnormal heart rate) and the tourist fails to respond to a verification prompt, ensuring help is sent even if the person is unconscious.
+
+**Impact and Benefits:**
+
+**For Tourists:**
+• Provides unparalleled safety and peace of mind with real-time monitoring, geo-fence alerts, and an instant SOS that works offline.
+• Creates a seamless travel experience with a secure digital ID for easy verification and multilingual support to remove language barriers.
+• Empowers tourists by giving them control over their safety with a panic button and optional live location sharing for family members.
+
+**For Government & Tourism Departments:**
+• Enables data-driven governance with real-time heat maps and analytics for better resource allocation and infrastructure planning.
+• Boosts the tourism economy by establishing the region as a safe destination, attracting more visitors.
+• Enhances the national reputation for safety and tourism.
+
+**For Law Enforcement & Emergency Services:**
+• Drastically reduces incident response time using pinpoint satellite-based GPS accuracy during the critical "golden hour."
+• Allows for proactive policing and incident prevention through AI-driven predictive insights.
+• Maximizes operational efficiency with features like automated E-FIR generation and a unified dashboard, reducing manual effort.`,
+    tags: [
+      { name: "AI/ML", color: "blue-text-gradient" },
+      { name: "IoT", color: "green-text-gradient" },
+      { name: "Blockchain", color: "pink-text-gradient" },
+      { name: "Mobile App", color: "orange-text-gradient" },
+      { name: "React.js", color: "blue-text-gradient" },
+      { name: "Node.js", color: "green-text-gradient" },
+      { name: "Public Safety", color: "pink-text-gradient" }
+    ],
+    image_gallery: [
+      "/setuka/Screenshot 2025-10-08 193305.png", 
+      "/setuka/Screenshot 2025-10-08 193316.png", 
+      "/setuka/Screenshot 2025-10-08 193327.png",
+      "/setuka/Screenshot 2025-10-08 193337.png"
+    ],
+    image: "/setuka/Screenshot 2025-10-08 193305.png",
+    demo_video: "/setuka/WhatsApp Video 2025-09-26 at 8.54.32 PM.mp4",
+    source_code_link: "#",
+    category: "fullstack",
+    type: "gallery"
+  },
+  {
+    name: "🌍 Ecosphere – Collaborative Platform for Environmental Action",
     description: "A web-based collaboration platform designed for environmental action, uniting governments, NGOs, researchers, and citizens to work together effectively on sustainability initiatives.",
     fullDescription: `Ecosphere is a web-based collaboration platform designed for environmental action, focusing on the theme of sustainability. The project's main goal is to unite governments, NGOs, researchers, and citizens to collaborate effectively on environmental initiatives. 🌍
 
@@ -289,7 +369,7 @@ The platform is designed to deliver substantial benefits across environmental, s
     type: "gallery"
   },
   {
-    name: "�🌐 AuraMed – Revolutionizing Hospital Operations & Patient Care",
+    name: "� AuraMed – Revolutionizing Hospital Operations & Patient Care",
     description: "AuraMed bridges the gap between patients and healthcare providers by offering a unified, intelligent platform that enhances healthcare accessibility, continuity, and operational efficiency.",
     fullDescription: `AuraMed bridges the gap between patients and healthcare providers by offering a unified, intelligent platform that enhances healthcare accessibility, continuity, and operational efficiency. It is a dual-interface hospital management system designed to serve both patients and hospitals through powerful features and real-time connectivity.
 

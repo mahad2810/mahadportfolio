@@ -61,8 +61,18 @@ const DashboardProjectCard = ({ project, index, onViewDetails }) => {
                 <div className="absolute top-4 right-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
                   Gallery
                 </div>
-                <div className="absolute bottom-3 right-3 text-white bg-black/60 px-2 py-1 rounded text-xs font-medium">
-                  {project.image_gallery.length} images
+                <div className="absolute bottom-3 right-3 flex items-center gap-2">
+                  <div className="text-white bg-black/60 px-2 py-1 rounded text-xs font-medium">
+                    {project.image_gallery.length} images
+                  </div>
+                  {project.demo_video && (
+                    <div className="text-white bg-red-600/80 px-2 py-1 rounded text-xs font-medium flex items-center gap-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                      </svg>
+                      Video
+                    </div>
+                  )}
                 </div>
               </div>
             ) : (

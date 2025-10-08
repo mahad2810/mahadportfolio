@@ -15,6 +15,8 @@ import { styles } from "../styles";
 const ProjectModal = ({ project, isOpen, onClose }) => {
   const [showPDFViewer, setShowPDFViewer] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [showVideo, setShowVideo] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   // Prevent body scroll when modal is open
   React.useEffect(() => {
@@ -24,8 +26,16 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
       document.body.style.overflow = 'unset';
     }
 
+    // Set up fullscreen change listener
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+
     return () => {
       document.body.style.overflow = 'unset';
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
     };
   }, [isOpen]);
 
@@ -82,9 +92,9 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
             </button>
 
             <div className="flex flex-col h-full overflow-hidden">
-              {/* PDF Preview Section - Top (60% height) */}
+              {/* PDF Preview Section - Top (40-50% height) */}
               {project.pdf_file && (
-                <div className="h-[50%] sm:h-[60%] border-b border-gray-200 dark:border-gray-700">
+                <div className="h-[40%] sm:h-[50%] border-b border-gray-200 dark:border-gray-700">
                   <div className="h-full flex flex-col">
                     <div className="p-2 sm:p-3 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
                       <div className="flex items-center justify-between">
@@ -103,12 +113,38 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                         </GlassButton>
                       </div>
                     </div>
-                    <div className="flex-1 p-1 sm:p-2 bg-gray-100 dark:bg-gray-900">
-                      <iframe
-                        src={`${project.pdf_file}#toolbar=0&navpanes=0&scrollbar=1&page=1&zoom=${window.innerWidth < 640 ? '70' : '90'}`}
-                        className="w-full h-full border-0 rounded-lg shadow-lg"
-                        title={`${project.name} PDF Preview`}
-                      />
+                    <div className="flex-1 p-1 sm:p-2 bg-gray-100 dark:bg-gray-900 flex items-center justify-center">
+                      <div className="absolute top-2 right-2 z-10">
+                        <GlassButton
+                          variant="outline"
+                          size="sm"
+                          onClick={() => {
+                            if (document.fullscreenElement) {
+                              document.exitFullscreen();
+                            } else {
+                              const pdfElement = document.getElementById('project-pdf');
+                              if (pdfElement) pdfElement.requestFullscreen();
+                            }
+                          }}
+                          className="p-1"
+                          title="Toggle Fullscreen"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <polyline points="9 21 3 21 3 15"></polyline>
+                            <line x1="21" y1="3" x2="14" y2="10"></line>
+                            <line x1="3" y1="21" x2="10" y2="14"></line>
+                          </svg>
+                        </GlassButton>
+                      </div>
+                      <div className="w-auto max-w-[90%] h-auto max-h-[90%] relative">
+                        <iframe
+                          id="project-pdf"
+                          src={`${project.pdf_file}#toolbar=0&navpanes=0&scrollbar=1&page=1&zoom=${window.innerWidth < 640 ? '70' : '90'}`}
+                          className="max-w-full max-h-[250px] sm:max-h-[350px] border-0 rounded-lg shadow-lg"
+                          title={`${project.name} PDF Preview`}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -116,7 +152,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
 
               {/* Image Gallery Section - Top (60% height) */}
               {project.type === "gallery" && project.image_gallery && project.image_gallery.length > 0 && (
-                <div className="h-[50%] sm:h-[60%] border-b border-gray-200 dark:border-gray-700">
+                <div className="h-[40%] sm:h-[50%] border-b border-gray-200 dark:border-gray-700">
                   <div className="h-full flex flex-col">
                     <div className="p-2 sm:p-3 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
                       <div className="flex items-center justify-between">
@@ -124,6 +160,19 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                           Project Gallery
                         </h3>
                         <div className="flex items-center gap-2">
+                          {project.demo_video && (
+                            <GlassButton
+                              variant="accent"
+                              size="sm"
+                              onClick={() => setShowVideo(true)}
+                              className="mr-2 flex items-center gap-1"
+                            >
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                              </svg>
+                              <span className="hidden sm:inline">Watch Demo</span>
+                            </GlassButton>
+                          )}
                           <span className="text-xs text-gray-500">
                             {currentImageIndex + 1} / {project.image_gallery.length}
                           </span>
@@ -148,33 +197,105 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                         </div>
                       </div>
                     </div>
-                    <div className="flex-1 p-1 sm:p-2 bg-gray-100 dark:bg-gray-900 relative">
-                      <img 
-                        src={project.image_gallery[currentImageIndex]} 
-                        alt={`${project.name} - Image ${currentImageIndex + 1}`}
-                        className="w-full h-full object-contain rounded-lg shadow-lg"
-                      />
-                      <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-1">
-                        {project.image_gallery.map((_, index) => (
-                          <button 
-                            key={index}
-                            onClick={() => setCurrentImageIndex(index)}
-                            className={`w-2 h-2 rounded-full transition-all ${
-                              currentImageIndex === index 
-                                ? 'bg-purple-600 w-4' 
-                                : 'bg-gray-400'
-                            }`}
-                            aria-label={`Go to image ${index + 1}`}
+                    {showVideo && project.demo_video ? (
+                      <div className="flex-1 p-1 sm:p-2 bg-gray-100 dark:bg-gray-900 relative flex items-center justify-center">
+                        <div className="absolute top-2 right-2 z-10 flex gap-2">
+                          <GlassButton
+                            variant="outline"
+                            size="sm"
+                            onClick={() => {
+                              if (document.fullscreenElement) {
+                                document.exitFullscreen();
+                              } else {
+                                const videoElement = document.getElementById('project-video');
+                                if (videoElement) videoElement.requestFullscreen();
+                              }
+                            }}
+                            className="p-1"
+                            title="Toggle Fullscreen"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                              <polyline points="15 3 21 3 21 9"></polyline>
+                              <polyline points="9 21 3 21 3 15"></polyline>
+                              <line x1="21" y1="3" x2="14" y2="10"></line>
+                              <line x1="3" y1="21" x2="10" y2="14"></line>
+                            </svg>
+                          </GlassButton>
+                          <GlassButton
+                            variant="outline"
+                            size="sm"
+                            onClick={() => setShowVideo(false)}
+                            className="p-1"
+                            title="Close Video"
+                          >
+                            ✕
+                          </GlassButton>
+                        </div>
+                        <div className="w-auto max-w-[90%] h-auto max-h-[90%] relative">
+                          <video 
+                            id="project-video"
+                            src={project.demo_video} 
+                            className="max-w-full max-h-[250px] sm:max-h-[350px] object-contain rounded-lg shadow-lg"
+                            controls
+                            autoPlay
                           />
-                        ))}
+                        </div>
                       </div>
-                    </div>
+                    ) : (
+                      <div className="flex-1 p-1 sm:p-2 bg-gray-100 dark:bg-gray-900 relative flex items-center justify-center">
+                        <div className="absolute top-2 right-2 z-10">
+                          <GlassButton
+                            variant="outline"
+                            size="sm"
+                            onClick={() => {
+                              if (document.fullscreenElement) {
+                                document.exitFullscreen();
+                              } else {
+                                const imgElement = document.getElementById('project-image');
+                                if (imgElement) imgElement.requestFullscreen();
+                              }
+                            }}
+                            className="p-1"
+                            title="Toggle Fullscreen"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                              <polyline points="15 3 21 3 21 9"></polyline>
+                              <polyline points="9 21 3 21 3 15"></polyline>
+                              <line x1="21" y1="3" x2="14" y2="10"></line>
+                              <line x1="3" y1="21" x2="10" y2="14"></line>
+                            </svg>
+                          </GlassButton>
+                        </div>
+                        <div className="w-auto max-w-[90%] h-auto max-h-[90%] relative">
+                          <img 
+                            id="project-image"
+                            src={project.image_gallery[currentImageIndex]} 
+                            alt={`${project.name} - Image ${currentImageIndex + 1}`}
+                            className="max-w-full max-h-[250px] sm:max-h-[350px] object-contain rounded-lg shadow-lg"
+                          />
+                        </div>
+                        <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-1">
+                          {project.image_gallery.map((_, index) => (
+                            <button 
+                              key={index}
+                              onClick={() => setCurrentImageIndex(index)}
+                              className={`w-2 h-2 rounded-full transition-all ${
+                                currentImageIndex === index 
+                                  ? 'bg-purple-600 w-4' 
+                                  : 'bg-gray-400'
+                              }`}
+                              aria-label={`Go to image ${index + 1}`}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               )}
 
-              {/* Project Info Section - Bottom (40% height) */}
-              <div className={`${(project.pdf_file || (project.type === "gallery" && project.image_gallery && project.image_gallery.length > 0)) ? 'h-[50%] sm:h-[40%]' : 'h-full'} overflow-y-auto`}>
+              {/* Project Info Section - Bottom (50-60% height) */}
+              <div className={`${(project.pdf_file || (project.type === "gallery" && project.image_gallery && project.image_gallery.length > 0)) ? 'h-[60%] sm:h-[50%]' : 'h-full'} overflow-y-auto`}>
                 {/* Content */}
                 <div className="p-3 sm:p-4 lg:p-8">
                   <h2 className="text-lg sm:text-2xl lg:text-3xl font-bold text-gray-800 dark:text-white mb-3 sm:mb-4 leading-tight">
@@ -352,8 +473,18 @@ const ProjectCard = ({
                 <div className="absolute top-4 right-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
                   Gallery
                 </div>
-                <div className="absolute bottom-3 right-3 text-white bg-black/60 px-2 py-1 rounded text-xs font-medium">
-                  {project.image_gallery.length} images
+                <div className="absolute bottom-3 right-3 flex items-center gap-2">
+                  <div className="text-white bg-black/60 px-2 py-1 rounded text-xs font-medium">
+                    {project.image_gallery.length} images
+                  </div>
+                  {project.demo_video && (
+                    <div className="text-white bg-red-600/80 px-2 py-1 rounded text-xs font-medium flex items-center gap-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                      </svg>
+                      Video
+                    </div>
+                  )}
                 </div>
               </div>
             ) : (

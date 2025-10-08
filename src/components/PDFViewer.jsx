@@ -73,6 +73,25 @@ const PDFViewer = ({ pdfFile, projectName, isOpen, onClose }) => {
                 <Download size={20} />
               </button>
               <button
+                onClick={() => {
+                  if (document.fullscreenElement) {
+                    document.exitFullscreen();
+                  } else {
+                    const pdfContainer = document.getElementById('pdf-fullscreen-container');
+                    if (pdfContainer) pdfContainer.requestFullscreen();
+                  }
+                }}
+                className="p-2 rounded-lg bg-white/20 hover:bg-white/30 transition-colors"
+                title="Toggle Fullscreen"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <polyline points="9 21 3 21 3 15"></polyline>
+                  <line x1="21" y1="3" x2="14" y2="10"></line>
+                  <line x1="3" y1="21" x2="10" y2="14"></line>
+                </svg>
+              </button>
+              <button
                 onClick={onClose}
                 className="p-2 rounded-lg bg-white/20 hover:bg-white/30 transition-colors"
                 title="Close"
@@ -83,7 +102,7 @@ const PDFViewer = ({ pdfFile, projectName, isOpen, onClose }) => {
           </div>
 
           {/* PDF Content */}
-          <div className="flex-1 overflow-auto p-4 bg-gray-100">
+          <div id="pdf-fullscreen-container" className="flex-1 overflow-auto p-4 bg-gray-100">
             <div className="flex justify-center">
               <div
                 style={{
