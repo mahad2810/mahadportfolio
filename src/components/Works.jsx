@@ -11,9 +11,10 @@ import { GlassCard, GlassButton } from "./ui";
 import PDFViewer from "./PDFViewer";
 import { styles } from "../styles";
 
-// Enhanced Project Modal with PDF Integration
+// Enhanced Project Modal with PDF Integration and Image Gallery
 const ProjectModal = ({ project, isOpen, onClose }) => {
   const [showPDFViewer, setShowPDFViewer] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Prevent body scroll when modal is open
   React.useEffect(() => {
@@ -38,7 +39,19 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
     setShowPDFViewer(false);
   };
 
-  if (!isOpen) return null;
+  const nextImage = () => {
+    if (project.image_gallery && project.image_gallery.length > 0) {
+      setCurrentImageIndex((prev) => (prev + 1) % project.image_gallery.length);
+    }
+  };
+
+  const prevImage = () => {
+    if (project.image_gallery && project.image_gallery.length > 0) {
+      setCurrentImageIndex((prev) => 
+        prev === 0 ? project.image_gallery.length - 1 : prev - 1
+      );
+    }
+  };
 
   if (!isOpen) return null;
 
@@ -101,8 +114,67 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                 </div>
               )}
 
+              {/* Image Gallery Section - Top (60% height) */}
+              {project.type === "gallery" && project.image_gallery && project.image_gallery.length > 0 && (
+                <div className="h-[50%] sm:h-[60%] border-b border-gray-200 dark:border-gray-700">
+                  <div className="h-full flex flex-col">
+                    <div className="p-2 sm:p-3 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
+                      <div className="flex items-center justify-between">
+                        <h3 className="text-sm sm:text-lg font-semibold text-gray-800 dark:text-white">
+                          Project Gallery
+                        </h3>
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs text-gray-500">
+                            {currentImageIndex + 1} / {project.image_gallery.length}
+                          </span>
+                          <div className="flex gap-1">
+                            <GlassButton
+                              variant="outline"
+                              size="sm"
+                              onClick={prevImage}
+                              className="p-1"
+                            >
+                              ←
+                            </GlassButton>
+                            <GlassButton
+                              variant="outline" 
+                              size="sm"
+                              onClick={nextImage}
+                              className="p-1"
+                            >
+                              →
+                            </GlassButton>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex-1 p-1 sm:p-2 bg-gray-100 dark:bg-gray-900 relative">
+                      <img 
+                        src={project.image_gallery[currentImageIndex]} 
+                        alt={`${project.name} - Image ${currentImageIndex + 1}`}
+                        className="w-full h-full object-contain rounded-lg shadow-lg"
+                      />
+                      <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-1">
+                        {project.image_gallery.map((_, index) => (
+                          <button 
+                            key={index}
+                            onClick={() => setCurrentImageIndex(index)}
+                            className={`w-2 h-2 rounded-full transition-all ${
+                              currentImageIndex === index 
+                                ? 'bg-purple-600 w-4' 
+                                : 'bg-gray-400'
+                            }`}
+                            aria-label={`Go to image ${index + 1}`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {/* Project Info Section - Bottom (40% height) */}
-              <div className={`${project.pdf_file ? 'h-[50%] sm:h-[40%]' : 'h-full'} overflow-y-auto`}>
+              <div className={`${(project.pdf_file || (project.type === "gallery" && project.image_gallery && project.image_gallery.length > 0)) ? 'h-[50%] sm:h-[40%]' : 'h-full'} overflow-y-auto`}>
                 {/* Content */}
                 <div className="p-3 sm:p-4 lg:p-8">
                   <h2 className="text-lg sm:text-2xl lg:text-3xl font-bold text-gray-800 dark:text-white mb-3 sm:mb-4 leading-tight">
@@ -253,7 +325,7 @@ const ProjectCard = ({
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          {/* Project Image or PDF Preview */}
+          {/* Project Image, PDF Preview, or Gallery Preview */}
           <div className='relative w-full h-[250px] overflow-hidden'>
             {project.pdf_file ? (
               // PDF Preview
@@ -266,6 +338,22 @@ const ProjectCard = ({
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30 pointer-events-none" />
                 <div className="absolute top-4 right-4 bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
                   PDF
+                </div>
+              </div>
+            ) : project.type === "gallery" && project.image_gallery && project.image_gallery.length > 0 ? (
+              // Gallery Preview
+              <div className="relative w-full h-full">
+                <img
+                  src={project.image_gallery[0]}
+                  alt={name}
+                  className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-110'
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30 pointer-events-none" />
+                <div className="absolute top-4 right-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                  Gallery
+                </div>
+                <div className="absolute bottom-3 right-3 text-white bg-black/60 px-2 py-1 rounded text-xs font-medium">
+                  {project.image_gallery.length} images
                 </div>
               </div>
             ) : (
@@ -311,16 +399,16 @@ const ProjectCard = ({
                     </button>
                   )}
 
-                  {project.pdf_file && (
+                  {(project.pdf_file || project.type === "gallery") && (
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
                         onViewDetails(project);
                       }}
-                      className="p-3 bg-purple-600 rounded-full hover:bg-purple-700 transition-colors"
-                      title="View Full PDF"
+                      className={`p-3 ${project.type === "gallery" ? "bg-emerald-600 hover:bg-emerald-700" : "bg-purple-600 hover:bg-purple-700"} rounded-full transition-colors`}
+                      title={project.type === "gallery" ? "View Gallery" : "View Full PDF"}
                     >
-                      <FileText size={20} />
+                      {project.type === "gallery" ? <Eye size={20} /> : <FileText size={20} />}
                     </button>
                   )}
                 </div>
@@ -330,7 +418,7 @@ const ProjectCard = ({
             {/* Project status badge */}
             <div className="absolute top-4 left-4">
               <span className="px-3 py-1 glass backdrop-blur-md border border-white/20 dark:border-white/10 rounded-full text-xs font-medium text-gray-700 dark:text-gray-300">
-                {project.pdf_file ? 'PDF Project' : 'Featured'}
+                {project.pdf_file ? 'PDF Project' : project.type === "gallery" ? 'Gallery Project' : 'Featured'}
               </span>
             </div>
           </div>

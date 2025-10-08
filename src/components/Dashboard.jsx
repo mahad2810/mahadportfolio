@@ -34,7 +34,7 @@ const DashboardProjectCard = ({ project, index, onViewDetails }) => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          {/* Project Image or PDF Preview */}
+          {/* Project Image, PDF Preview, or Gallery Preview */}
           <div className='relative w-full h-[200px] overflow-hidden'>
             {project.pdf_file ? (
               // PDF Preview
@@ -47,6 +47,22 @@ const DashboardProjectCard = ({ project, index, onViewDetails }) => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30 pointer-events-none" />
                 <div className="absolute top-4 right-4 bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
                   PDF
+                </div>
+              </div>
+            ) : project.type === "gallery" && project.image_gallery && project.image_gallery.length > 0 ? (
+              // Gallery Preview
+              <div className="relative w-full h-full">
+                <img
+                  src={project.image_gallery[0]}
+                  alt={name}
+                  className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-110'
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30 pointer-events-none" />
+                <div className="absolute top-4 right-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                  Gallery
+                </div>
+                <div className="absolute bottom-3 right-3 text-white bg-black/60 px-2 py-1 rounded text-xs font-medium">
+                  {project.image_gallery.length} images
                 </div>
               </div>
             ) : (
@@ -91,16 +107,16 @@ const DashboardProjectCard = ({ project, index, onViewDetails }) => {
                     </button>
                   )}
 
-                  {project.pdf_file && (
+                  {(project.pdf_file || project.type === "gallery") && (
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
                         onViewDetails(project);
                       }}
-                      className="p-3 bg-purple-600 rounded-full hover:bg-purple-700 transition-colors"
-                      title="View Full PDF"
+                      className={`p-3 ${project.type === "gallery" ? "bg-emerald-600 hover:bg-emerald-700" : "bg-purple-600 hover:bg-purple-700"} rounded-full transition-colors`}
+                      title={project.type === "gallery" ? "View Gallery" : "View Full PDF"}
                     >
-                      <FileText size={20} />
+                      {project.type === "gallery" ? <Eye size={20} /> : <FileText size={20} />}
                     </button>
                   )}
                 </div>
@@ -110,7 +126,7 @@ const DashboardProjectCard = ({ project, index, onViewDetails }) => {
             {/* Project status badge */}
             <div className="absolute top-4 left-4">
               <span className="px-3 py-1 glass backdrop-blur-md border border-white/20 dark:border-white/10 rounded-full text-xs font-medium text-gray-700 dark:text-gray-300">
-                {project.pdf_file ? 'PDF Project' : 'Featured'}
+                {project.pdf_file ? 'PDF Project' : project.type === "gallery" ? 'Gallery Project' : 'Featured'}
               </span>
             </div>
           </div>

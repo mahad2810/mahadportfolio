@@ -200,7 +200,96 @@ const experiences = [
 
 const projects = [
   {
-    name: "🌐 AuraMed – Revolutionizing Hospital Operations & Patient Care",
+    name: "� Ecosphere – Collaborative Platform for Environmental Action",
+    description: "A web-based collaboration platform designed for environmental action, uniting governments, NGOs, researchers, and citizens to work together effectively on sustainability initiatives.",
+    fullDescription: `Ecosphere is a web-based collaboration platform designed for environmental action, focusing on the theme of sustainability. The project's main goal is to unite governments, NGOs, researchers, and citizens to collaborate effectively on environmental initiatives. 🌍
+
+**Core Concept:**
+The platform brings together various stakeholders by providing them with specialized, role-based dashboards. It integrates real-time data from numerous official sources as well as crowdsourced reports to offer a complete picture of the environmental situation.
+
+The specific roles for each group are:
+
+• Governments: Can approve, fund, and monitor environmental projects through a system that ensures transparency with blockchain technology.
+• Researchers: Are able to analyze incoming data, visualize environmental trends, and propose evidence-based solutions.
+• NGOs/Communities: Can manage local projects, coordinate with volunteers, and handle project proposals.
+• Citizens: Have the ability to report environmental issues using geotags and images, join local initiatives, and earn eco-tokens or green credits via a gamified participation system.
+
+**Technology and Features:**
+
+**Data Integration:**
+Ecosphere pulls in real-time data from a wide array of respected sources, including NASA FIRMS, Sentinel-5P, NOAA, UNEP, Global Forest Watch (GFW), Copernicus, and the UN SDG API, supplementing this with crowdsourced reports from citizens.
+
+**AI/ML Capabilities:** 🤖
+The platform utilizes Artificial Intelligence and Machine Learning to perform several crucial functions:
+
+• Issue Analyzer: Verifies the authenticity of reports and images submitted by citizens.
+• Project Advisor: Employs AI to generate risk and impact scores for proposed projects.
+• RAG Chatbot: A Q&A chatbot available across all dashboards that provides evidence-backed answers.
+• Education Copilot: Delivers a personalized environmental learning experience with gamification elements.
+
+**Deep Analysis Modules:**
+These are specialized dashboards focusing on specific UN Sustainable Development Goals (SDGs):
+
+• Climate Action (SDG 13): Tracks AQI, GHG emissions, pollution trends, and features carbon calculators.
+• Marine Ecosystem (SDG 14): Includes a plastic tracker, monitors ocean temperature and coral reef health, and assists in conservation planning.
+• Environmental Monitoring (SDG 15): Issues deforestation alerts, monitors soil health and biodiversity, maps dumping sites, and provides 3D risk visualizations.
+
+**Blockchain Integration:**
+To build trust and maintain transparency, Ecosphere incorporates blockchain technology to:
+
+• Create unchangeable records for all project funding.
+• Hash citizen-submitted reports for verification.
+• Log the impact of successfully completed projects.
+• A future goal is the full implementation of eco-tokens on the blockchain.
+
+**Innovation and Impact:**
+
+**Unique Features:** ✨
+Ecosphere stands out due to several innovative characteristics:
+
+• It provides a complete end-to-end ecosystem, from data collection and AI validation to funding, execution, and impact reporting.
+• It features a community rewards system using eco-tokens and green credits to foster long-term citizen participation.
+• An integrated chat system allows for real-time collaboration among all stakeholders.
+• Blockchain-backed transparency builds trust between governments, NGOs, and citizens.
+• The project is strongly aligned with UN SDGs 13, 14, and 15, powered by reliable global datasets.
+
+**Problem-Solving Approach:**
+The platform tackles significant environmental challenges by:
+
+• Breaking down data silos to facilitate multi-stakeholder collaboration.
+• Combining scientific data with citizen reports to enable stronger, evidence-based policies and actions.
+• Boosting citizen engagement through a gamified rewards system.
+• Ensuring accountability by using blockchain for transparent records of funding, reports, and impact.
+
+**Potential Benefits:**
+The platform is designed to deliver substantial benefits across environmental, social, and economic spheres:
+
+• Environmental: Leads to better monitoring of deforestation, marine pollution, and biodiversity, and allows for faster identification of environmental threats.
+• Social: Increases climate literacy through its Education Hub and empowers citizens to transition from passive observers to active participants. It also strengthens cooperation between global and local stakeholders.
+• Economic: Facilitates smarter allocation of funds with AI-powered project evaluations, generates cost savings through early detection of environmental risks, and creates new opportunities for green jobs and volunteering.`,
+    tags: [
+      { name: "React.js", color: "blue-text-gradient" },
+      { name: "Node.js", color: "green-text-gradient" },
+      { name: "MongoDB", color: "pink-text-gradient" },
+      { name: "AI/ML", color: "orange-text-gradient" },
+      { name: "Blockchain", color: "blue-text-gradient" },
+      { name: "Data Visualization", color: "green-text-gradient" },
+      { name: "Sustainability", color: "pink-text-gradient" }
+    ],
+    image_gallery: [
+      "/eco/Screenshot 2025-08-21 145550.png", 
+      "/eco/Screenshot 2025-08-21 144929.png", 
+      "/eco/Screenshot 2025-08-21 150452.png",
+      "/eco/Screenshot 2025-08-21 145640.png",
+      "/eco/Screenshot 2025-08-21 150214.png"
+    ],
+    image: "/eco/Screenshot 2025-08-21 145550.png",
+    source_code_link: "#",
+    category: "fullstack",
+    type: "gallery"
+  },
+  {
+    name: "�🌐 AuraMed – Revolutionizing Hospital Operations & Patient Care",
     description: "AuraMed bridges the gap between patients and healthcare providers by offering a unified, intelligent platform that enhances healthcare accessibility, continuity, and operational efficiency.",
     fullDescription: `AuraMed bridges the gap between patients and healthcare providers by offering a unified, intelligent platform that enhances healthcare accessibility, continuity, and operational efficiency. It is a dual-interface hospital management system designed to serve both patients and hospitals through powerful features and real-time connectivity.
 
