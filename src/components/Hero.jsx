@@ -4,13 +4,12 @@ import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 import { GlassButton } from "./ui";
 import ErrorBoundary from "./ErrorBoundary";
-import { resume } from "../assets";
+// Resume now served from public folder directly
 
 const Hero = () => {
   const handleDownloadResume = () => {
-    // Create a temporary link element and trigger download
     const link = document.createElement('a');
-    link.href = resume;
+    link.href = '/Mahad(Resume).pdf'; // served from public/
     link.download = 'Mahad_Iqbal_Resume.pdf';
     link.target = '_blank';
     document.body.appendChild(link);
@@ -53,22 +52,22 @@ const Hero = () => {
 
             {/* Main heading */}
             <motion.h1
-              className={`${styles.heroHeadText} text-gray-800 dark:text-white mb-3 sm:mb-4`}
+              className={`${styles.heroHeadText} text-gray-800 dark:text-white mb-2 sm:mb-3`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Hi, I'm <span className='text-accent-purple'>Mahad Iqbal</span>
+              <span className='text-accent-purple'>Mahad Iqbal</span>
             </motion.h1>
 
             {/* Subtitle / Professional Headline */}
             <motion.p
-              className={`${styles.heroSubText} text-gray-700 dark:text-gray-200 mb-3 sm:mb-4 font-semibold tracking-wide bg-gradient-to-r from-accent-purple via-accent-blue to-pink-500 bg-clip-text text-transparent`}
+              className={`${styles.heroSubText} text-gray-800 dark:text-gray-100 mb-4 sm:mb-5 font-semibold tracking-wide bg-gradient-to-r from-accent-purple via-accent-blue to-pink-500 bg-clip-text text-transparent`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
             >
-              AI/ML Engineer · Data Scientist & Analyst · Generative AI Intern @ AI Wallah
+              AI/ML Engineer & Full-Stack Developer
             </motion.p>
 
             {/* Description */}
@@ -79,18 +78,14 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.55 }}
             >
               <p className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                AI practitioner focused on <span className="font-semibold text-accent-purple/90">LLMs</span>,
-                <span className="font-semibold text-accent-blue/90"> multimodal generation</span>, and
-                <span className="font-semibold text-pink-500/80"> data‑driven intelligence</span>. B.Tech CSE - AIML @ Heritage Institute of Technology.
-                I love shipping production‑ready, measurable ML systems that move real metrics—not just demos.
+                An aspiring AI/ML Engineer with hands-on experience deploying machine learning models and building data-driven solutions to solve real-world problems. Skilled in <span className='font-semibold text-accent-purple/90'>Python</span>, <span className='font-semibold text-accent-blue/90'>Flask</span>, and <span className='font-semibold text-pink-500/80'>React</span>, I am passionate about creating impactful projects like smart healthcare platforms and AI-powered safety systems.
               </p>
               <div className="flex flex-wrap gap-2 sm:gap-3">
                 {[
+                  'GenAI',
+                  'Data Scientist',
                   '4× Hackathon Winner',
-                  'RAG & Vector Search',
-                  'MLOps & Model Eval',
-                  'Generative AI (LLMs / Diffusion)',
-                  'Data Storytelling'
+                  'AI Engineer'
                 ].map((badge, i) => (
                   <span
                     key={badge}
