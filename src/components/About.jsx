@@ -11,23 +11,23 @@ const About = () => {
   const highlights = [
     {
       icon: <Code size={24} />,
-      title: "Machine Learning",
-      description: "ML model development, deployment, and optimization for real-world applications"
+      title: "Generative AI",
+      description: "Building and deploying generative AI solutions, chatbots, and intelligent interfaces"
     },
     {
       icon: <Palette size={24} />,
-      title: "Data Science",
-      description: "Complex dataset analysis, visualization, and extracting actionable insights"
+      title: "Full-Stack Development",
+      description: "Creating production-ready applications with Next.js, React, Flask, and MongoDB"
     },
     {
       icon: <Zap size={24} />,
-      title: "NLP & Generative AI",
-      description: "Building intelligent language models, chatbots, and AI applications"
+      title: "Team Leadership",
+      description: "Leading cross-functional teams to deliver MVPs in competitive hackathon environments"
     },
     {
       icon: <Users size={24} />,
-      title: "Healthcare Innovation",
-      description: "Developing AI-powered solutions for healthcare challenges and patient care"
+      title: "AI Applications",
+      description: "Developing innovative solutions for healthcare, environmental monitoring, and travel safety"
     }
   ];
 
@@ -90,22 +90,26 @@ const About = () => {
 
               <div className="text-gray-600 dark:text-gray-300 leading-relaxed space-y-6">
                 <p className="text-base text-center">
-                  I'm <span className="text-accent-purple font-semibold">Mahad Iqbal</span>, an aspiring AI/ML Engineer and Data Scientist with a strong foundation in machine learning, data analysis, and full-stack development. My passion lies in turning complex datasets into actionable insights and building intelligent systems that solve real-world problems.
+                  I'm <span className="text-accent-purple font-semibold">Mahad Iqbal</span>, a Generative AI Developer and Full-Stack Engineer with a Bachelor of Technology in CSE-AIML from Heritage Institute of Technology, Kolkata. I graduated with excellence from Seventh Day Adventist Senior Secondary School, achieving 94% in both my Class X (ICSE) and Class XII (ISC) examinations.
                 </p>
 
                 <div>
                   <p className="text-base mb-3 text-center">
-                    With hands-on experience in deploying ML models, working with satellite and sensor data, and building end-to-end applications, I've developed impactful projects like:
+                    With professional experience as a Generative AI Developer Intern at AI Wallah and a Data Science Intern at Pinnacle Labs, I've developed innovative solutions including:
                   </p>
                   
                   <div className="bg-gradient-to-r from-accent-purple/10 to-accent-blue/10 rounded-lg p-4 space-y-2 max-w-2xl mx-auto">
                     <div className="flex items-start gap-3">
                       <span className="text-accent-blue text-lg">•</span>
-                      <p><span className="text-accent-blue font-semibold">AuraMed</span> – an AI-powered healthcare platform for symptom prediction and emergency alerts.</p>
+                      <p><span className="text-accent-blue font-semibold">MaveriqAir</span> – a real-time environmental dashboard with AQI-based health insights, animated weather effects, and an AI chatbot powered by Google Gemini and AirVisual API.</p>
                     </div>
                     <div className="flex items-start gap-3">
                       <span className="text-accent-purple text-lg">•</span>
-                      <p><span className="text-accent-purple font-semibold">MaveriqAir</span> – a real-time AQI and flood forecasting system using CPCB and Sentinel-5P data.</p>
+                      <p><span className="text-accent-purple font-semibold">AuraMed</span> – a Smart Healthcare Platform with geolocation-based SOS alerts, symptom prediction, and real-time resource tracking, built using React, Flask, Firebase, and ML models.</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <span className="text-accent-blue text-lg">•</span>
+                      <p><span className="text-accent-blue font-semibold">Setuka</span> – an AI+IoT ecosystem providing real-time safety for travelers with wearable telemetry for live vitals and location tracking, implemented with React and Node.js.</p>
                     </div>
                   </div>
                 </div>
@@ -116,36 +120,48 @@ const About = () => {
                     <div className="space-y-2">
                       <div className="flex items-center gap-2">
                         <span className="w-2 h-2 bg-accent-purple rounded-full"></span>
-                        <span className="font-medium">Machine Learning & NLP</span>
+                        <span className="font-medium">Programming</span>
                       </div>
-                      <p className="text-sm text-gray-500 dark:text-gray-400 ml-4">Scikit-learn, Transformers, Prompt Engineering</p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 ml-4">Python, C++, SQL</p>
                       
                       <div className="flex items-center gap-2">
                         <span className="w-2 h-2 bg-accent-blue rounded-full"></span>
-                        <span className="font-medium">Data Analysis & Visualization</span>
+                        <span className="font-medium">Data & ML Libraries</span>
                       </div>
-                      <p className="text-sm text-gray-500 dark:text-gray-400 ml-4">Pandas, NumPy, Power BI, Seaborn</p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 ml-4">Pandas, NumPy, Matplotlib, Seaborn, Scikit-Learn, TensorFlow, PyTorch</p>
+                      
+                      <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 bg-accent-purple rounded-full"></span>
+                        <span className="font-medium">ML & AI Expertise</span>
+                      </div>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 ml-4">Supervised/Unsupervised Learning, Deep Learning, Computer Vision, Feature Engineering</p>
                     </div>
                     
                     <div className="space-y-2">
                       <div className="flex items-center gap-2">
                         <span className="w-2 h-2 bg-accent-purple rounded-full"></span>
-                        <span className="font-medium">Model Deployment</span>
+                        <span className="font-medium">Web Development</span>
                       </div>
-                      <p className="text-sm text-gray-500 dark:text-gray-400 ml-4">Flask, Docker, GCP</p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 ml-4">Next.js, FastAPI, Django, Flask, SQL, MongoDB</p>
                       
                       <div className="flex items-center gap-2">
                         <span className="w-2 h-2 bg-accent-blue rounded-full"></span>
-                        <span className="font-medium">Cloud & APIs</span>
+                        <span className="font-medium">Generative AI</span>
                       </div>
-                      <p className="text-sm text-gray-500 dark:text-gray-400 ml-4">Firebase, REST, AirVisual, Gemini</p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 ml-4">LangChain, OpenCV, LLM Integration, Agentic Engineering</p>
+                      
+                      <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 bg-accent-blue rounded-full"></span>
+                        <span className="font-medium">Soft Skills</span>
+                      </div>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 ml-4">Team Management, Strategic Planning, Problem-Solving, Communication</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="border-l-4 border-accent-purple/30 pl-4 bg-accent-purple/5 rounded-r-lg py-3 max-w-3xl mx-auto">
                   <p className="text-base">
-                    Currently deepening my skills in <span className="text-accent-purple font-semibold">Generative AI</span> and <span className="text-accent-blue font-semibold">LLM applications</span>, I'm seeking opportunities where I can contribute to impactful AI products and continue growing as a data-driven problem solver.
+                    With a proven track record of <span className="text-accent-purple font-semibold">hackathon victories</span> including 1st Place at IEM Smart Make-A-Thon, 1st Place at Hack Heritage 3.0, and multiple finalist selections at national-level competitions, I combine <span className="text-accent-blue font-semibold">technical expertise</span> with leadership skills to create innovative solutions that address real-world challenges in healthcare, travel safety, and environmental monitoring.
                   </p>
                 </div>
               </div>

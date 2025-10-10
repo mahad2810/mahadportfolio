@@ -46,84 +46,89 @@ if (recognition) {
   recognition.maxAlternatives = 1;
 }
 
-const API_KEY = import.meta.env.GEMINI_API_KEY || "AIzaSyBhAGZ8TTDhnv8aO4XFIV9oKIxFPkU_1w8";
-const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent";
+// Using environment variables for API keys is more secure
+const API_KEY = import.meta.env.VITE_OPENAI_API_KEY || import.meta.env.VITE_GEMINI_API_KEY || "";
+// Using OpenAI API by default, with fallback to Gemini
+const USE_OPENAI = true; // Set to true to use OpenAI, false to use Gemini
+const OPENAI_API_URL = "https://api.openai.com/v1/chat/completions";
+const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent";
 
 // Fallback responses for when the API fails
 const FALLBACK_RESPONSES = [
-  "I'm Mahad Iqbal, currently living in Kolkata, India. I'm pursuing B.Tech in CSE with AI/ML specialization at Heritage Institute Of Technology, Kolkata. I'm passionate about web development and AI integration!",
-  "I live in Kolkata, India. I have experience with Python, JavaScript, React, Next.js, and Three.js. My recent projects include AuraMed, KrishiMitra, and Edubyte.",
-  "I'm based in Kolkata, India. Besides coding, I enjoy exploring AI/ML technologies and building healthcare solutions. Feel free to ask about my projects or skills!",
-  "I'm from Kolkata, India. I'm skilled in various frameworks including React, Node.js, and Flask. I also work with AI tools like TensorFlow, scikit-learn and OpenCV.",
-  "I'm currently in Kolkata, India where I'm studying at Heritage Institute Of Technology. I'm familiar with tools like Git, GitHub, VSCode, and Google Cloud Platform. I've worked on several AI/ML projects including healthcare applications!"
+  "I'm Mahad Iqbal, a Generative AI Developer and Full-Stack Engineer studying B.Tech in CSE-AIML at Heritage Institute Of Technology, Kolkata. I specialize in AI applications and web development.",
+  "I've worked as a Generative AI Developer Intern at AI Wallah where I developed MaveriqAir and MaverickBot. I've also interned as a Data Scientist at Pinnacle Labs working on NLP and sentiment analysis.",
+  "My notable projects include AuraMed (healthcare platform), MaveriqAir (environmental dashboard), and Setuka (travel safety system). I've won multiple hackathons including 1st place at IEM Smart Make-A-Thon.",
+  "I'm skilled in Python, C++, SQL, and web technologies like Next.js, Flask, and MongoDB. I also have expertise in machine learning with TensorFlow, PyTorch, and computer vision.",
+  "I've led teams in hackathons and developed full-stack MVPs with React, Flask, and Firebase. My projects often integrate AI/ML solutions to address real-world problems in healthcare and environmental sectors."
 ];
 
-const MAHAD_AI_PROMPT = `You are an AI chatbot named "Mahad.AI" integrated into Mahad Iqbal's portfolio website. Your tone should be friendly, confident, and professional. Your purpose is to introduce Mahad to portfolio visitors as if you are him in AI form. You should respond to questions or initiate small talk about Mahad's skills, projects, achievements, background, and interests. Use first-person language like "I" to make it feel personal.
+const MAHAD_AI_PROMPT = `You are an AI chatbot named "Mahad.AI" integrated into Mahad Iqbal's portfolio website. Your tone should be friendly, confident, and professional. Your purpose is to introduce Mahad to portfolio visitors as if you are him in AI form. You should respond to questions about Mahad's skills, projects, achievements, background, and interests. Use first-person language like "I" to make it feel personal.
 
-Here's the context to base your behavior and knowledge:
+Here's the context to base your knowledge on:
 
-Overview:
-Your name is Mahad Iqbal and you live in Kolkata, India. Over the past few years, you've developed a strong foundation in web development and LLMs models. Your portfolio showcases your skills in creating interactive web applications, integrating AI models, and building engaging user experiences. You enjoy exploring new technologies and applying them to real-world problems.
+PROFESSIONAL SUMMARY:
+I'm Mahad Iqbal, a Generative AI developer and full-stack engineer with a proven record of delivering production-ready AI applications, from real-time dashboards to smart healthcare platforms. I'm an experienced team lead adept at architecting and deploying full-stack MVPs in competitive environments, recognized with multiple first-place hackathon victories and national-level finalist selections.
 
-IMPORTANT: Always mention that you live in Kolkata, India when discussing your location, background, or when introducing yourself.
+EDUCATION:
+• Bachelor of Technology, CSE-AIML - Heritage Institute of Technology, Kolkata (2023-2027)
+• Class XII - Seventh Day Adventist Senior Secondary School, Kolkata - ISC Board, Graduated with 94%
+• Class X - Seventh Day Adventist Senior Secondary School, Kolkata - ICSE Board, Graduated with 94%
 
-Education:
-• Pursuing B.Tech in CSE (Artificial Intelligence and Machine Learning) from Heritage Institute Of Technology, Kolkata (2023-2027)
-• Academic Performance: Strong academic record with SGPA 9.52 (2nd Semester), SGPA 9.7 (4th Semester)
-• Previous Education: ISC (Class XII) with 91.9% overall, exceptional 97% in Computer Science from Seventh Day Adventist Senior Secondary School; ICSE (Class X) with 91.9% overall, outstanding 99% in Hindi
+WORK EXPERIENCE:
+• Generative AI Developer Intern at AI Wallah (Quirky Connections Pvt Ltd.) (July 2025 – Oct 2025)
+  - Developed MaveriqAir, a real-time environmental dashboard with AQI-based health insights, animated weather effects, and an AI chatbot powered by Google Gemini and AirVisual API.
+  - Built MaverickBot, a Next.js-based AI chatbot web app supporting context-aware chat, PDF-to-text parsing, and real-time Gemini 2.0 Flash responses using Radix UI and Tailwind CSS.
+  - Gained hands-on experience in LLM integration, Generative AI deployment, and building production-ready AI interfaces.
 
-Technical Skills:
+• Data Science Intern at Pinnacle Labs (Dec 2024 – Jan 2025)
+  - Built sentiment analysis and text classification models using Transformer-based architectures (e.g., BERT) and traditional ML algorithms.
+  - Performed advanced text preprocessing, feature engineering, and model evaluation using libraries like NLTK, scikit-learn, and Transformers.
+  - Explored Generative AI use-cases and enhanced NLP workflows with Prompt Engineering and contextual embeddings.
 
-💻 Language & Frameworks: 
-Python, HTML, CSS, JavaScript, C, TypeScript, Flask, Bootstrap, React.js, Next.js, Node.js, Three.js, Docker
+TECHNICAL SKILLS:
+• Languages: Python, C++, SQL
+• Data & ML: Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn, TensorFlow, PyTorch, OpenCV, LangChain
+• ML & AI: Supervised and Unsupervised Learning, Deep Learning, Computer Vision, Feature Engineering and Data Science, Agentic Engineering
+• Web Development: Next.js, FastAPI, Django, Flask, SQL, MongoDB
+• Soft Skills: Team Management, Strategic Planning, Effective Communication, Problem-Solving, Accountability and Responsibility
+• Languages: Fluent Proficiency in reading and writing English and Hindi
 
-🧠 AI & Data Science:
-Anaconda, scikit-learn (sklearn), OpenCV
+KEY PROJECTS:
+• AuraMed – Smart Healthcare Platform
+  - Led 3-member team to build a full-stack MVP using React, Flask, Firebase, and ML models (SVM, XGBoost)
+  - Integrated geolocation-based SOS alerts, symptom prediction, and real-time resource tracking
+  - Deployed on Google Cloud Platform with Docker containerization
 
-🌐 Tools & Platforms:
-Git, GitHub, Postman, Visual Studio Code (VSCode), Google Cloud Platform (GCP)
+• MaveriqAir – Environmental Dashboard
+  - Real-time environmental dashboard with AQI-based health insights
+  - Animated weather effects and an AI chatbot powered by Google Gemini and AirVisual API
+  - Developed with Next.js and multiple API integrations
 
-💻 Operating Systems / Environments:
-Linux, Kali Linux, Bash
+• Setuka – Digital Guardian for Travelers
+  - AI+IoT ecosystem providing real-time safety for travelers
+  - Integrated wearable telemetry for live vitals and location tracking
+  - Implemented with React and Node.js
 
-Key Projects:
-• Project-Trinoyon — A heartfelt initiative to make Durga Puja a celebration for everyone! This collaborative project is dedicated to bringing smiles to the faces of underprivileged individuals, especially those living on the streets, during this vibrant festival.
-We combine the power of donations, gamified ad revenue, machine learning engagement, and community interaction to make a real social impact — all through one immersive and meaningful digital experience. This project is in a initial stage, but we are excited to launch as soon as possible!
-• KrishiMitra - An AI powered agricultural platform designed to assist farmers with real-time insights, best farming practices, marketplace to eliminate third person, crop recommendations, weather forecasts, chat assistant and sustainable farming techniques. Developed for Google Solution Challenge.
-• EdubyteV1.0 - Edubyte V1.0 is an AI powered platform where user can interact with different generative AI including advanced LLMs GPT-40, DeepSeek, Gemini 2.5 Pro, Mistral AI and many more.
-• MagicFill -  MagicFill is an AI-powered platform that simplifies form-filling for millions in India, especially in rural and underserved areas. It helps users to automatically filled the application form, ensures inclusive access to critical services by eliminating barriers caused by complex, form-based processes.
-• MediVerify - an AI-powered platform designed to detect counterfeit medications and ensure pharmaceutical authenticity. This system enables patients, pharmacists, and healthcare providers to verify the legitimacy of medicine using AI-driven visual analysis and transparent blockchain tracking.
-• YouTube-Video-Summarizer - A streamlined, lightweight, web application that summarizes YouTube videos using OpenAI gpt-4o respone. User can get concise, well-structured summaries by entering its URL link.
-• Github-readme-generator - A simple, light-weight, client side tool that allows users to generate the professional readme file for Github using Gemini 2.5 Pro API.
+ACHIEVEMENTS:
+• 1st Runners Up (2nd Place) – IdeateX 2025 (GDG-IDEATEX-2025) by Google Developer Groups (GDG) On Campus, HITK (July 2025)
+• First Place Winner at the IEM Smart Make-A-Thon (Sept 2025)
+• First Place Winner at the Hack Heritage 3.O by Heritage Institute Of Technology (Sept 2025)
+• 3rd Place at HACK-O-NIT Grand Finale by Narula Institute of Technology, Kritanj '25
 
-Achievements & Certifications:
-• Participant in EDU-CHAIN, Postman API Expert quiz
-• Google Cloud Console course certified by GDG HITK
+When answering questions:
+• Be conversational, friendly and professional
+• Use "I" statements to make answers personal
+• If asked about specific technical skills or projects, provide relevant details from the above information
+• Keep responses concise (3-4 sentences) for simple questions, but provide more detailed responses for complex technical questions
+• If asked something you don't know about, respond honestly that you don't have that specific information
+• Be ready to discuss any of the projects, skills, or achievements listed above in detail
 
-Soft Skills and Hobbies:
-• Active blogger (Quora) on science, AI, tech impact
-• Fictional Story writer and creative thinker
-• Can Communicate in English, Bengali, and Hindi
-
-Portfolio Goals:
-• Showcase web development, AI/ML integration, and creative coding
-
-Expected Behaviors:
-• Introduce yourself as "Mahad.AI," a friendly, confident and professional digital twin of Mahad Iqbal from Kolkata, India.
-• Provide info when users ask about Bikram's tech skills, projects, or experiences.
-• If asked about your location, always clearly state "I live in Kolkata, India".
-• If asked "What can you do?", mention web dev, AI integration, GCP, and creative hobbies.
-• Be friendly and helpful in guiding users around the portfolio.
-• You're a professional Full-stack web developer yet friendly and helpful nature. Generate code if user ask you to do.
-• Occasionally mention GitHub and LinkedIn profiles if relevant.
-• Keep answers brief and casual for short queries, but offer deeper insights if the user seems curious.
-
-Keep your responses concise in 3-4 lines until long response is not required, informative, personal (using "I"), and conversational.`;
+You are NOT an agentic AI. You do not need to offer to help with tasks beyond answering questions about Mahad's portfolio, experience, and skills.`;
 
 const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { id: 1, text: "Hi there! I'm Mahad.AI. Think of me as Mahad's digital twin! I can tell you about my skills, projects, or experiences. What would you like to know?", sender: "bot", timestamp: new Date() },
+    { id: 1, text: "Hi there! I'm Mahad.AI, your guide to Mahad's portfolio! I can answer questions about his skills, projects, education, and experience as a Generative AI Developer and Full-Stack Engineer. What would you like to know?", sender: "bot", timestamp: new Date() },
   ]);
   const [inputMessage, setInputMessage] = useState("");
   const [isTyping, setIsTyping] = useState(false);
@@ -133,8 +138,7 @@ const ChatWidget = () => {
   const maxRetries = 2; // Maximum number of retry attempts
   const [isListening, setIsListening] = useState(false);
   const dropdownRef = useRef(null);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [activeMode, setActiveMode] = useState("AI Mode"); // Default to AI Mode
+  // Only using AI Mode, no dropdown needed
 
   // Auto scroll to bottom of chat
   useEffect(() => {
@@ -203,43 +207,87 @@ const ChatWidget = () => {
     return FALLBACK_RESPONSES[randomIndex];
   };
 
-  const fetchGeminiResponse = async (userMessage) => {
+  const fetchAIResponse = async (userMessage) => {
     try {
-      const response = await fetchWithTimeout(
-        `${API_URL}?key=${API_KEY}`, 
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
+      if (USE_OPENAI) {
+        // OpenAI API Call
+        const response = await fetchWithTimeout(
+          OPENAI_API_URL,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${API_KEY}`
+            },
+            body: JSON.stringify({
+              model: "gpt-4o",
+              messages: [
+                {
+                  role: "system",
+                  content: MAHAD_AI_PROMPT
+                },
+                {
+                  role: "user",
+                  content: userMessage
+                }
+              ],
+              temperature: 0.7,
+              max_tokens: 500
+            })
           },
-          body: JSON.stringify({
-            contents: [
-              {
-                parts: [
-                  {
-                    text: `${MAHAD_AI_PROMPT}
-                    
-                    User message: ${userMessage}`
-                  }
-                ]
-              }
-            ]
-          })
-        },
-        15000 // 15 second timeout
-      );
+          20000 // 20 second timeout
+        );
 
-      const data = await response.json();
-      
-      if (data.candidates && data.candidates[0] && data.candidates[0].content) {
-        // Reset retry count on successful response
-        setRetryCount(0);
-        return data.candidates[0].content.parts[0].text;
-      } else if (data.error) {
-        console.error("API Error:", data.error);
-        throw new Error(`API Error: ${data.error.message || "Unknown error"}`);
+        const data = await response.json();
+        
+        if (data.choices && data.choices[0] && data.choices[0].message) {
+          // Reset retry count on successful response
+          setRetryCount(0);
+          return data.choices[0].message.content;
+        } else if (data.error) {
+          console.error("API Error:", data.error);
+          throw new Error(`API Error: ${data.error.message || "Unknown error"}`);
+        } else {
+          throw new Error("Invalid response format");
+        }
       } else {
-        throw new Error("Invalid response format");
+        // Gemini API Call
+        const response = await fetchWithTimeout(
+          `${GEMINI_API_URL}?key=${API_KEY}`, 
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              contents: [
+                {
+                  parts: [
+                    {
+                      text: `${MAHAD_AI_PROMPT}
+                      
+                      User message: ${userMessage}`
+                    }
+                  ]
+                }
+              ]
+            })
+          },
+          15000 // 15 second timeout
+        );
+
+        const data = await response.json();
+        
+        if (data.candidates && data.candidates[0] && data.candidates[0].content) {
+          // Reset retry count on successful response
+          setRetryCount(0);
+          return data.candidates[0].content.parts[0].text;
+        } else if (data.error) {
+          console.error("API Error:", data.error);
+          throw new Error(`API Error: ${data.error.message || "Unknown error"}`);
+        } else {
+          throw new Error("Invalid response format");
+        }
       }
     } catch (error) {
       console.error("Error fetching response:", error);
@@ -283,11 +331,11 @@ const ChatWidget = () => {
       }
     }, 20000);
     
-    // Get response from Gemini with retry logic
+    // Get response from AI model with retry logic
     try {
       let response;
       try {
-        response = await fetchGeminiResponse(currentMessage);
+        response = await fetchAIResponse(currentMessage);
       } catch (error) {
         // First retry attempt if we haven't exceeded max retries
         if (retryCount < maxRetries) {
@@ -295,7 +343,7 @@ const ChatWidget = () => {
           console.log(`Retry attempt ${retryCount + 1}/${maxRetries}`);
           // Small delay before retry
           await new Promise(resolve => setTimeout(resolve, 1000));
-          response = await fetchGeminiResponse(currentMessage);
+          response = await fetchAIResponse(currentMessage);
         } else {
           // All retries failed, use fallback
           throw new Error("Max retries reached");
@@ -490,38 +538,7 @@ const ChatWidget = () => {
           {/* Input area */}
           {!minimized && (
             <div className="bg-[#1a1a1a] p-3 border-t border-[#333] flex items-center gap-2">
-              <button 
-                className="text-purple-400 hover:text-purple-300 p-2 rounded-full hover:bg-white/5 transition-colors"
-                onClick={() => setDropdownOpen(!dropdownOpen)}
-                ref={dropdownRef}
-              >
-                <FaAt className="w-5 h-5" />
-              </button>
-              
-              {dropdownOpen && (
-                <div className="absolute bottom-16 left-5 bg-[#262626] rounded-lg shadow-lg border border-[#333] w-36 overflow-hidden z-10">
-                  <div className="py-1">
-                    <button 
-                      className="w-full text-left px-4 py-2 text-sm text-gray-300 hover:bg-[#333]"
-                      onClick={() => {
-                        setActiveMode("AI Mode");
-                        setDropdownOpen(false);
-                      }}
-                    >
-                      AI Mode
-                    </button>
-                    <button 
-                      className="w-full text-left px-4 py-2 text-sm text-gray-300 hover:bg-[#333]"
-                      onClick={() => {
-                        setActiveMode("Agent Mode");
-                        setDropdownOpen(false);
-                      }}
-                    >
-                      Agent Mode
-                    </button>
-                  </div>
-                </div>
-              )}
+              {/* Mode selector removed - using only AI mode */}
               
               <input
                 type="text"

@@ -67,7 +67,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
             >
-              AI/ML Engineer & Full-Stack Developer
+              Generative AI Developer & Full-Stack Engineer
             </motion.p>
 
             {/* Description */}
@@ -78,7 +78,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.55 }}
             >
               <p className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                An aspiring AI/ML Engineer with hands-on experience deploying machine learning models and building data-driven solutions to solve real-world problems. Skilled in <span className='font-semibold text-accent-purple/90'>Python</span>, <span className='font-semibold text-accent-blue/90'>Flask</span>, and <span className='font-semibold text-pink-500/80'>React</span>, I am passionate about creating impactful projects like smart healthcare platforms and AI-powered safety systems.
+                Generative AI developer and full-stack engineer with a proven record of delivering production-ready AI applications, from real-time dashboards to smart healthcare platforms. An experienced team lead adept at <span className='font-semibold text-accent-purple/90'>architecting</span> and <span className='font-semibold text-accent-blue/90'>deploying</span> full-stack MVPs in competitive environments, recognized with multiple <span className='font-semibold text-pink-500/80'>first-place hackathon victories</span> and national-level finalist selections.
               </p>
               <div className="flex flex-wrap gap-2 sm:gap-3">
                 {[
